@@ -38,7 +38,7 @@ public class PlayerScript : MonoBehaviour
         {
             Debug.Log("jump");
             RB.gravityScale = 30f;
-            RB.velocity = new Vector2(RB.velocity.x, 80f);
+            RB.velocity = new Vector2(RB.velocity.x, JumpForce);
             canDoubleJump = true;
         }
 
@@ -47,7 +47,7 @@ public class PlayerScript : MonoBehaviour
             Debug.Log("double jump");
             canDoubleJump = false;
             RB.gravityScale = 30f;
-            RB.velocity = new Vector2(RB.velocity.x, 80f);
+            RB.velocity = new Vector2(RB.velocity.x, JumpForce);
         }
         
     }
@@ -63,7 +63,7 @@ public class PlayerScript : MonoBehaviour
 
             if(isAlive)
             {
-                score += Time.deltaTime;
+                score += Time.deltaTime * 50;
             
                 ScoreTxt.text = "SCORE: " + score.ToString("0.00") ;
             }

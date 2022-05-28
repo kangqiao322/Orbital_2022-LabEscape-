@@ -15,7 +15,7 @@ public class SpikeGenerator : MonoBehaviour
     {
        GameObject clone = Instantiate(spike, transform.position, Quaternion.identity);
 
-       Destroy(clone, 6f);
+       Destroy(clone, 8f);
     }
 
 

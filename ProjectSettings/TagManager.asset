@@ -7,6 +7,8 @@ TagManager:
   - ground
   - nextLine
   - spike
+  - enemy
+  - player
   layers:
   - Default
   - TransparentFX
