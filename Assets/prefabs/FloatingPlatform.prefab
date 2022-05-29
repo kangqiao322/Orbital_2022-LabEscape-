@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 6865644418913664808}
   - component: {fileID: 4832294411070219291}
   - component: {fileID: -2157165496212608072}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FloatingPlatform
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80,7 +80,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 10, y: 1}
+  m_Size: {x: 2.6, y: 2.2}
   m_EdgeRadius: 0
 --- !u!212 &4832294411070219291
 SpriteRenderer:

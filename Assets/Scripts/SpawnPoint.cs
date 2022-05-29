@@ -9,7 +9,7 @@ public class SpawnPoint : MonoBehaviour
     void Start()
     {
         GameObject enemyIns = Instantiate(enemy, transform.position, Quaternion.identity);
-        Destroy(enemyIns, 4f);
+        Destroy(enemyIns, 8f);
     }
 
     // Update is called once per frame
