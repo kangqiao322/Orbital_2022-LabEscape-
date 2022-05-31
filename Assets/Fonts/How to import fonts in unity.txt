@@ -1,0 +1,8 @@
+1. Download a font file with file extension .ttf online
+2. put it in this folder
+3. Window > Text mesh pro > Font asset creator
+4. Sampling point size = 900, padding = 64, atlas resolution 8192 x 8192
+5. generate font atlas
+
+if a lot of fonts are missing, try adjusting the atlas resolution
+if still got a lot of fonts missing then download another font file.
