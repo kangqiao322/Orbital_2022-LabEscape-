@@ -10,6 +10,7 @@ TagManager:
   - enemy
   - player
   - platformUnderside
+  - platformUndersideEnd
   layers:
   - Default
   - TransparentFX

@@ -23,10 +23,11 @@ public class PlayerScript : MonoBehaviour
     private void Awake() 
     {
         RB = GetComponent<Rigidbody2D>();
+        RB.gravityScale = 30f;
         score = 0;
     }
 
-       void Update()
+    void Update()
     {
        
         isOnGround = Physics2D.OverlapCircle(playerFeet.position, playerFeetRadius, groundLayer);
@@ -53,6 +54,7 @@ public class PlayerScript : MonoBehaviour
             Debug.Log("under jump");
             RB.gravityScale = 30f;
             RB.velocity = new Vector2(0, JumpForce);
+            isUndersidePlatform = false;
         }
         
         
@@ -60,42 +62,41 @@ public class PlayerScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //Debug.Log(collision.gameObject.CompareTag("platformUndersideEnd"));
+        
         if (collision.gameObject.CompareTag("platformUnderside"))
         {
-            isUndersidePlatform = true;   
+            isUndersidePlatform = true;
+            isOnGround = false;
             RB.gravityScale = -30f;
-        }
-        
-        if(collision.gameObject.CompareTag("ground"))
+            
+        } else if (collision.gameObject.CompareTag("platformUndersideEnd"))
+        {
+            isUndersidePlatform = false;   
+            RB.gravityScale = 30f;
+            
+        } else if (collision.gameObject.CompareTag("ground"))
         {
             RB.gravityScale = 30f;
             isUndersidePlatform = false;
-            
-            if(isOnGround == false)
-            {
-                isOnGround = true;
-            }
+            isOnGround = true;
 
-            if(isAlive)
+                if(isAlive)
             {
                 score += Time.deltaTime * 50;
             
                 ScoreTxt.text = "SCORE: " + score.ToString(("0.00")) ;
             }
-        }
-
-        // if(collision.gameObject.CompareTag("spike"))
-        // {
-        //     isAlive = false;
-        //     Time.timeScale = 0;
-        //     
-        // }
-
-        if(collision.gameObject.CompareTag("enemy"))
+                
+        } else if (collision.gameObject.CompareTag("enemy"))
         {
             isAlive = false;
             Time.timeScale = 0;
             
+        }
+        else
+        {
+            Debug.Log("debug");
         }
     }
 }
