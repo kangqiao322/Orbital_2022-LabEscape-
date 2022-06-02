@@ -57,6 +57,13 @@ public class PlayerScript : MonoBehaviour
             isUndersidePlatform = false;
         }
         
+        if (isAlive)
+        {
+            score += Time.deltaTime * 50;
+            
+            ScoreTxt.text = "SCORE: " + score.ToString(("0.00")) ;
+        }
+        
         
     }
 
@@ -70,33 +77,29 @@ public class PlayerScript : MonoBehaviour
             isOnGround = false;
             RB.gravityScale = -30f;
             
-        } else if (collision.gameObject.CompareTag("platformUndersideEnd"))
-        {
-            isUndersidePlatform = false;   
-            RB.gravityScale = 30f;
-            
-        } else if (collision.gameObject.CompareTag("ground"))
+        }  else if (collision.gameObject.CompareTag("ground"))
         {
             RB.gravityScale = 30f;
             isUndersidePlatform = false;
             isOnGround = true;
 
-                if(isAlive)
-            {
-                score += Time.deltaTime * 50;
-            
-                ScoreTxt.text = "SCORE: " + score.ToString(("0.00")) ;
-            }
-                
         } else if (collision.gameObject.CompareTag("enemy"))
         {
             isAlive = false;
             Time.timeScale = 0;
-            
+            GameManager.GameOver();
         }
         else
         {
             Debug.Log("debug");
         }
+    }
+    
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("platformUnderside"))
+        {
+            RB.gravityScale = 30f;
+        } 
     }
 }

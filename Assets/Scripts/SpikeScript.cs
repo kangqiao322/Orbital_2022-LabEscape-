@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class SpikeScript : MonoBehaviour
 {
+    //contains information on lifespan, velocity, and spawn rate
 
     //do not freeze the x-axis
     //spike has tag of enemy instead of spike in unity
