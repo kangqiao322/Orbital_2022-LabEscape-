@@ -6,9 +6,9 @@ using UnityEngine;
 public class SpikeGeneratorScript2 : GeneratorAbstract
 {
 
-    private float interval = 3f;
+    private float interval = 2f;
     private float timePassed = 0f;
-    private Vector3 spawnVector = new Vector3(21f, 4.9f);
+    private Vector3 spawnVector = new Vector3(1f, 16.94f);
 
     //make it public and drag the prefab into this field in the unity GUI
     [SerializeField] public Transform spike;

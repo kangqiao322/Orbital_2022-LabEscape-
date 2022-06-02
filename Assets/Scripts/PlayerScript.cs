@@ -5,7 +5,7 @@ using UnityEngine.Serialization;
 
 public class PlayerScript : MonoBehaviour
 {
-    public float JumpForce;
+    private float JumpForce = 20f;
     public float score;
     public TextMeshProUGUI ScoreTxt;
 
@@ -14,6 +14,7 @@ public class PlayerScript : MonoBehaviour
     public LayerMask groundLayer;
     
     private float playerFeetRadius = 0.4f;
+    private float gravityForce = 5f;
     public bool isAlive = true;
     public bool canDoubleJump = true;
 
@@ -23,7 +24,7 @@ public class PlayerScript : MonoBehaviour
     private void Awake() 
     {
         RB = GetComponent<Rigidbody2D>();
-        RB.gravityScale = 30f;
+        RB.gravityScale = gravityForce;
         score = 0;
     }
 
@@ -35,7 +36,7 @@ public class PlayerScript : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isOnGround)
         {
             Debug.Log("jump");
-            RB.gravityScale = 30f;
+            RB.gravityScale = gravityForce;
             RB.velocity = new Vector2(0, JumpForce);
             canDoubleJump = true;
         }
@@ -45,14 +46,14 @@ public class PlayerScript : MonoBehaviour
         {
             Debug.Log("double jump");
             canDoubleJump = false;
-            RB.gravityScale = 30f;
+            RB.gravityScale = gravityForce;
             RB.velocity = new Vector2(0, JumpForce);
         }
         
         if (Input.GetButtonDown("Jump") && isUndersidePlatform) //on underside of platform and jumps
         {
             Debug.Log("under jump");
-            RB.gravityScale = 30f;
+            RB.gravityScale = gravityForce;
             RB.velocity = new Vector2(0, JumpForce);
             isUndersidePlatform = false;
         }
@@ -75,11 +76,11 @@ public class PlayerScript : MonoBehaviour
         {
             isUndersidePlatform = true;
             isOnGround = false;
-            RB.gravityScale = -30f;
+            RB.gravityScale = -gravityForce;
             
         }  else if (collision.gameObject.CompareTag("ground"))
         {
-            RB.gravityScale = 30f;
+            RB.gravityScale = gravityForce;
             isUndersidePlatform = false;
             isOnGround = true;
 
@@ -99,7 +100,7 @@ public class PlayerScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("platformUnderside"))
         {
-            RB.gravityScale = 30f;
+            RB.gravityScale = gravityForce;
         } 
     }
 }

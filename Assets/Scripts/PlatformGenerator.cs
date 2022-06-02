@@ -18,7 +18,7 @@ public class PlatformGenerator : GeneratorAbstract //this extends GeneratorAbstr
 
         if (timePassed > interval)
         {
-            spawnVector = new Vector3(30f, UnityEngine.Random.Range(12f, 30f));
+            spawnVector = new Vector3(5.52f, UnityEngine.Random.Range(20f, 25f));
             RandomSpawn(1, platform, spawnVector);
             timePassed = 0f;
         }
