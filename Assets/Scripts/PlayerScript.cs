@@ -5,13 +5,16 @@ using UnityEngine.Serialization;
 
 public class PlayerScript : MonoBehaviour
 {
-    private float JumpForce = 20f;
+    public GameManager GameManager;
+
+    public float JumpForce;
     public float score;
     public TextMeshProUGUI ScoreTxt;
 
     private Rigidbody2D RB;
     public Transform playerFeet;
     public LayerMask groundLayer;
+
     
     private float playerFeetRadius = 0.4f;
     private float gravityForce = 5f;
@@ -56,13 +59,14 @@ public class PlayerScript : MonoBehaviour
             RB.gravityScale = gravityForce;
             RB.velocity = new Vector2(0, JumpForce);
             isUndersidePlatform = false;
+            canDoubleJump = true;
         }
         
         if (isAlive)
         {
             score += Time.deltaTime * 50;
             
-            ScoreTxt.text = "SCORE: " + score.ToString(("0.00")) ;
+            ScoreTxt.text = "SCORE: " + score.ToString(("0")) ;
         }
         
         
@@ -84,11 +88,15 @@ public class PlayerScript : MonoBehaviour
             isUndersidePlatform = false;
             isOnGround = true;
 
-        } else if (collision.gameObject.CompareTag("enemy"))
+        } else if (collision.gameObject.CompareTag("enemy") || collision.gameObject.CompareTag("spike"))
         {
             isAlive = false;
-            Time.timeScale = 0;
-            GameManager.GameOver();
+            //timescale is the cause of the bug where nothing is moving after restrting
+            //Time.timeScale = 0;
+            //this is to activate gameoverscreen without referencing
+
+            FindObjectOfType<GameManager>().GameOverScene(score);
+            
         }
         else
         {
