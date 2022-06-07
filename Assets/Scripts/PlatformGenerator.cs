@@ -11,6 +11,15 @@ public class PlatformGenerator : GeneratorAbstract //this extends GeneratorAbstr
 
     //make it public and drag the prefab into this field in the unity GUI
     [SerializeField] public Transform platform;
+    [SerializeField] public Transform platformWithGems;
+
+    private Transform[] platformArray;
+
+    private void Awake()
+    {
+        //an array of platform objects
+        platformArray = new Transform[] { platform, platformWithGems };
+    }
 
     private void Update()
     {
@@ -18,9 +27,31 @@ public class PlatformGenerator : GeneratorAbstract //this extends GeneratorAbstr
 
         if (timePassed > interval)
         {
-            spawnVector = new Vector3(20f, UnityEngine.Random.Range(20f, 25f));
-            RandomSpawn(1, platform, spawnVector);
+            platformGeneration();
             timePassed = 0f;
         }
+        
+        
+        // if (PlayerScript.isAlive)
+        // {
+        //     timePassed += Time.deltaTime;
+        //
+        //     if (timePassed > interval)
+        //     {
+        //         platformGeneration();
+        //         timePassed = 0f;
+        //     }
+        // }
+
+    }
+
+    private void platformGeneration()
+    //a method that handles platform prefabs
+    {
+        //randomly selects the platform to spawn
+        int randInt = UnityEngine.Random.Range(0, platformArray.Length);
+        spawnVector = new Vector3(20f, UnityEngine.Random.Range(20f, 25f));
+        
+        RandomSpawn(0.8, platformArray[randInt], spawnVector);
     }
 }

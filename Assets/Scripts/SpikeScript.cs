@@ -19,7 +19,8 @@ public class SpikeScript : MonoBehaviour
     
     void Update()
     {
-        spikeRb.velocity = new Vector2(-20f, 0);
+        
+        spikeRb.velocity = new Vector2(-15f, 0);
 
         timePassed += Time.deltaTime;
         if (timePassed > lifespan)
@@ -28,6 +29,19 @@ public class SpikeScript : MonoBehaviour
             Destroy(this.gameObject);
             timePassed = 0f;
         }
+        
+        // if (PlayerScript.isAlive)
+        // {
+        //     spikeRb.velocity = new Vector2(-15f, 0);
+        //
+        //     timePassed += Time.deltaTime;
+        //     if (timePassed > lifespan)
+        //     {
+        //         Debug.Log("destroy " + this.gameObject);
+        //         Destroy(this.gameObject);
+        //         timePassed = 0f;
+        //     }
+        // }
     }
 
 

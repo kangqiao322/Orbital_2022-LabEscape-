@@ -39,7 +39,6 @@ public abstract class GeneratorAbstract : MonoBehaviour
         {
             Debug.Log("Spawned " + spawnObject);
             Instantiate(spawnObject, spawnPosition, Quaternion.identity);
-            noSpawnCount++;
         }
 
     }

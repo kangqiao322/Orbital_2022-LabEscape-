@@ -96,12 +96,12 @@ public class PlayerScript : MonoBehaviour
             //this is to activate gameoverscreen without referencing
 
             FindObjectOfType<GameManager>().GameOverScene(score);
-            
+            //Time.timeScale = 0;
         }
-        else
+        else if (collision.gameObject.CompareTag("gem"))
         {
-            Debug.Log("debug");
-        }
+            Debug.Log("touched gem");
+        } 
     }
     
     private void OnCollisionExit2D(Collision2D collision)
