@@ -8,7 +8,7 @@ public class PlatformScript : MonoBehaviour
     //private Rigidbody2D platformRB; //this is private
     private float speed = 15f;
     private float timePassed = 0f;
-    private float lifespan = 3f; //the amount of time left before destroyed
+    private float lifespan = 4f; //the amount of time left before destroyed
     
     
     void Start()
@@ -26,7 +26,7 @@ public class PlatformScript : MonoBehaviour
         timePassed += Time.deltaTime;
         if (timePassed > lifespan)
         {
-            Debug.Log("destroy " + this.gameObject);
+            //Debug.Log("destroy " + this.gameObject);
             Destroy(this.gameObject);
             timePassed = 0f;
         }

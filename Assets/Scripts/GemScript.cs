@@ -27,6 +27,7 @@ public class GemScript : MonoBehaviour
         //Destroy the gem if Object tagged Player comes in contact with it
         if (otherCollider.CompareTag("Player"))
         {
+            PlayerScript.score += 1; //gem increases main score by 1
             totalGems++;
             //Debug.Log("You currently have " + GemScript.totalGems + " Gems.");
             Destroy(this.gameObject);
@@ -41,7 +42,7 @@ public class GemScript : MonoBehaviour
         timePassed += Time.deltaTime;
         if (timePassed > lifespan)
         {
-            Debug.Log("destroy " + this.gameObject);
+            //Debug.Log("destroy " + this.gameObject);
             Destroy(this.gameObject);
             timePassed = 0f;
         }

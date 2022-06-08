@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2644726306365053750}
   - component: {fileID: 4421295891303281838}
   m_Layer: 0
-  m_Name: greenGem
+  m_Name: do not use this
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

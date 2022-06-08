@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5157046044547166629}
   - component: {fileID: 5157046044547166626}
   m_Layer: 3
-  m_Name: PlatformWithRedGems
+  m_Name: do not use this 3
   m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -25,7 +25,7 @@ public class SpikeScript : MonoBehaviour
         timePassed += Time.deltaTime;
         if (timePassed > lifespan)
         {
-            Debug.Log("destroy " + this.gameObject);
+            //Debug.Log("destroy " + this.gameObject);
             Destroy(this.gameObject);
             timePassed = 0f;
         }
