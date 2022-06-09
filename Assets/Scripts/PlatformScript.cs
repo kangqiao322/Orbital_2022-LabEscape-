@@ -5,24 +5,29 @@ public class PlatformScript : MonoBehaviour
 
     //do not freeze the x-axis
 
-    //private Rigidbody2D platformRB; //this is private
-    private float speed = 15f;
     private float timePassed = 0f;
     private float lifespan = 3f; //the amount of time left before destroyed
+    private float speed;
+
+    private GameManager gameManager;
     
-    
-    void Start()
+    void Awake()
     {
         // platformRB = GetComponent<Rigidbody2D>();
         // platformRB.transform.localScale = new Vector3(10, 1, 0);
+        
     }
     
     
     void Update()
     {
-        transform.Translate(Vector2.left * speed * Time.deltaTime);
-
+        speed = FindObjectOfType<GameManager>().getSpeed();
+   
         timePassed += Time.deltaTime;
+        
+        transform.Translate(new Vector3(-speed * Time.deltaTime, 0, 0));
+       
+        
         if (timePassed > lifespan)
         {
             Debug.Log("destroy " + this.gameObject);

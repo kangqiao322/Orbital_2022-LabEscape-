@@ -2,13 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random=UnityEngine.Random;
+//this is the same as platformGenerator
 
 public class SpikeGeneratorScript2 : GeneratorAbstract
 {
 
     private float interval = 2f;
     private float timePassed = 0f;
-    private Vector3 spawnVector = new Vector3(1f, 16.94f);
+    private Vector3 spawnVector = new Vector3(10f, 16.94f);
 
     //make it public and drag the prefab into this field in the unity GUI
     [SerializeField] public Transform spike;
@@ -19,8 +21,10 @@ public class SpikeGeneratorScript2 : GeneratorAbstract
 
         if (timePassed > interval)
         {
+
             RandomSpawn(0.7, spike, spawnVector, 2);
             timePassed = 0f;
+
         }
     }
 }

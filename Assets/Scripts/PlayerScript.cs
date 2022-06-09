@@ -66,7 +66,7 @@ public class PlayerScript : MonoBehaviour
         {
             score += Time.deltaTime * 50;
             
-            ScoreTxt.text = "SCORE: " + score.ToString(("0")) ;
+            ScoreTxt.text = "Score: " + score.ToString(("0")) ;
         }
         
         
@@ -95,7 +95,7 @@ public class PlayerScript : MonoBehaviour
             //Time.timeScale = 0;
             //this is to activate gameoverscreen without referencing
 
-            FindObjectOfType<GameManager>().GameOverScene(score);
+            //FindObjectOfType<GameManager>().GameOverScene(score);
             
         }
         else
