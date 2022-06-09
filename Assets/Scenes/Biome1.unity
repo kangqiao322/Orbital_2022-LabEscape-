@@ -1101,9 +1101,41 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7035030315686270054, guid: 89b0062bc78c5d045a535c5f3be5edbd, type: 3}
     - target: {fileID: 3356922515078740068, guid: 34cbe724b8a62944ca9ba30d951e84f4, type: 3}
+      propertyPath: platformArray.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3356922515078740068, guid: 34cbe724b8a62944ca9ba30d951e84f4, type: 3}
       propertyPath: doublePlatWithGemsJumpArc
       value: 
       objectReference: {fileID: 6941947286294183183, guid: 5aaf6a238688c4f4cad44a467c63c462, type: 3}
+    - target: {fileID: 3356922515078740068, guid: 34cbe724b8a62944ca9ba30d951e84f4, type: 3}
+      propertyPath: platformArray.Array.data[0]
+      value: 
+      objectReference: {fileID: 7543715723666087460, guid: f39061f38d6634a428de9a34b9748296, type: 3}
+    - target: {fileID: 3356922515078740068, guid: 34cbe724b8a62944ca9ba30d951e84f4, type: 3}
+      propertyPath: platformArray.Array.data[1]
+      value: 
+      objectReference: {fileID: 7035030315686270054, guid: 89b0062bc78c5d045a535c5f3be5edbd, type: 3}
+    - target: {fileID: 3356922515078740068, guid: 34cbe724b8a62944ca9ba30d951e84f4, type: 3}
+      propertyPath: platformArray.Array.data[2]
+      value: 
+      objectReference: {fileID: 6941947286294183183, guid: 5aaf6a238688c4f4cad44a467c63c462, type: 3}
+    - target: {fileID: 3356922515078740068, guid: 34cbe724b8a62944ca9ba30d951e84f4, type: 3}
+      propertyPath: platformArray.Array.data[3]
+      value: 
+      objectReference: {fileID: 544108314620494078, guid: 7fb6775cacf7fa042940aae14c26a5f5, type: 3}
+    - target: {fileID: 3356922515078740068, guid: 34cbe724b8a62944ca9ba30d951e84f4, type: 3}
+      propertyPath: platformArray.Array.data[4]
+      value: 
+      objectReference: {fileID: 31261415218366915, guid: c3084a7f15135af4c96c448753cf0b1b, type: 3}
+    - target: {fileID: 3356922515078740068, guid: 34cbe724b8a62944ca9ba30d951e84f4, type: 3}
+      propertyPath: platformArray.Array.data[5]
+      value: 
+      objectReference: {fileID: 6837565079747438005, guid: ae620cb5b28ed9c4aae402d370e1e8a3, type: 3}
+    - target: {fileID: 3356922515078740068, guid: 34cbe724b8a62944ca9ba30d951e84f4, type: 3}
+      propertyPath: platformArray.Array.data[6]
+      value: 
+      objectReference: {fileID: 544108314620494078, guid: 7fb6775cacf7fa042940aae14c26a5f5, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34cbe724b8a62944ca9ba30d951e84f4, type: 3}
 --- !u!1 &1233725209

@@ -12,19 +12,21 @@ public class PlatformGenerator : GeneratorAbstract //this extends GeneratorAbstr
     //make it public and drag the prefab into this field in the unity GUI
     //to add more platforms to spawn, copy and paste another line
     //then add your platform into platformArray below 
-    [SerializeField] public Transform platform;
-    [SerializeField] public Transform platformWithGems;
-    [SerializeField] public Transform doublePlatWithGemsJumpArc;
+    // [SerializeField] public Transform platform;
+    // [SerializeField] public Transform platformWithGems;
+    // [SerializeField] public Transform doublePlatWithGemsJumpArc;
 
-    private Transform[] platformArray;
+    //drag platform prefabs into this array in Unity GUI
+    public Transform[] platformArray;
 
     private void Awake()
     {
         //an array of platform objects
-        platformArray = new Transform[] {
-            platform,
-            platformWithGems,
-            doublePlatWithGemsJumpArc };
+        // platformArray = new Transform[] {
+        //     platform,
+        //     platformWithGems,
+        //     doublePlatWithGemsJumpArc };
+        
     }
 
     private void Update()

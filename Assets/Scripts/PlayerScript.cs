@@ -25,6 +25,7 @@ public class PlayerScript : MonoBehaviour
     public bool isUndersidePlatform = false;
 
     private float timePassed;
+    public static float gameSpeed = 15f;
     
 
     private void Awake() 
@@ -36,13 +37,13 @@ public class PlayerScript : MonoBehaviour
 
     void Update()
     {
-        timePassed += Time.deltaTime;
-        if (timePassed > 5f && Time.timeScale < 1.8f)
-        {
-            Debug.Log("speed is now " + Time.timeScale);
-            Time.timeScale += 0.1f;
-            timePassed = 0;
-        }
+        // timePassed += Time.deltaTime;
+        // if (timePassed > 5f && PlayerScript.gameSpeed < 30f)
+        // {
+        //     Debug.Log(PlayerScript.gameSpeed);
+        //     PlayerScript.gameSpeed += 5f;
+        //     timePassed = 0;
+        // } 
        
         isOnGround = Physics2D.OverlapCircle(playerFeet.position, playerFeetRadius, groundLayer);
 
@@ -101,11 +102,13 @@ public class PlayerScript : MonoBehaviour
         } else if (collision.gameObject.CompareTag("enemy") || collision.gameObject.CompareTag("spike"))
         {
             isAlive = false;
+            
             //timescale is the cause of the bug where nothing is moving after restrting
             //Time.timeScale = 0;
             //this is to activate gameoverscreen without referencing
 
             FindObjectOfType<GameManager>().GameOverScene(score);
+            
             //Time.timeScale = 0;
         }
         // else if (collision.gameObject.CompareTag("gem"))

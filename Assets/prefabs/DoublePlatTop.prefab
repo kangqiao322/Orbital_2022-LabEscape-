@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 6941947286294183180}
   - component: {fileID: 6941947286294183179}
   m_Layer: 3
-  m_Name: DoublePlatWithGreenGemJumpArc
+  m_Name: DoublePlatTop
   m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

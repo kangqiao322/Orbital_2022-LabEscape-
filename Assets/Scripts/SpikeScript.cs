@@ -9,7 +9,7 @@ public class SpikeScript : MonoBehaviour
     private Rigidbody2D spikeRb; //this is private
     private float timePassed = 0f;
     private float lifespan = 4f; //the amount of time left before destroyed
-    
+
     void Start()
     {
         spikeRb = GetComponent<Rigidbody2D>();
@@ -20,7 +20,7 @@ public class SpikeScript : MonoBehaviour
     void Update()
     {
         
-        spikeRb.velocity = new Vector2(-15f, 0);
+        spikeRb.velocity = new Vector2(-PlayerScript.gameSpeed, 0);
 
         timePassed += Time.deltaTime;
         if (timePassed > lifespan)
