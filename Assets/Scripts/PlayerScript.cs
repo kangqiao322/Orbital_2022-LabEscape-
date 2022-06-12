@@ -92,10 +92,10 @@ public class PlayerScript : MonoBehaviour
         {
             isAlive = false;
             //timescale is the cause of the bug where nothing is moving after restrting
-            //Time.timeScale = 0;
+            Time.timeScale = 0;
             //this is to activate gameoverscreen without referencing
 
-            //FindObjectOfType<GameManager>().GameOverScene(score);
+            FindObjectOfType<GameManager>().GameOverScene(score);
             
         }
         else
