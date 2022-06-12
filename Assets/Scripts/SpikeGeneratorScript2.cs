@@ -21,7 +21,7 @@ public class SpikeGeneratorScript2 : GeneratorAbstract
             
         if (timePassed > interval)
         {
-            RandomSpawn(0.7, spike, spawnVector, 2);
+            RandomSpawn(0.8, spike, spawnVector, 2);
             timePassed = 0f;
         }
         
