@@ -27,21 +27,29 @@ public class GameOverScript : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-    public void MainMenuButton() {
+    public void MainMenuButton() 
+    {
         SceneManager.LoadScene("MainMenu");
         GameManager.gameHasEnded = false;
         GemScript.totalGems = 0;
         Time.timeScale = 1f;
     }
 
-    public void ResumeButton() {
+    public void ResumeButton() 
+    {
         gameObject.SetActive(false);
         Time.timeScale = 1f;
     }
 
-    public void PauseButton() {
+    public void PauseButton() 
+    {
         gameObject.SetActive(true);
         Time.timeScale = 0f;
+    }
+
+    public void ExitButton()
+    {
+        Application.Quit();
     }
 
 }

@@ -6,13 +6,22 @@ public class PlatformScript : MonoBehaviour
 
     //do not freeze the x-axis
 
+    private float timePassed = 0f;
+    private float lifespan = 5f; //the amount of time left before destroyed
+    private float speed;
+
+    private GameManager gameManager;
+
     private Rigidbody2D platformRB; //this is private
     private float timePassed = 0f;
     private float lifespan = 4f; //the amount of time left before destroyed
+
     
-    
-    void Start()
+    void Awake()
     {
+        //assign GameManager to gameManager only once
+        gameManager = FindObjectOfType<GameManager>();
+        
         platformRB = GetComponent<Rigidbody2D>();
         // platformRB.transform.localScale = new Vector3(10, 1, 0);
     }
@@ -21,11 +30,16 @@ public class PlatformScript : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(new Vector3(-PlayerScript.gameSpeed * Time.deltaTime, 0, 0));
+        speed = gameManager.getSpeed();
+   
+        //transform.Translate(new Vector3(-PlayerScript.gameSpeed * Time.deltaTime, 0, 0));
         //speed = displacement / deltaTime, and translation uses displacement
         
-
         timePassed += Time.deltaTime;
+        
+        transform.Translate(new Vector3(-speed * Time.deltaTime, 0, 0));
+       
+        
         if (timePassed > lifespan)
         {
             //Debug.Log("destroy " + this.gameObject);

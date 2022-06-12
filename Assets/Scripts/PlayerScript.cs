@@ -8,7 +8,7 @@ public class PlayerScript : MonoBehaviour
     public GameManager GameManager;
 
     public float JumpForce;
-    public static float score;
+    private float score;
     public TextMeshProUGUI ScoreTxt;
 
     private Rigidbody2D RB;
@@ -25,14 +25,13 @@ public class PlayerScript : MonoBehaviour
     public bool isUndersidePlatform = false;
 
     private float timePassed;
-    public static float gameSpeed = 15f;
+    //public static float gameSpeed = 15f;
     
 
     private void Awake() 
     {
         RB = GetComponent<Rigidbody2D>();
         RB.gravityScale = gravityForce;
-        PlayerScript.score = 0;
     }
 
     void Update()
@@ -75,9 +74,8 @@ public class PlayerScript : MonoBehaviour
         
         if (isAlive)
         {
-            PlayerScript.score += Time.deltaTime * 50;
-            
-            ScoreTxt.text = "SCORE: " + PlayerScript.score.ToString(("0")) ;
+            score += Time.deltaTime * 50;
+            ScoreTxt.text = "Score: " + score.ToString(("0")) ;
         }
         
         
@@ -107,7 +105,7 @@ public class PlayerScript : MonoBehaviour
             //Time.timeScale = 0;
             //this is to activate gameoverscreen without referencing
 
-            FindObjectOfType<GameManager>().GameOverScene(score);
+            //FindObjectOfType<GameManager>().GameOverScene(score);
             
             //Time.timeScale = 0;
         }
@@ -123,5 +121,10 @@ public class PlayerScript : MonoBehaviour
         {
             RB.gravityScale = gravityForce;
         } 
+    }
+
+    public void increaseMainScoreBy(int increment)
+    {
+        this.score += increment;
     }
 }
