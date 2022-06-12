@@ -6,8 +6,10 @@ public class PlatformScript : MonoBehaviour
 
     //do not freeze the x-axis
 
-
+    private float timePassed = 0f;
+    private float lifespan = 5f; //the amount of time left before destroyed
     private float speed;
+
     private GameManager gameManager;
 
     private Rigidbody2D platformRB; //this is private
