@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 548190f5706fb2346861a53aca0c6c0c
+guid: 7aa20c0df78a0f54fa2e786f8a6114be
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 75
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -116,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spr_coin_roj_0
+      name: greenGem4x_1
       rect:
         serializedVersion: 2
-        x: 3
+        x: 11
         y: 0
-        width: 10
-        height: 15
+        width: 42
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,20 +130,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59f1ab07476dab841b0d7fef8cfa5014
-      internalID: 1604202264
+      spriteID: 47975bfe6afdf4e43993988b0d57f522
+      internalID: -1111180699
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_coin_roj_1
+      name: greenGem4x_3
       rect:
         serializedVersion: 2
-        x: 19
+        x: 75
         y: 0
-        width: 10
-        height: 15
+        width: 42
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,20 +151,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1a07792b1f6c8741b290fde6fc4ecf0
-      internalID: 1956984542
+      spriteID: 26638e252a6663d47bae90770361477b
+      internalID: -155540429
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_coin_roj_2
+      name: greenGem4x_5
       rect:
         serializedVersion: 2
-        x: 35
+        x: 139
         y: 0
-        width: 10
-        height: 15
+        width: 42
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,20 +172,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 204a1f874174c484c814d6c4abb31aa5
-      internalID: -1672112568
+      spriteID: becba7b864fb24a46ad02025f49722e7
+      internalID: 1209353048
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spr_coin_roj_3
+      name: greenGem4x_7
       rect:
         serializedVersion: 2
-        x: 51
+        x: 203
         y: 0
-        width: 10
-        height: 15
+        width: 42
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,8 +193,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92eab8073bb73b9428216cc477eed05e
-      internalID: 1547071243
+      spriteID: 2c25290886678a94b815670355df081b
+      internalID: 1469387864
       vertices: []
       indices: 
       edges: []
@@ -210,10 +210,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      spr_coin_roj_0: 1604202264
-      spr_coin_roj_1: 1956984542
-      spr_coin_roj_2: -1672112568
-      spr_coin_roj_3: 1547071243
+      greenGem4x_7: 1469387864
+      greenGem4x_1: -1111180699
+      greenGem4x_5: 1209353048
+      greenGem4x_3: -155540429
+      greenGem4x_6: 99989453
+      greenGem4x_4: -1035269065
+      greenGem4x_0: -1899956386
+      greenGem4x_2: -264689709
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

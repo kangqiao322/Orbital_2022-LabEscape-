@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 // this manages the various scenes and restart etc
 public class GameManager : MonoBehaviour
 {
+
 //make this adjustable first
     public float  maxSpeed;
     public float currentSpeed;
@@ -13,15 +14,18 @@ public class GameManager : MonoBehaviour
     public float timeUntilSpawnRateIncrease;
 
     public GameOverScript GameOverScreen;
+    public static bool gameHasEnded = false;
 
 
     public void GameOverScene(float score) {
         //this generates the game over screen
+
+        GameManager.gameHasEnded = true;
         GameOverScreen.SetUp(score);
     }
 
-    bool gameHasEnded = false;
-    public float restartDelay  = 1f;
+    
+    //public float restartDelay  = 1f;
     // Start is called before the first frame update
     
     

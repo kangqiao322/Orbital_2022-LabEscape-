@@ -22,12 +22,17 @@ public class GameOverScript : MonoBehaviour
     {
         //reload the active scene instead of biome1
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        GameManager.gameHasEnded = false;
+        GemScript.totalGems = 0;
         Time.timeScale = 1f;
     }
 
     public void MainMenuButton() 
     {
         SceneManager.LoadScene("MainMenu");
+        GameManager.gameHasEnded = false;
+        GemScript.totalGems = 0;
+        Time.timeScale = 1f;
     }
 
     public void ResumeButton() 
