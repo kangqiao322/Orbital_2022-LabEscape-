@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 {
 
 //make this adjustable first
-    public float  maxSpeed;
+    public float maxSpeed;
     public float currentSpeed;
     public float speedIncrMultiplier;
     public float timeUntilSpawnRateIncrease;
@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
             timeUntilSpawnRateIncrease = 2f;
         }
     }
-
+    
     public float getSpeed()
     {
         return this.currentSpeed;

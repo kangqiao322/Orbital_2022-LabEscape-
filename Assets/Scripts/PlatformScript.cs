@@ -17,16 +17,18 @@ public class PlatformScript : MonoBehaviour
     
     void Awake()
     {
+        //assign GameManager to gameManager only once
+        gameManager = FindObjectOfType<GameManager>();
+        
         platformRB = GetComponent<Rigidbody2D>();
         // platformRB.transform.localScale = new Vector3(10, 1, 0);
-        
     }
     
 
 
     void Update()
     {
-        speed = FindObjectOfType<GameManager>().getSpeed();
+        speed = gameManager.getSpeed();
    
         //transform.Translate(new Vector3(-PlayerScript.gameSpeed * Time.deltaTime, 0, 0));
         //speed = displacement / deltaTime, and translation uses displacement

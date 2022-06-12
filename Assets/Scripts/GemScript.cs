@@ -5,7 +5,7 @@ public class GemScript : MonoBehaviour
 {
     //freeze z-axis
     
-    private Rigidbody2D gemRB; //this is private, may not need this
+    private PlayerScript player;
     private float timePassed = 0f;
     private float lifespan = 4f; //the amount of time left before destroyed
     
@@ -13,23 +13,20 @@ public class GemScript : MonoBehaviour
     
     private void Start()
     {
-        gemRB = GetComponent<Rigidbody2D>(); //may not need this
-        
+        //accessing PlayerScript from this variable "player"
+        player = FindObjectOfType<PlayerScript>();
+
         //Make Collider2D as trigger 
         GetComponent<Collider2D>().isTrigger = true;
-        
-        //may not need this
-        //gemRB.transform.localScale = new Vector3(7, 7, 0);
     }
     
     void OnTriggerEnter2D(Collider2D otherCollider)
     {
-        //Destroy the gem if Object tagged Player comes in contact with it
+        //Destroy the gem if any Object with tag Player comes into contact with it
         if (otherCollider.CompareTag("Player"))
         {
-            PlayerScript.score += 1; //gem increases main score by 1, violates OOP
+            player.increaseMainScoreBy(1); //1 gem = +1 main score
             totalGems++;
-            //Debug.Log("You currently have " + GemScript.totalGems + " Gems.");
             Destroy(this.gameObject);
         }
     }
