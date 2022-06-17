@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,24 +13,27 @@ public class BackgroundScroller : MonoBehaviour
    public float startX;
    
    private GameManager gameManager;
+
+   private void Awake()
+   {
+       //only calls this once
+       gameManager = FindObjectOfType<GameManager>();
+   }
    
-
-
-    // Update is called once per frame
-    void FixedUpdate()
+   //fixed, use Update() instead of FixedUpdate()
+    void Update()
     {
-        speed = FindObjectOfType<GameManager>().getSpeed();
+        speed = gameManager.getSpeed();
         //this transforms one screen to the other side once it exits to the camera, like a rotation of screens
         //delta time seems to be creating the gaps in the background
-        transform.Translate(Vector2.left * speed * Time.deltaTime);
+        // transform.Translate(Vector2.left * speed * Time.deltaTime);
+        transform.Translate(new Vector3(-speed * Time.deltaTime, 0, 0));
 
         if (transform.position.x <= endX)
         {
-            Vector2 pos = new Vector2(startX, transform.position.y);
-            transform.position = pos;
+            transform.position = new Vector3(startX, transform.position.y, 0);
         }
-    
- 
+        
     }
 
 

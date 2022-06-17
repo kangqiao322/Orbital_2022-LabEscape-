@@ -8,7 +8,7 @@ public class PlayerScript : MonoBehaviour
     public GameManager GameManager;
 
     public float JumpForce;
-    public float score;
+    private float score;
     public TextMeshProUGUI ScoreTxt;
 
     private Rigidbody2D RB;
@@ -24,21 +24,31 @@ public class PlayerScript : MonoBehaviour
     public bool isOnGround = true;
     public bool isUndersidePlatform = false;
 
+    private float timePassed;
+    //public static float gameSpeed = 15f;
+    
+
     private void Awake() 
     {
         RB = GetComponent<Rigidbody2D>();
         RB.gravityScale = gravityForce;
-        score = 0;
     }
 
     void Update()
     {
+        // timePassed += Time.deltaTime;
+        // if (timePassed > 5f && PlayerScript.gameSpeed < 30f)
+        // {
+        //     Debug.Log(PlayerScript.gameSpeed);
+        //     PlayerScript.gameSpeed += 5f;
+        //     timePassed = 0;
+        // } 
        
         isOnGround = Physics2D.OverlapCircle(playerFeet.position, playerFeetRadius, groundLayer);
 
         if (Input.GetButtonDown("Jump") && isOnGround)
         {
-            Debug.Log("jump");
+            //Debug.Log("jump");
             RB.gravityScale = gravityForce;
             RB.velocity = new Vector2(0, JumpForce);
             canDoubleJump = true;
@@ -47,7 +57,7 @@ public class PlayerScript : MonoBehaviour
         //double jump feature
         if (Input.GetButtonDown("Jump") && canDoubleJump && !isOnGround)
         {
-            Debug.Log("double jump");
+            //Debug.Log("double jump");
             canDoubleJump = false;
             RB.gravityScale = gravityForce;
             RB.velocity = new Vector2(0, JumpForce);
@@ -55,7 +65,7 @@ public class PlayerScript : MonoBehaviour
         
         if (Input.GetButtonDown("Jump") && isUndersidePlatform) //on underside of platform and jumps
         {
-            Debug.Log("under jump");
+            //Debug.Log("under jump");
             RB.gravityScale = gravityForce;
             RB.velocity = new Vector2(0, JumpForce);
             isUndersidePlatform = false;
@@ -65,7 +75,6 @@ public class PlayerScript : MonoBehaviour
         if (isAlive)
         {
             score += Time.deltaTime * 50;
-            
             ScoreTxt.text = "Score: " + score.ToString(("0")) ;
         }
         
@@ -91,17 +100,19 @@ public class PlayerScript : MonoBehaviour
         } else if (collision.gameObject.CompareTag("enemy") || collision.gameObject.CompareTag("spike"))
         {
             isAlive = false;
+            
             //timescale is the cause of the bug where nothing is moving after restrting
             //Time.timeScale = 0;
             //this is to activate gameoverscreen without referencing
 
             //FindObjectOfType<GameManager>().GameOverScene(score);
             
+            //Time.timeScale = 0;
         }
-        else
-        {
-            Debug.Log("debug");
-        }
+        // else if (collision.gameObject.CompareTag("gem"))
+        // {
+        //     Debug.Log("touched gem");
+        // } 
     }
     
     private void OnCollisionExit2D(Collision2D collision)
@@ -110,5 +121,10 @@ public class PlayerScript : MonoBehaviour
         {
             RB.gravityScale = gravityForce;
         } 
+    }
+
+    public void increaseMainScoreBy(int increment)
+    {
+        this.score += increment;
     }
 }

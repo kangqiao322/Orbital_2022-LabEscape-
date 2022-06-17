@@ -22,7 +22,7 @@ public abstract class GeneratorAbstract : MonoBehaviour
 
             if (rand < probability)
             {
-                Debug.Log("Spawned " + spawnObject);
+                //Debug.Log("Spawned " + spawnObject);
                 Instantiate(spawnObject, spawnPosition, Quaternion.identity);
                 noSpawnCount++;
             }
@@ -37,9 +37,8 @@ public abstract class GeneratorAbstract : MonoBehaviour
 
         if (rand < probability)
         {
-            Debug.Log("Spawned " + spawnObject);
+            //Debug.Log("Spawned " + spawnObject);
             Instantiate(spawnObject, spawnPosition, Quaternion.identity);
-            noSpawnCount++;
         }
 
     }
