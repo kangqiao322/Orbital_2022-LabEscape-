@@ -11,8 +11,9 @@ public class PlatformGenerator : GeneratorAbstract
     private Vector3 spawnVector;
 
     //drag extra platform prefabs into this array field in the Unity GUI
-    public Transform[] platformArray;
-    
+    [SerializeField]
+    private Transform[] platformArray = new Transform[7];
+
 
     private void Update()
     {
@@ -23,6 +24,15 @@ public class PlatformGenerator : GeneratorAbstract
             platformGeneration();
             timePassed = 0f;
         }
+
+        print(platformArray[1]);
+         print(platformArray[2]);
+          print(platformArray[3]);
+           print(platformArray[4]);
+            print(platformArray[5]); 
+             print(platformArray[6]);
+
+         
         
         
         // if (PlayerScript.isAlive)
@@ -42,14 +52,14 @@ public class PlatformGenerator : GeneratorAbstract
         //a method that handles platform prefabs
     {
         //randomly selects the platform to spawn
-        int randInt = UnityEngine.Random.Range(0, platformArray.Length);
+        int randInt = UnityEngine.Random.Range(0, platformArray.Length - 1);
         
         //why is it returning 0???
-        Debug.Log(platformArray.Length);
-        Debug.Log(randInt);
-        
+        //Debug.Log(platformArray.Length);
+        //Debug.Log(randInt);
+
         spawnVector = new Vector3(20f, UnityEngine.Random.Range(20f, 25f), 0);
-        RandomSpawn(0.8, platformArray[randInt], spawnVector);
+        RandomSpawn(0.8, platformArray[1], spawnVector);
         //1st value is probability. It is a parent class' method
     }
 }
