@@ -5,11 +5,11 @@ using UnityEngine.Serialization;
 
 public class PlayerScript : MonoBehaviour
 {
-    public GameManager GameManager;
+    //public GameManager GameManager; //not needed after all?
 
+    //public TextMeshProUGUI ScoreTxt;
     public float JumpForce;
-    private float score;
-    public TextMeshProUGUI ScoreTxt;
+    
 //player body fields
     private Rigidbody2D RB;
     public Transform playerFeet;
@@ -48,8 +48,11 @@ public class PlayerScript : MonoBehaviour
         //     PlayerScript.gameSpeed += 5f;
         //     timePassed = 0;
         // } 
+        
+
        
         isOnGround = Physics2D.OverlapCircle(playerFeet.position, playerFeetRadius, groundLayer);
+        
         //first jump
         if (Input.GetButtonDown("Jump") && isOnGround)
         {
@@ -84,14 +87,6 @@ public class PlayerScript : MonoBehaviour
             canDoubleJump = true;
         }
 
-
-        if (isAlive)
-        {
-            score += Time.deltaTime * 50;
-            ScoreTxt.text = "Score: " + score.ToString(("0")) ;
-        }
-        
-        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -139,10 +134,5 @@ public class PlayerScript : MonoBehaviour
             RB.gravityScale = gravityForce;
             animator.SetBool("IsUnder", false);
         } 
-    }
-
-    public void increaseMainScoreBy(int increment)
-    {
-        this.score += increment;
     }
 }

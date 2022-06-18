@@ -15,6 +15,7 @@ public class SpikeScript : MonoBehaviour
 
     void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
         spikeRb = GetComponent<Rigidbody2D>();
         spikeRb.transform.localScale = new Vector3(2, 2, 0); //rescales the spike
     }
@@ -28,8 +29,8 @@ public class SpikeScript : MonoBehaviour
         //spikeRb.velocity = new Vector2(-PlayerScript.gameSpeed, 0);
 
 
-        speed = FindObjectOfType<GameManager>().getSpeed();
-   
+        speed = gameManager.getSpeed();
+
         timePassed += Time.deltaTime;
         
         transform.Translate(new Vector3(-speed * Time.deltaTime, 0, 0));

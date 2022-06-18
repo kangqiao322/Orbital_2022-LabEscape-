@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class GemScript : MonoBehaviour
 //this script handles the behaviour of all gems, including counting of total gems
+//however displaying of gem score is in ScoreManager
 {
     //freeze z-axis
     
-    private PlayerScript player;
+    private ScoreManager scoreManager;
     private float timePassed = 0f;
     private float lifespan = 4f; //the amount of time left before destroyed
     
@@ -13,8 +14,8 @@ public class GemScript : MonoBehaviour
     
     private void Start()
     {
-        //accessing PlayerScript from this variable "player"
-        player = FindObjectOfType<PlayerScript>();
+        //storing ScoreManager into a variable called scoreManager
+        scoreManager = FindObjectOfType<ScoreManager>();
 
         //Make Collider2D as trigger 
         GetComponent<Collider2D>().isTrigger = true;
@@ -25,7 +26,7 @@ public class GemScript : MonoBehaviour
         //Destroy the gem if any Object with tag Player comes into contact with it
         if (otherCollider.CompareTag("Player"))
         {
-            player.increaseMainScoreBy(1); //1 gem = +1 main score
+            scoreManager.increaseMainScoreBy(1); //1 gem = +1 main score
             totalGems++;
             Destroy(this.gameObject);
         }
