@@ -1193,7 +1193,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1508106217}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.36, y: 16.02, z: 0}
+  m_LocalPosition: {x: -6.36, y: 16.0228, z: 0}
   m_LocalScale: {x: 35, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1229,8 +1229,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8443f7dace912ea42a808cc3de93c5bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 30
-  currentSpeed: 10
+  maxSpeed: 20
+  currentSpeed: 5
   speedIncrMultiplier: 1
   timeUntilSpawnRateIncrease: 2
   GameOverScreen: {fileID: 44131839}
@@ -1613,7 +1613,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1904884356}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.4, y: 17.131, z: 0}
+  m_LocalPosition: {x: -16.4, y: 17.119, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1633,7 +1633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4156e3469ab9e3f41b2ce79720ae5f92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameManager: {fileID: 0}
+  GameManager: {fileID: 1552895418}
   JumpForce: 20
   ScoreTxt: {fileID: 1766439031}
   playerFeet: {fileID: 742208683}
@@ -1644,6 +1644,7 @@ MonoBehaviour:
   canDoubleJump: 0
   isOnGround: 1
   isUndersidePlatform: 0
+  animator: {fileID: 1904884362}
 --- !u!95 &1904884362
 Animator:
   serializedVersion: 4
