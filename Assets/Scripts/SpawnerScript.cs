@@ -2,28 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnerScript : MonoBehaviour
+public class SpawnerScript : GeneratorAbstract //this extends GeneratorAbstract class
 {
-     public GameObject[] enemyPatterns;
-     private float timeBtwSpawn;
-     public float startTimeBtwSpawn;
-     public float decreaseTime;
-     public float minTime = 0.65f;
-   
-    // // Update is called once per frame
-     void Update()
-     {
-         if (timeBtwSpawn <= 0)
-         {
-             int rand = Random.Range(0, enemyPatterns.Length);
-             Instantiate(enemyPatterns[rand], transform.position, Quaternion.identity);
-             timeBtwSpawn = startTimeBtwSpawn;
-             if (startTimeBtwSpawn > minTime) {
-             startTimeBtwSpawn -= decreaseTime;
-             }
-         }
-         else {
-             timeBtwSpawn -= Time.deltaTime;
-         }
-     }
+    //interval is mananing the time inbewteen spawns
+    private float interval;
+
+    private float timePassed = 0f;
+    
+    private Vector3 spawnVector;
+    
+
+    //make it public and drag the prefab into this field in the unity GUI
+    [SerializeField] private Transform enemy;
+
+    private void Update()
+    {
+        timePassed += Time.deltaTime;
+
+        if (timePassed > interval)
+        {
+            interval = Random.Range(1f, 2f);
+            spawnVector = new Vector3(20f, UnityEngine.Random.Range(20f, 25f));
+            RandomSpawn(1, enemy, spawnVector);
+            timePassed = 0f;
+        }
+
+    }
+
 }
