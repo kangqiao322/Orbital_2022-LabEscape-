@@ -6,6 +6,8 @@ using UnityEngine.Serialization;
 public class PlayerScript : MonoBehaviour
 {
     //public GameManager GameManager; //not needed after all?
+    //gem count increases when gem is in contact with tag "Player",
+    //not when player is in contact with tag "gem"
 
     //public TextMeshProUGUI ScoreTxt;
     public float JumpForce;
