@@ -13,7 +13,7 @@ public class SpawnerScript : GeneratorAbstract //this extends GeneratorAbstract 
     
 
     //make it public and drag the prefab into this field in the unity GUI
-    [SerializeField] private Transform enemy;
+    [SerializeField] public Transform enemy;
 
     private void Update()
     {

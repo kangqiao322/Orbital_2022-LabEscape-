@@ -12,6 +12,7 @@ TagManager:
   - platformUnderside
   - platformUndersideEnd
   - gem
+  - platform
   layers:
   - Default
   - TransparentFX
