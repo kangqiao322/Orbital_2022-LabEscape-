@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlatformGenerator : GeneratorAbstract
     //this extends GeneratorAbstract class^
 {
-    private float interval = 1f;
+    private float interval;
     private float timePassed = 0f;
     private Vector3 spawnVector;
 
@@ -16,6 +16,7 @@ public class PlatformGenerator : GeneratorAbstract
     
     private void Update()
     {
+        interval = UnityEngine.Random.Range(2f, 5f);
         timePassed += Time.deltaTime;
 
         if (timePassed > interval)
@@ -41,9 +42,9 @@ public class PlatformGenerator : GeneratorAbstract
         //a method that handles platform prefabs
     {
         //randomly selects the platform to spawn
-        int randInt = UnityEngine.Random.Range(0, platformArray.Length - 1);
+        int randInt = UnityEngine.Random.Range(0, platformArray.Length);
 
-        spawnVector = new Vector3(20f, UnityEngine.Random.Range(20f, 25f), 0);
+        spawnVector = new Vector3(80f, UnityEngine.Random.Range(22f, 24f), 0);
         RandomSpawn(0.8, platformArray[randInt], spawnVector);
         //1st value is probability. It is a parent class' method
     }

@@ -9,8 +9,9 @@ public class PlayerScript : MonoBehaviour
     //gem count increases when gem is in contact with tag "Player",
     //not when player is in contact with tag "gem"
 
-    //public TextMeshProUGUI ScoreTxt;
+    public TextMeshProUGUI ScoreTxt;
     public float JumpForce;
+    public ScoreManager scoreManager;
     
 //player body fields
     private Rigidbody2D RB;
@@ -39,6 +40,7 @@ public class PlayerScript : MonoBehaviour
     {
         RB = GetComponent<Rigidbody2D>();
         RB.gravityScale = gravityForce;
+        scoreManager = FindObjectOfType<ScoreManager>();
     }
 
     void Update()
@@ -113,13 +115,13 @@ public class PlayerScript : MonoBehaviour
         {
             isAlive = false;
             //this is to animate death
-            //animator.SetBool("IsDead", true);
+            animator.SetBool("IsDead", true);
             
             //timescale is the cause of the bug where nothing is moving after restrting
             //Time.timeScale = 0;
             //this is to activate gameoverscreen without referencing
 
-            //FindObjectOfType<GameManager>().GameOverScene(score);
+            FindObjectOfType<GameManager>().GameOverScene(scoreManager.getScore());
             
             //Time.timeScale = 0;
         }

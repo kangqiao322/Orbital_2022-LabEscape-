@@ -63,4 +63,14 @@ public class ScoreManager : MonoBehaviour
     {
         this.score += increment;
     }
+
+    public float getScore()
+    {
+        return this.score;
+    }
+
+    public float getHighScore() 
+    {
+        return this.currentHighscore;
+    }
 }

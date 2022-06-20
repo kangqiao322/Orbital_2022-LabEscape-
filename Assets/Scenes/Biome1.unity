@@ -1261,8 +1261,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8443f7dace912ea42a808cc3de93c5bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 20
-  currentSpeed: 5
+  maxSpeed: 30
+  currentSpeed: 6
   speedIncrMultiplier: 1
   timeUntilSpawnRateIncrease: 2
   GameOverScreen: {fileID: 44131839}
@@ -1860,7 +1860,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4156e3469ab9e3f41b2ce79720ae5f92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ScoreTxt: {fileID: 0}
   JumpForce: 20
+  scoreManager: {fileID: 0}
   playerFeet: {fileID: 742208683}
   groundLayer:
     serializedVersion: 2

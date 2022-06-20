@@ -22,7 +22,7 @@ public class SpawnerScript : GeneratorAbstract //this extends GeneratorAbstract 
         if (timePassed > interval)
         {
             interval = Random.Range(1f, 2f);
-            spawnVector = new Vector3(20f, UnityEngine.Random.Range(20f, 25f));
+            spawnVector = new Vector3(50f, UnityEngine.Random.Range(20f, 25f));
             RandomSpawn(1, enemy, spawnVector);
             timePassed = 0f;
         }
