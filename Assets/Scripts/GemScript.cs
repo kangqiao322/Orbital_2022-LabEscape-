@@ -10,6 +10,7 @@ public class GemScript : MonoBehaviour
     private float timePassed = 0f;
     private float lifespan = 10f; //the amount of time left before destroyed
     
+    private static int gemMuliplier = 1;
     public static int totalGems = 0; 
     
     private void Start()
@@ -26,8 +27,8 @@ public class GemScript : MonoBehaviour
         //Destroy the gem if any Object with tag Player comes into contact with it
         if (otherCollider.CompareTag("Player"))
         {
-            scoreManager.increaseMainScoreBy(1); //1 gem = +1 main score
-            totalGems++;
+            scoreManager.increaseMainScoreBy(gemMuliplier); //1 gem = +1 main score
+            totalGems += gemMuliplier;
             Destroy(this.gameObject);
         }
     }
@@ -55,6 +56,11 @@ public class GemScript : MonoBehaviour
         //         timePassed = 0f;
         //     }
         // }
+    }
+
+    public static void setGemMultiplierTo(int multiplier)
+    {
+        gemMuliplier = multiplier;
     }
 
 

@@ -11,7 +11,9 @@ public class PlayerScript : MonoBehaviour
 
     public TextMeshProUGUI ScoreTxt;
     public float JumpForce;
-    public ScoreManager scoreManager;
+    
+    private ScoreManager scoreManager;
+    private PowerUpManager powerUpManager;
     
 //player body fields
     private Rigidbody2D RB;
@@ -40,7 +42,10 @@ public class PlayerScript : MonoBehaviour
     {
         RB = GetComponent<Rigidbody2D>();
         RB.gravityScale = gravityForce;
+        
+        
         scoreManager = FindObjectOfType<ScoreManager>();
+        powerUpManager = FindObjectOfType<PowerUpManager>();
     }
 
     void Update()
@@ -113,15 +118,24 @@ public class PlayerScript : MonoBehaviour
 
         } else if (collision.gameObject.CompareTag("enemy") || collision.gameObject.CompareTag("spike"))
         {
-            isAlive = false;
-            //this is to animate death
-            animator.SetBool("IsDead", true);
+            if (powerUpManager.getHungerEffectStatus())
+            {
+                Debug.Log("on hunger effect, collide");
+                Destroy(collision.gameObject);
+            }
+            else
+            {
+                isAlive = false;
+                //this is to animate death
+                animator.SetBool("IsDead", true);
+                FindObjectOfType<GameManager>().GameOverScene(scoreManager.getScore());
+            }
             
             //timescale is the cause of the bug where nothing is moving after restrting
             //Time.timeScale = 0;
             //this is to activate gameoverscreen without referencing
 
-            FindObjectOfType<GameManager>().GameOverScene(scoreManager.getScore());
+            
             
             //Time.timeScale = 0;
         }
