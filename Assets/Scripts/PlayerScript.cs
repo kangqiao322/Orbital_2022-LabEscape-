@@ -34,6 +34,10 @@ public class PlayerScript : MonoBehaviour
 
 //animation fields
     public Animator animator;
+
+//playerHP
+    public float playerHP = 0f;
+    public PlayerPowerupStats PowerStatus;
     
 
     private void Awake() 
@@ -96,7 +100,7 @@ public class PlayerScript : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //Debug.Log(collision.gameObject.CompareTag("platformUndersideEnd"));
-        
+       
         if (collision.gameObject.CompareTag("platformUnderside"))
         {
             isUndersidePlatform = true;
@@ -104,26 +108,39 @@ public class PlayerScript : MonoBehaviour
             RB.gravityScale = -gravityForce;
             animator.SetBool("IsUnder", true);
             
-        }  else if (collision.gameObject.CompareTag("ground"))
+        }  
+        else if (collision.gameObject.CompareTag("ground"))
         {
             RB.gravityScale = gravityForce;
             isUndersidePlatform = false;
             isOnGround = true;
             animator.SetBool("IsJumping", false);
 
-        } else if (collision.gameObject.CompareTag("enemy") || collision.gameObject.CompareTag("spike"))
-        {
-            isAlive = false;
-            //this is to animate death
-            animator.SetBool("IsDead", true);
-            
-            //timescale is the cause of the bug where nothing is moving after restrting
-            //Time.timeScale = 0;
-            //this is to activate gameoverscreen without referencing
 
-            FindObjectOfType<GameManager>().GameOverScene(scoreManager.getScore());
+        } 
+        else if (collision.gameObject.CompareTag("enemy") || collision.gameObject.CompareTag("spike"))
+        {
+            if (playerHP == 0f) 
+            {
+                isAlive = false;
+              //this is to animate death
+              animator.SetBool("IsDead", true);
             
-            //Time.timeScale = 0;
+              //timescale is the cause of the bug where nothing is moving after restrting
+              //Time.timeScale = 0;
+              //this is to activate gameoverscreen without referencing
+
+              FindObjectOfType<GameManager>().GameOverScene(scoreManager.getScore());
+            
+              //Time.timeScale = 0;
+             
+            } 
+            else 
+            {
+                isAlive = true;
+                playerHP -= 1f;
+                PowerStatus.BubbleDecre();
+            }
         }
         // else if (collision.gameObject.CompareTag("gem"))
         // {
