@@ -11,7 +11,9 @@ public class PlayerScript : MonoBehaviour
 
     public TextMeshProUGUI ScoreTxt;
     public float JumpForce;
-    public ScoreManager scoreManager;
+    
+    private ScoreManager scoreManager;
+    private PowerUpManager powerUpManager;
     
 //player body fields
     private Rigidbody2D RB;
@@ -44,7 +46,10 @@ public class PlayerScript : MonoBehaviour
     {
         RB = GetComponent<Rigidbody2D>();
         RB.gravityScale = gravityForce;
+        
+        
         scoreManager = FindObjectOfType<ScoreManager>();
+        powerUpManager = FindObjectOfType<PowerUpManager>();
     }
 
     void Update()
@@ -116,36 +121,26 @@ public class PlayerScript : MonoBehaviour
             isOnGround = true;
             animator.SetBool("IsJumping", false);
 
-
-        } 
-        else if (collision.gameObject.CompareTag("enemy") || collision.gameObject.CompareTag("spike"))
+        } else if (collision.gameObject.CompareTag("enemy") || collision.gameObject.CompareTag("spike"))
         {
-            if (playerHP == 0f) 
+            if (powerUpManager.getHungerEffectStatus())
+            {
+                Debug.Log("on hunger effect, collide");
+                Destroy(collision.gameObject);
+            }
+            else if (playerHP == 0f)
             {
                 isAlive = false;
-              //this is to animate death
-              animator.SetBool("IsDead", true);
-            
-              //timescale is the cause of the bug where nothing is moving after restrting
-              //Time.timeScale = 0;
-              //this is to activate gameoverscreen without referencing
-
-              FindObjectOfType<GameManager>().GameOverScene(scoreManager.getScore());
-            
-              //Time.timeScale = 0;
-             
-            } 
-            else 
+                //this is to animate death
+                animator.SetBool("IsDead", true);
+                FindObjectOfType<GameManager>().GameOverScene(scoreManager.getScore());
+            } else
             {
                 isAlive = true;
                 playerHP -= 1f;
                 PowerStatus.BubbleDecre();
             }
         }
-        // else if (collision.gameObject.CompareTag("gem"))
-        // {
-        //     Debug.Log("touched gem");
-        // } 
     }
     
     private void OnCollisionExit2D(Collision2D collision)
