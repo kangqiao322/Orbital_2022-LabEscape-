@@ -8,7 +8,7 @@ public class GemScript : MonoBehaviour
     
     private ScoreManager scoreManager;
     private float timePassed = 0f;
-    private float lifespan = 4f; //the amount of time left before destroyed
+    private float lifespan = 10f; //the amount of time left before destroyed
     
     public static int totalGems = 0; 
     

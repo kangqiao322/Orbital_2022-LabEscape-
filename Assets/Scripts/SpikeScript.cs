@@ -56,5 +56,13 @@ public class SpikeScript : MonoBehaviour
         // }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("platformUnderside"))
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
 
 }

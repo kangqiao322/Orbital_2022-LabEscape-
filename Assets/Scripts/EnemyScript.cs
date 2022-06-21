@@ -12,7 +12,7 @@ public class EnemyScript : MonoBehaviour
 
     private Rigidbody2D enemyRB; //this is private
     private float timePassed = 0f;
-    private float lifespan = 4f; //the amount of time left before destroyed
+    private float lifespan = 10f; //the amount of time left before destroyed
 
     
     void Awake()

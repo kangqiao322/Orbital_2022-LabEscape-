@@ -12,7 +12,7 @@ public class PlatformScript : MonoBehaviour
 
     private Rigidbody2D platformRB; //this is private
     private float timePassed = 0f;
-    private float lifespan = 4f; //the amount of time left before destroyed
+    private float lifespan = 10f; //the amount of time left before destroyed
 
     
     void Awake()
@@ -56,6 +56,16 @@ public class PlatformScript : MonoBehaviour
         //     }
         // }
 
+        
+
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("ground"))
+        {
+            Destroy(this.gameObject);
+        }
     }
 
 }
