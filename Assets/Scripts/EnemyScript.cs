@@ -61,7 +61,7 @@ public class EnemyScript : MonoBehaviour
     {
         if (!collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("enemy touched " + collision.gameObject + ", destroying enemy...");
+            //Debug.Log("enemy touched " + collision.gameObject + ", destroying enemy...");
             Destroy(this.gameObject);
         }
     }

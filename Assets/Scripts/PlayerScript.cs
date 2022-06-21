@@ -36,12 +36,7 @@ public class PlayerScript : MonoBehaviour
 
 //animation fields
     public Animator animator;
-
-//playerHP
-    public float playerHP = 0f;
-    public PlayerPowerupStats PowerStatus;
     
-
     private void Awake() 
     {
         RB = GetComponent<Rigidbody2D>();
@@ -123,22 +118,26 @@ public class PlayerScript : MonoBehaviour
 
         } else if (collision.gameObject.CompareTag("enemy") || collision.gameObject.CompareTag("spike"))
         {
+            Debug.Log("bubble status: " + powerUpManager.getBubbleStatus());
+            
             if (powerUpManager.getHungerEffectStatus())
             {
-                Debug.Log("on hunger effect, collide");
+                Debug.Log("on hunger effect, eat enemy");
                 Destroy(collision.gameObject);
             }
-            else if (playerHP == 0f)
+            else if (powerUpManager.getBubbleStatus())
+            {
+                Debug.Log("removes bubble");
+                powerUpManager.setBubbleActive(false);
+                Destroy(collision.collider);
+                Destroy(collision.rigidbody);
+            }
+            else //when you dont have either effects you die
             {
                 isAlive = false;
                 //this is to animate death
                 animator.SetBool("IsDead", true);
                 FindObjectOfType<GameManager>().GameOverScene(scoreManager.getScore());
-            } else
-            {
-                isAlive = true;
-                playerHP -= 1f;
-                PowerStatus.BubbleDecre();
             }
         }
     }

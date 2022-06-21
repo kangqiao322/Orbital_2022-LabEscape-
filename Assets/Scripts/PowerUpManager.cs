@@ -4,21 +4,22 @@ using UnityEngine;
 
 public class PowerUpManager : MonoBehaviour
 {
-    private bool x2GemEffectActive = false;
-    private float x2effectDuration = 15f;
+    public bool x2GemEffectActive = false;
+    private float x2effectDuration = 10f;
     private float x2effectTimePassed = 0f;
     
-    private bool hungerEffectActive = false;
-    private float hungerEffectDuration = 15f;
+    public bool hungerEffectActive = false;
+    private float hungerEffectDuration = 10f;
     private float hungerEffectTimePassed = 0f;
-    
+
+    public bool bubbleActive = false;
+
     void Update()
     {
         if (x2GemEffectActive) //handles x2 gem effect active mechanic
         {
             x2effectTimePassed += Time.deltaTime;
             GemScript.setGemMultiplierTo(2);
-            Debug.Log("x2 effect active");
             
             if (x2effectTimePassed > x2effectDuration)
             {
@@ -32,7 +33,7 @@ public class PowerUpManager : MonoBehaviour
         if (hungerEffectActive)
         {
             hungerEffectTimePassed += Time.deltaTime;
-            Debug.Log("hunger effect active");
+            //Debug.Log("hunger effect active");
 
             if (hungerEffectTimePassed > hungerEffectDuration)
             {
@@ -45,6 +46,7 @@ public class PowerUpManager : MonoBehaviour
         
     }
 
+    //x2 gem effect
     public bool getx2GemEffectStatus() //OOP principles time
     {
         return x2GemEffectActive;
@@ -75,5 +77,16 @@ public class PowerUpManager : MonoBehaviour
     public void resetHungerEffectTimePassed()
     {
         hungerEffectTimePassed = 0f;
+    }
+    
+    //bubble effect
+    public bool getBubbleStatus() //OOP principles time
+    {
+        return bubbleActive;
+    }
+    
+    public void setBubbleActive(bool booleanVal)
+    {
+        bubbleActive = booleanVal;
     }
 }
