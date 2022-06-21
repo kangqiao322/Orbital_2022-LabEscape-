@@ -36,6 +36,10 @@ public class PlayerScript : MonoBehaviour
 
 //animation fields
     public Animator animator;
+
+//playerHP
+    public float playerHP = 0f;
+    public PlayerPowerupStats PowerStatus;
     
 
     private void Awake() 
@@ -101,7 +105,7 @@ public class PlayerScript : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //Debug.Log(collision.gameObject.CompareTag("platformUndersideEnd"));
-        
+       
         if (collision.gameObject.CompareTag("platformUnderside"))
         {
             isUndersidePlatform = true;
@@ -109,7 +113,8 @@ public class PlayerScript : MonoBehaviour
             RB.gravityScale = -gravityForce;
             animator.SetBool("IsUnder", true);
             
-        }  else if (collision.gameObject.CompareTag("ground"))
+        }  
+        else if (collision.gameObject.CompareTag("ground"))
         {
             RB.gravityScale = gravityForce;
             isUndersidePlatform = false;
@@ -123,26 +128,19 @@ public class PlayerScript : MonoBehaviour
                 Debug.Log("on hunger effect, collide");
                 Destroy(collision.gameObject);
             }
-            else
+            else if (playerHP == 0f)
             {
                 isAlive = false;
                 //this is to animate death
                 animator.SetBool("IsDead", true);
                 FindObjectOfType<GameManager>().GameOverScene(scoreManager.getScore());
+            } else
+            {
+                isAlive = true;
+                playerHP -= 1f;
+                PowerStatus.BubbleDecre();
             }
-            
-            //timescale is the cause of the bug where nothing is moving after restrting
-            //Time.timeScale = 0;
-            //this is to activate gameoverscreen without referencing
-
-            
-            
-            //Time.timeScale = 0;
         }
-        // else if (collision.gameObject.CompareTag("gem"))
-        // {
-        //     Debug.Log("touched gem");
-        // } 
     }
     
     private void OnCollisionExit2D(Collision2D collision)

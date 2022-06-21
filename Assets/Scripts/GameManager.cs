@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public float currentSpeed;
     public float speedIncrMultiplier;
     public float timeUntilSpawnRateIncrease;
+    public float timeCounter;
 
     public GameOverScript GameOverScreen;
     public static bool gameHasEnded = false;
@@ -51,17 +52,31 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         timeUntilSpawnRateIncrease -= Time.deltaTime;
-
+        /*
         if (timeUntilSpawnRateIncrease < 1 && currentSpeed <= maxSpeed) 
         {
             currentSpeed += speedIncrMultiplier;
-            timeUntilSpawnRateIncrease = 2f;
+            timeUntilSpawnRateIncrease = timeCounter;
         }
+        */
+
+        if (currentSpeed <= maxSpeed) 
+        {
+            currentSpeed += speedIncrMultiplier;
+        }
+    
+        
+        
     }
     
     public float getSpeed()
     {
         return this.currentSpeed;
+    }
+
+    public float getMaxSpeed()
+    {
+        return this.maxSpeed;
     }
 
 }
