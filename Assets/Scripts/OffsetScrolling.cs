@@ -4,31 +4,30 @@ using UnityEngine;
 
 public class OffsetScrolling : MonoBehaviour {
     public float scrollSpeed;
-    public float maxSpeed = 2f;
+    public float maxSpeed;
 
     public GameManager gameManager;
 
-    private Renderer renderer;
+    private Material renderer;
     private Vector2 savedOffset;
 
-    void Start () {
-        renderer = GetComponent<Renderer> ();
+    private void Awake () {
+        renderer = GetComponent<Renderer>().material;
     }
 
     void Update () {
         //correlate to game manager
-    maxSpeed = gameManager.getMaxSpeed() * 0.1f;
-    /*
+    maxSpeed = gameManager.getMaxSpeed() * 0.025f;
+    scrollSpeed = gameManager.getSpeed() * 0.025f;
+    
     if (scrollSpeed < maxSpeed) 
     {
         scrollSpeed += Time.deltaTime * 0.01f;
     }
-    */
-    scrollSpeed = gameManager.getSpeed() * 0.025f;
+  
 
-    //scrollSpeed = gameManager.getSpeed() * 0.1f;
-	float x = Mathf.Repeat (Time.time * scrollSpeed, 1);
-	Vector2 offset = new Vector2 (x, 0);
-	renderer.sharedMaterial.SetTextureOffset("_MainTex", offset);
+    savedOffset = new Vector2(scrollSpeed, 0);
+    renderer.mainTextureOffset += savedOffset * Time.deltaTime;
+
     }
 }
