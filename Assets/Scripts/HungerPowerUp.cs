@@ -1,21 +1,25 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class HungerPowerUp : MonoBehaviour
+public class HungerPowerUp : PowerUpAbstract
+    //this extends PowerUpAbstract class for movement and lifespan
 {
     //power up script handles collision with player
     //not player script handles collision with power up
-    
-    private GameManager gameManager;
-    private PowerUpManager powerUpManager;
-    
-    private float speed;
 
-    void Start()
+    private PowerUpManager powerUpManager;
+
+    public override void Start()
     {
-        gameManager = FindObjectOfType<GameManager>();
+        base.Start();
         powerUpManager = FindObjectOfType<PowerUpManager>();
 
         GetComponent<Collider2D>().isTrigger = true;
+    }
+    
+    public override void Update()
+    {
+        base.Update();
     }
     
     void OnTriggerEnter2D(Collider2D otherCollider) 
@@ -26,6 +30,7 @@ public class HungerPowerUp : MonoBehaviour
             {
                 //if effect is still active and player picks up another hunger powerup
                 //resets the effect time passed
+                Debug.Log("reset hunger timer");
                 powerUpManager.resetHungerEffectTimePassed(); 
             }
             
@@ -33,11 +38,5 @@ public class HungerPowerUp : MonoBehaviour
             powerUpManager.setHungerEffectActive(true); //effect handled by other class
             Destroy(this.gameObject);
         }
-    }
-
-    private void Update()
-    {
-        speed = gameManager.getSpeed();
-        transform.Translate(new Vector3(-speed * Time.deltaTime, 0, 0));
     }
 }
