@@ -5,7 +5,7 @@ using UnityEngine.Serialization;
 
 public class PlayerScript : MonoBehaviour
 {
-    //public GameManager GameManager; //not needed after all?
+    public GameManager gameManager; //not needed after all?
     //gem count increases when gem is in contact with tag "Player",
     //not when player is in contact with tag "gem"
 
@@ -138,6 +138,9 @@ public class PlayerScript : MonoBehaviour
                 //this is to animate death
                 animator.SetBool("IsDead", true);
                 FindObjectOfType<GameManager>().GameOverScene(scoreManager.getScore());
+                //Time.timeScale = 0f;
+                
+
             }
         }
     }
