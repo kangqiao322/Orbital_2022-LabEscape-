@@ -15,7 +15,7 @@ public class PowerUpGenerator : GeneratorAbstract
     
     private void Update()
     {
-        interval = UnityEngine.Random.Range(20f, 50f);
+        interval = UnityEngine.Random.Range(2f, 5f);
         timePassed += Time.deltaTime;
 
         if (timePassed > interval)
@@ -43,7 +43,7 @@ public class PowerUpGenerator : GeneratorAbstract
         //randomly selects the platform to spawn
         int randInt = UnityEngine.Random.Range(0,  PowerUpArray.Length);
 
-        spawnVector = new Vector3(80f, UnityEngine.Random.Range(22f, 24f), 0);
+        spawnVector = new Vector3(50f, UnityEngine.Random.Range(22f, 24f), 0);
         RandomSpawn(0.8,  PowerUpArray[randInt], spawnVector);
         //1st value is probability. It is a parent class' method
     }

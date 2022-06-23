@@ -116,7 +116,7 @@ public class PlayerScript : MonoBehaviour
             isOnGround = true;
             animator.SetBool("IsJumping", false);
 
-        } else if (collision.gameObject.CompareTag("enemy") || collision.gameObject.CompareTag("spike"))
+        } else if (collision.gameObject.CompareTag("enemy") )
         {
             Debug.Log("bubble status: " + powerUpManager.getBubbleStatus());
             
