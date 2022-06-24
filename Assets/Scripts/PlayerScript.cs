@@ -5,7 +5,6 @@ using UnityEngine.Serialization;
 
 public class PlayerScript : MonoBehaviour
 {
-    public GameManager gameManager; //not needed after all?
     //gem count increases when gem is in contact with tag "Player",
     //not when player is in contact with tag "gem"
 
@@ -99,8 +98,8 @@ public class PlayerScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //Debug.Log(collision.gameObject.CompareTag("platformUndersideEnd"));
-       
+        //Debug.Log(collision.gameObject.tag);
+
         if (collision.gameObject.CompareTag("platformUnderside"))
         {
             isUndersidePlatform = true;
@@ -134,13 +133,11 @@ public class PlayerScript : MonoBehaviour
             }
             else //when you dont have either effects you die
             {
-                isAlive = false;
+                //isAlive = false;
                 //this is to animate death
-                animator.SetBool("IsDead", true);
-                FindObjectOfType<GameManager>().GameOverScene(scoreManager.getScore());
-                //Time.timeScale = 0f;
+                //animator.SetBool("IsDead", true);
+                //FindObjectOfType<GameManager>().GameOverScene(scoreManager.getScore());
                 
-
             }
         }
     }

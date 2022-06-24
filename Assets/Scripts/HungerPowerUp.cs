@@ -38,5 +38,11 @@ public class HungerPowerUp : PowerUpAbstract
             powerUpManager.setHungerEffectActive(true); //effect handled by other class
             Destroy(this.gameObject);
         }
+        else
+        {
+            Debug.Log(gameObject + " touched " + otherCollider.gameObject + ", destroying itself...");
+            Destroy(this.gameObject);
+            FindObjectOfType<PowerUpGenerator>().increasePity();
+        }
     }
 }
