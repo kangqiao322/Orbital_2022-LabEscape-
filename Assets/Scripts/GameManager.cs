@@ -25,26 +25,10 @@ public class GameManager : MonoBehaviour
         GameOverScreen.SetUp(score);
     }
 
-    
-    //public float restartDelay  = 1f;
-    // Start is called before the first frame update
-    
-    
-    public void GameOver()
+    public void ResetGameData()
     {
-        //this instantly restarts the game, might not need it anymore
-        if (gameHasEnded == false)
-        {
-            gameHasEnded = true;
-            Debug.Log("GAMEOVER");
-            //Invoke("Restart", restartDelay);
-        }
-    }
-
-    public void Restart() 
-    {
-         //this instantly restarts the game, might not need it anymore
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        currentSpeed = 0f;
+        speedIncrMultiplier = 0f;
     }
 
      
@@ -52,18 +36,19 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         timeUntilSpawnRateIncrease -= Time.deltaTime;
-        /*
-        if (timeUntilSpawnRateIncrease < 1 && currentSpeed <= maxSpeed) 
+        
+        if (timeUntilSpawnRateIncrease < 0 && currentSpeed <= maxSpeed) 
         {
             currentSpeed += speedIncrMultiplier;
             timeUntilSpawnRateIncrease = timeCounter;
         }
-        */
-
+        
+/*
         if (currentSpeed <= maxSpeed) 
         {
             currentSpeed += speedIncrMultiplier;
         }
+        */
     
         
         

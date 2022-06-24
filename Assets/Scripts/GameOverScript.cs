@@ -1,10 +1,10 @@
-using System.Collections;
+  using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-//this is for all the buttons actually
+//this is a button manager actually
 
 public class GameOverScript : MonoBehaviour
 {

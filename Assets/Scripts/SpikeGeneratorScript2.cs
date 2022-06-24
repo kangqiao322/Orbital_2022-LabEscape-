@@ -9,7 +9,7 @@ public class SpikeGeneratorScript2 : GeneratorAbstract
     private float interval = 2f;
     private float timePassed = 0f;
     //now it spawns outside the screen which is intended
-    private Vector3 spawnVector = new Vector3(9f, 16.94f);
+    private Vector3 spawnVector = new Vector3(9f, 17.4f);
 
     //make it public and drag the prefab into this field in the unity GUI
     [SerializeField] public Transform spike;
