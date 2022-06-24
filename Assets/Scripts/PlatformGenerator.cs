@@ -44,7 +44,7 @@ public class PlatformGenerator : GeneratorAbstract
         //randomly selects the platform to spawn
         int randInt = UnityEngine.Random.Range(0, platformArray.Length);
 
-        spawnVector = new Vector3(80f, UnityEngine.Random.Range(22f, 24f), 0);
+        spawnVector = new Vector3(30f, UnityEngine.Random.Range(22f, 24f), 0);
         RandomSpawn(0.8, platformArray[randInt], spawnVector);
         //1st value is probability. It is a parent class' method
     }

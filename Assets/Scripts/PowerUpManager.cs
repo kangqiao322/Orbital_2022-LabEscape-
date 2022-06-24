@@ -19,14 +19,14 @@ public class PowerUpManager : MonoBehaviour
         if (x2GemEffectActive) //handles x2 gem effect active mechanic
         {
             x2effectTimePassed += Time.deltaTime;
-            GemScript.setGemMultiplierTo(2);
+            GhostGemScript.setGemMultiplierTo(2);
             
             if (x2effectTimePassed > x2effectDuration)
             {
                 Debug.Log("x2 effect not active");
                 x2GemEffectActive = false;
                 x2effectTimePassed = 0f;
-                GemScript.setGemMultiplierTo(1);
+                GhostGemScript.setGemMultiplierTo(1);
             }
         }
 

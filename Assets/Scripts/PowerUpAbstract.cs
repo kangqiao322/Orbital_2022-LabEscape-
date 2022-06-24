@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PowerUpAbstract : MonoBehaviour
@@ -9,7 +7,7 @@ public class PowerUpAbstract : MonoBehaviour
     private GameManager gameManager;
     
     private float timePassed = 0f;
-    private float lifespan = 15f; //the amount of time left before destroyed
+    private float lifespan = 10f; //the amount of time left before destroyed
     private float speed;
     
     public virtual void Start()
@@ -31,4 +29,5 @@ public class PowerUpAbstract : MonoBehaviour
             timePassed = 0f;
         }
     }
+    
 }

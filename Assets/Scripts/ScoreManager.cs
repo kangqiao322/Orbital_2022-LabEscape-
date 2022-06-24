@@ -19,6 +19,8 @@ public class ScoreManager : MonoBehaviour
     private float score;
     private float currentHighscore;
 
+    private int totalGems = 0;
+
     void Awake()
     {
         //recursively finds all TextMeshProUGUI in its children and children's children
@@ -56,12 +58,22 @@ public class ScoreManager : MonoBehaviour
         }
         
         //Set the current number of gems to display
-        gemScoreTxt.text = GemScript.totalGems.ToString(("0"));
+        gemScoreTxt.text = totalGems.ToString(("0"));
     }
     
     public void increaseMainScoreBy(int increment)
     {
         this.score += increment;
+    }
+    
+    public void increaseGemScoreBy(int n)
+    {
+        totalGems += n;
+    }
+
+    public void setTotalGems(int n)
+    {
+        totalGems = n;
     }
 
     public float getScore()
@@ -73,4 +85,6 @@ public class ScoreManager : MonoBehaviour
     {
         return this.currentHighscore;
     }
+
+
 }
