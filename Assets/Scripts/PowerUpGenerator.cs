@@ -13,9 +13,10 @@ public class PowerUpGenerator : GeneratorAbstract
 
     //drag extra platform prefabs into this array field in the Unity GUI
     [SerializeField] public Transform[] PowerUpArray;
-
+    
     private void Update()
     {
+        //interval = UnityEngine.Random.Range(2f, 5f); //testing for now 
         timePassed += Time.deltaTime;
 
         if (timePassed > interval)
@@ -52,5 +53,4 @@ public class PowerUpGenerator : GeneratorAbstract
     {
         pity++;
     }
-    
 }

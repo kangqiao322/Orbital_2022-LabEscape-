@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OffsetScrolling : MonoBehaviour {
     public float scrollSpeed;
-    public float maxSpeed = 2f;
+    public float maxSpeed;
 
     public GameManager gameManager;
 

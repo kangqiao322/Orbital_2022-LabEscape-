@@ -17,7 +17,7 @@ public class SpikeScript : MonoBehaviour
     {
         gameManager = FindObjectOfType<GameManager>();
         spikeRb = GetComponent<Rigidbody2D>();
-        spikeRb.transform.localScale = new Vector3(2, 2, 0); //rescales the spike
+        
     }
     
     
