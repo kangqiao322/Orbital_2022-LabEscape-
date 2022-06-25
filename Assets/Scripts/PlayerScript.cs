@@ -115,7 +115,7 @@ public class PlayerScript : MonoBehaviour
             isOnGround = true;
             animator.SetBool("IsJumping", false);
 
-        } else if (collision.gameObject.CompareTag("enemy") )
+        } else if (collision.gameObject.CompareTag("enemy"))
         {
             Debug.Log("bubble status: " + powerUpManager.getBubbleStatus());
             
@@ -133,11 +133,26 @@ public class PlayerScript : MonoBehaviour
             }
             else //when you dont have either effects you die
             {
-                //isAlive = false;
+                isAlive = false;
                 //this is to animate death
-                //animator.SetBool("IsDead", true);
-                //FindObjectOfType<GameManager>().GameOverScene(scoreManager.getScore());
+                animator.SetBool("IsDead", true);
+                FindObjectOfType<GameManager>().GameOverScene(scoreManager.getScore());
                 
+            }
+        } else if (collision.gameObject.CompareTag("spike"))
+        {
+            if (powerUpManager.getBubbleStatus())
+            {
+                Debug.Log("removes bubble");
+                powerUpManager.setBubbleActive(false);
+                Destroy(collision.collider);
+                Destroy(collision.rigidbody);
+            } else //dies even if you have hunger effect
+            {
+                isAlive = false;
+                //this is to animate death
+                animator.SetBool("IsDead", true);
+                FindObjectOfType<GameManager>().GameOverScene(scoreManager.getScore());
             }
         }
     }
