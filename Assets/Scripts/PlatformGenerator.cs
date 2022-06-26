@@ -12,7 +12,7 @@ public class PlatformGenerator : GeneratorAbstract
 
     //drag extra platform prefabs into this array field in the Unity GUI
     [SerializeField]
-    public Transform[] platformArray;
+    private Transform[] platformArray;
     
     private void Update()
     {
@@ -44,7 +44,9 @@ public class PlatformGenerator : GeneratorAbstract
         //randomly selects the platform to spawn
         int randInt = UnityEngine.Random.Range(0, platformArray.Length);
 
-        spawnVector = new Vector3(30f, UnityEngine.Random.Range(22f, 24f), 0);
+        spawnVector = randInt == 6
+            ? new Vector3(30f, UnityEngine.Random.Range(22.8f, 23f), 0)
+            : new Vector3(30f, UnityEngine.Random.Range(20f, 23f), 0);
         RandomSpawn(0.8, platformArray[randInt], spawnVector);
         //1st value is probability. It is a parent class' method
     }

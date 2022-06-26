@@ -6,9 +6,7 @@ public class SpawnerScript : GeneratorAbstract //this extends GeneratorAbstract 
 {
     //interval is mananing the time inbewteen spawns
     private float interval;
-
     private float timePassed = 0f;
-    
     private Vector3 spawnVector;
     
 
@@ -21,9 +19,9 @@ public class SpawnerScript : GeneratorAbstract //this extends GeneratorAbstract 
 
         if (timePassed > interval)
         {
-            interval = Random.Range(1f, 2f);
-            spawnVector = new Vector3(50f, UnityEngine.Random.Range(20f, 25f));
-            RandomSpawn(1, enemy, spawnVector);
+            interval = Random.Range(1f, 8f);
+            spawnVector = new Vector3(15f, UnityEngine.Random.Range(20f, 25f));
+            RandomSpawn(0.9, enemy, spawnVector);
             timePassed = 0f;
         }
 

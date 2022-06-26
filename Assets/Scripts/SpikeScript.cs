@@ -8,7 +8,7 @@ public class SpikeScript : MonoBehaviour
     
     private Rigidbody2D spikeRb; //this is private
     private float timePassed = 0f;
-    private float lifespan = 5f; //the amount of time left before destroyed
+    private float lifespan = 10f; //the amount of time left before destroyed
 
     private GameManager gameManager;
     private float speed;

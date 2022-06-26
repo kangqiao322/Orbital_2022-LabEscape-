@@ -8,11 +8,11 @@ public class GameManager : MonoBehaviour
 {
 
 //make this adjustable first
-    public float maxSpeed;
-    public float currentSpeed;
-    public float speedIncrMultiplier;
-    public float timeUntilSpawnRateIncrease;
-    public float timeCounter;
+    private float maxSpeed = 25f;
+    private float currentSpeed = 10f;
+    private float speedIncrMultiplier = 0.8f;
+    private float timeUntilSpawnRateIncrease = 3f;
+    private float timeCounter = 3f;
 
     public GameOverScript GameOverScreen;
     public static bool gameHasEnded = false;
@@ -35,23 +35,15 @@ public class GameManager : MonoBehaviour
     //this is for increasing speed
     private void Update()
     {
+        //Debug.Log(currentSpeed);
         timeUntilSpawnRateIncrease -= Time.deltaTime;
         
-        if (timeUntilSpawnRateIncrease < 0 && currentSpeed <= maxSpeed) 
+        if (timeUntilSpawnRateIncrease < 0 && currentSpeed + speedIncrMultiplier <= maxSpeed) 
         {
             currentSpeed += speedIncrMultiplier;
             timeUntilSpawnRateIncrease = timeCounter;
         }
-        
-/*
-        if (currentSpeed <= maxSpeed) 
-        {
-            currentSpeed += speedIncrMultiplier;
-        }
-        */
-    
-        
-        
+
     }
     
     public float getSpeed()

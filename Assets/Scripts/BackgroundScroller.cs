@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BackgroundScroller : MonoBehaviour
+public class BackgroundScroller : MonoBehaviour //not in use for now
 {
 
    public float speed;

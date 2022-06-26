@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 //this may be redundant as i already havea pause screen, this is pause when esc is pressed
 public class PauseMenu : MonoBehaviour
 {
-    public static bool GameIsPaused = false;
+    private bool GameIsPaused = false;
 
     public GameObject pauseMenuUI;
 

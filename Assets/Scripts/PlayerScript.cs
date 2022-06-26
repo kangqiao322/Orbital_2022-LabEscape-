@@ -48,16 +48,6 @@ public class PlayerScript : MonoBehaviour
 
     void Update()
     {
-        // timePassed += Time.deltaTime;
-        // if (timePassed > 5f && PlayerScript.gameSpeed < 30f)
-        // {
-        //     Debug.Log(PlayerScript.gameSpeed);
-        //     PlayerScript.gameSpeed += 5f;
-        //     timePassed = 0;
-        // } 
-        
-
-       
         isOnGround = Physics2D.OverlapCircle(playerFeet.position, playerFeetRadius, groundLayer);
         
         //first jump

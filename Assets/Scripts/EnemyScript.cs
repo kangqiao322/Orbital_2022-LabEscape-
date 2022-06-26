@@ -10,7 +10,7 @@ public class EnemyScript : MonoBehaviour
 
     private GameManager gameManager;
 
-    private Rigidbody2D enemyRB; //this is private
+    //private Rigidbody2D enemyRB; //removed rigidbody on 26 June 2022
     private float timePassed = 0f;
     private float lifespan = 10f; //the amount of time left before destroyed
 
@@ -20,7 +20,7 @@ public class EnemyScript : MonoBehaviour
         //assign GameManager to gameManager only once
         gameManager = FindObjectOfType<GameManager>();
         
-        enemyRB = GetComponent<Rigidbody2D>();
+        //enemyRB = GetComponent<Rigidbody2D>();
         // platformRB.transform.localScale = new Vector3(10, 1, 0);
     }
     
