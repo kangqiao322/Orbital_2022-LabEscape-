@@ -122,6 +122,8 @@ public class PlayerScript : MonoBehaviour
             if (powerUpManager.getHungerEffectStatus())
             {
                 Debug.Log("on hunger effect, eat enemy");
+                //Destroy(collision.collider);
+                //Destroy(collision.rigidbody);
                 Destroy(collision.gameObject);
             }
             else if (powerUpManager.getBubbleStatus())
@@ -130,6 +132,7 @@ public class PlayerScript : MonoBehaviour
                 powerUpManager.setBubbleActive(false);
                 Destroy(collision.collider);
                 Destroy(collision.rigidbody);
+                
             }
             else //when you dont have either effects you die
             {
@@ -149,6 +152,7 @@ public class PlayerScript : MonoBehaviour
                 Destroy(collision.rigidbody);
             } else //dies even if you have hunger effect
             {
+                Debug.Log(collision.collider.gameObject.tag);
                 isAlive = false;
                 //this is to animate death
                 animator.SetBool("IsDead", true);

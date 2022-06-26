@@ -22,7 +22,7 @@ public class PowerUpGenerator : GeneratorAbstract
         if (timePassed > interval)
         {
             //time for next power up to spawn
-            interval = UnityEngine.Random.Range(5f, 10f); //prob = 0.5 to spawn tho
+            interval = UnityEngine.Random.Range(5f, 10f); //prob = 0.4 to spawn tho
             powerUpNtimes(1 + 2 * pity);
             timePassed = 0f;
         }
@@ -45,7 +45,7 @@ public class PowerUpGenerator : GeneratorAbstract
         int randInt = UnityEngine.Random.Range(0, PowerUpArray.Length);
 
         spawnVector = new Vector3(UnityEngine.Random.Range(10f, 70f), UnityEngine.Random.Range(17f, 25f), 0);
-        RandomSpawn(0.5, PowerUpArray[randInt], spawnVector);
+        RandomSpawn(0.4, PowerUpArray[randInt], spawnVector);
         //1st value is probability. It is a parent class' method
     }
 
