@@ -9,10 +9,16 @@ public class PauseMenu : MonoBehaviour
     private bool GameIsPaused = false;
 
     public GameObject pauseMenuUI;
+    private GameManager gameManager;
+
+    private void Start()
+    {
+        gameManager = FindObjectOfType<GameManager>();
+    }
 
     void Update () {
         
-        if (Input.GetKeyDown(KeyCode.Escape) && !GameManager.gameHasEnded)
+        if (Input.GetKeyDown(KeyCode.Escape) && !gameManager.gameHasEnded())
             //if game over screen displays then cannot display pause menu
         {
             if (GameIsPaused)
