@@ -12,10 +12,12 @@ public class GameOverScript : MonoBehaviour
     public TextMeshProUGUI pointsTxt;
 
     private ScoreManager scoreManager;
+    private GameManager gameManager;
 
     private void Start()
     {
         scoreManager = FindObjectOfType<ScoreManager>();
+        gameManager = FindObjectOfType<GameManager>();
     }
     
     // Start is called before the first frame update
@@ -30,7 +32,7 @@ public class GameOverScript : MonoBehaviour
     {
         //reload the active scene instead of biome1
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        GameManager.gameHasEnded = false;
+        gameManager.startGame();
         scoreManager.setTotalGems(0);
         Time.timeScale = 1f;
     }
@@ -38,7 +40,7 @@ public class GameOverScript : MonoBehaviour
     public void MainMenuButton() 
     {
         SceneManager.LoadScene("MainMenu");
-        GameManager.gameHasEnded = false;
+        gameManager.startGame();
         scoreManager.setTotalGems(0);
         Time.timeScale = 1f;
     }
@@ -46,12 +48,14 @@ public class GameOverScript : MonoBehaviour
     public void ResumeButton() 
     {
         gameObject.SetActive(false);
+        gameManager.startGame();
         Time.timeScale = 1f;
     }
 
     public void PauseButton() 
     {
         gameObject.SetActive(true);
+        gameManager.startGame();
         Time.timeScale = 0f;
     }
 
