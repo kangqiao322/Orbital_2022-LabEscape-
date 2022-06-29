@@ -7,8 +7,7 @@ public class GhostGemScript : MonoBehaviour
 //handles x2 gem effect
 {
     private ScoreManager scoreManager;
-    //private PowerUpManager powerUpManager;
-    private static int gemMuliplier = 1;
+    private static int gemMuliplier = 1; //has to be static no choice
 
     private Vector3 destinationVector = new Vector3(-19f, 29f, 0);
 
@@ -26,7 +25,6 @@ public class GhostGemScript : MonoBehaviour
         
         if (distanceToDestination < 0.5)
         {
-            
             scoreManager.increaseMainScoreBy(gemMuliplier); //1 gem = +1 main score
             scoreManager.increaseGemScoreBy(gemMuliplier);
             Destroy(this.gameObject);

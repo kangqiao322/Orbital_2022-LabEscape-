@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnerScript : GeneratorAbstract //this extends GeneratorAbstract class
+public class EnemyGeneratorScript : GeneratorAbstract //this extends GeneratorAbstract class
 {
     //interval is mananing the time inbewteen spawns
     private float interval;
@@ -11,10 +11,18 @@ public class SpawnerScript : GeneratorAbstract //this extends GeneratorAbstract 
     
 
     //make it public and drag the prefab into this field in the unity GUI
-    [SerializeField] public Transform enemy;
+    [SerializeField] private Transform enemy;
 
     private void Update()
     {
+        if (base.hasGameEnded())
+        {
+            return;
+        }
+        //code stops here when game has ended, refer to parent method in GeneratorAbstract
+        //this method is just so that i dont have to keep
+        //importing GameManager in every single generator just to check if game has ended
+
         timePassed += Time.deltaTime;
 
         if (timePassed > interval)

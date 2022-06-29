@@ -23,7 +23,6 @@ public class PlayerScript : MonoBehaviour
 //jumping fields
     private float playerFeetRadius = 0.4f;
     private float gravityForce = 5f;
-    public bool isAlive = true;
     public bool canDoubleJump = true;
 
 //underside fields
@@ -50,6 +49,12 @@ public class PlayerScript : MonoBehaviour
 
     void Update()
     {
+        //player is not supposed to jump when dead
+        if (gameManager.gameHasEnded())
+        {
+            return;
+        }
+        
         isOnGround = Physics2D.OverlapCircle(playerFeet.position, playerFeetRadius, groundLayer);
         
         //first jump
@@ -61,7 +66,6 @@ public class PlayerScript : MonoBehaviour
             canDoubleJump = true;
 
             animator.SetBool("IsJumping", true);
-           
         }
         
         //double jump feature
@@ -114,8 +118,7 @@ public class PlayerScript : MonoBehaviour
             if (powerUpManager.getHungerEffectStatus())
             {
                 Debug.Log("on hunger effect, eat enemy");
-                //Destroy(collision.collider);
-                //Destroy(collision.rigidbody);
+                scoreManager.increaseMainScoreBy(100);
                 Destroy(collision.gameObject);
             }
             else if (powerUpManager.getBubbleStatus())
@@ -124,15 +127,13 @@ public class PlayerScript : MonoBehaviour
                 powerUpManager.setBubbleActive(false);
                 Destroy(collision.collider);
                 Destroy(collision.rigidbody);
-                
             }
             else //when you dont have either effects you die
             {
-                isAlive = false;
+                //sets gameEnded boolean in GameManager to true
                 gameManager.endGame();
                 animator.SetBool("IsDead", true);
                 FindObjectOfType<GameManager>().GameOverScene(scoreManager.getScore());
-                
             }
         } else if (collision.gameObject.CompareTag("spike"))
         {
@@ -144,8 +145,8 @@ public class PlayerScript : MonoBehaviour
                 Destroy(collision.rigidbody);
             } else //dies even if you have hunger effect
             {
-                Debug.Log(collision.collider.gameObject.tag);
-                isAlive = false;
+                //sets gameEnded boolean in GameManager to true
+                gameManager.endGame();
                 //this is to animate death
                 animator.SetBool("IsDead", true);
                 FindObjectOfType<GameManager>().GameOverScene(scoreManager.getScore());

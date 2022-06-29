@@ -23,6 +23,10 @@ public class SpikeScript : MonoBehaviour
     
     void Update()
     {
+        if (gameManager.gameHasEnded())
+        {
+            return;
+        }
 
         //im not sure why time.deltatime does not work to decrease the timebeforespdincr
         
@@ -41,24 +45,7 @@ public class SpikeScript : MonoBehaviour
             Destroy(this.gameObject);
             timePassed = 0f;
         }
-
-        if (gameManager.gameHasEnded() == true)
-        {
-            speed = 0f;
-        }
         
-        // if (PlayerScript.isAlive)
-        // {
-        //     spikeRb.velocity = new Vector2(-15f, 0);
-        //
-        //     timePassed += Time.deltaTime;
-        //     if (timePassed > lifespan)
-        //     {
-        //         Debug.Log("destroy " + this.gameObject);
-        //         Destroy(this.gameObject);
-        //         timePassed = 0f;
-        //     }
-        // }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
