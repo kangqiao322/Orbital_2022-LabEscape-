@@ -13,6 +13,7 @@ public class PlayerScript : MonoBehaviour
     
     private ScoreManager scoreManager;
     private PowerUpManager powerUpManager;
+    private GameManager gameManager;
     
 //player body fields
     private Rigidbody2D RB;
@@ -44,6 +45,7 @@ public class PlayerScript : MonoBehaviour
         
         scoreManager = FindObjectOfType<ScoreManager>();
         powerUpManager = FindObjectOfType<PowerUpManager>();
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     void Update()
@@ -127,7 +129,7 @@ public class PlayerScript : MonoBehaviour
             else //when you dont have either effects you die
             {
                 isAlive = false;
-                //this is to animate death
+                gameManager.endGame();
                 animator.SetBool("IsDead", true);
                 FindObjectOfType<GameManager>().GameOverScene(scoreManager.getScore());
                 

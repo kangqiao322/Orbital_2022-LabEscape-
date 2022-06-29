@@ -1,4 +1,4 @@
-using System.Collections;
+   using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -15,13 +15,13 @@ public class GameManager : MonoBehaviour
     private float timeCounter = 3f;
 
     public GameOverScript GameOverScreen;
-    public static bool gameHasEnded = false;
+    private bool gameEnded = false;
 
 
     public void GameOverScene(float score) {
         //this generates the game over screen
 
-        GameManager.gameHasEnded = true;
+        gameEnded = true;
         GameOverScreen.SetUp(score);
     }
 
@@ -44,6 +44,11 @@ public class GameManager : MonoBehaviour
             timeUntilSpawnRateIncrease = timeCounter;
         }
 
+        if ( gameEnded == true)
+        {
+            currentSpeed = 0;
+        }
+
     }
     
     public float getSpeed()
@@ -54,6 +59,21 @@ public class GameManager : MonoBehaviour
     public float getMaxSpeed()
     {
         return this.maxSpeed;
+    }
+
+    public bool gameHasEnded()
+    {
+        return this.gameEnded;
+    }
+
+    public void endGame()
+    {
+        gameEnded = true;
+    }
+
+     public void startGame()
+    {
+        gameEnded = false;
     }
 
 }

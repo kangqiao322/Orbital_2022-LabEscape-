@@ -42,6 +42,11 @@ public class EnemyScript : MonoBehaviour
             timePassed = 0f;
         }
         
+        if (gameManager.gameHasEnded() == true)
+        {
+            speed = 0f;
+        }
+        
         // if (PlayerScript.isAlive)
         // {
         //     transform.Translate(Vector2.left * speed * Time.deltaTime);

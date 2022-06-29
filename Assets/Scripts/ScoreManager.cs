@@ -15,14 +15,18 @@ public class ScoreManager : MonoBehaviour
     private TextMeshProUGUI gemScoreTxt;
     
     private PlayerScript player;
+    private GameManager gameManager;
     
     private float score;
     private float currentHighscore;
+    //this is to speed up score incrementation
+    private float scoreIncrement;
 
     private int totalGems = 0;
 
     void Awake()
     {
+        gameManager = FindObjectOfType<GameManager>();
         //recursively finds all TextMeshProUGUI in its children and children's children
         scoreArray = GetComponentsInChildren<TextMeshProUGUI>();
         mainScoreTxt = scoreArray[0];
@@ -45,7 +49,8 @@ public class ScoreManager : MonoBehaviour
         //this is for displaying score and highscore
         if (player.isAlive)
         {
-            score += Time.deltaTime * 50;
+            scoreIncrement = gameManager.getSpeed();
+            score += Time.deltaTime * scoreIncrement * 2;
             mainScoreTxt.text = "SCORE: " + score.ToString(("0")) ;
             
             //this is for maintaining highscore and saving it 
