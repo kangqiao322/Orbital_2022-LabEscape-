@@ -7,10 +7,10 @@ public class PlayerScript : MonoBehaviour
 {
     //gem count increases when gem is in contact with tag "Player",
     //not when player is in contact with tag "gem"
-
-    public TextMeshProUGUI ScoreTxt;
-    public float JumpForce;
     
+    public float JumpForce;
+
+    //private FloatingScoreManager floatingScoreManager;
     private ScoreManager scoreManager;
     private PowerUpManager powerUpManager;
     private GameManager gameManager;
@@ -35,16 +35,20 @@ public class PlayerScript : MonoBehaviour
 
 //animation fields
     public Animator animator;
+
+    [SerializeField] private Transform floatingScore;
     
     private void Awake() 
     {
         RB = GetComponent<Rigidbody2D>();
         RB.gravityScale = gravityForce;
-        
-        
+
+
+        //floatingScoreManager = FindObjectOfType<FloatingScoreManager>();
         scoreManager = FindObjectOfType<ScoreManager>();
         powerUpManager = FindObjectOfType<PowerUpManager>();
         gameManager = FindObjectOfType<GameManager>();
+        
     }
 
     void Update()
@@ -98,6 +102,7 @@ public class PlayerScript : MonoBehaviour
 
         if (collision.gameObject.CompareTag("platformUnderside"))
         {
+
             isUndersidePlatform = true;
             isOnGround = false;
             RB.gravityScale = -gravityForce;
@@ -118,6 +123,12 @@ public class PlayerScript : MonoBehaviour
             if (powerUpManager.getHungerEffectStatus())
             {
                 Debug.Log("on hunger effect, eat enemy");
+                
+                //5 is to compensate for the half length of the floating score prefab
+                Vector3 spawnVector = new Vector3(this.transform.position.x + 5f, this.transform.position.y, 0);
+                Instantiate(floatingScore, spawnVector, Quaternion.identity);
+                
+                //floatingScoreManager.spawnPoint(100, collision.transform.position);
                 scoreManager.increaseMainScoreBy(100);
                 Destroy(collision.gameObject);
             }
