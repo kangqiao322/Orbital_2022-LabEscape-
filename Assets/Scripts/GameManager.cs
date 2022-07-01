@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 
 //make this adjustable first
     private float maxSpeed = 25f;
-    private float currentSpeed = 10f;
+    private float currentSpeed = 5f;
     private float speedIncrMultiplier = 0.8f;
     private float timeUntilSpawnRateIncrease = 3f;
     private float timeCounter = 3f;
@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
 
         if ( gameEnded == true)
         {
-            currentSpeed = 0;
+            currentSpeed = 0f;
         }
 
     }

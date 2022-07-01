@@ -43,11 +43,7 @@ public class PlatformScript : MonoBehaviour
             timePassed = 0f;
         }
 
-        if (gameManager.gameHasEnded() == true)
-        {
-            
-           speed = 0f;
-        }
+       
         
         // if (PlayerScript.isAlive)
         // {

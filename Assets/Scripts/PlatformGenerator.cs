@@ -13,10 +13,12 @@ public class PlatformGenerator : GeneratorAbstract
     //drag extra platform prefabs into this array field in the Unity GUI
     [SerializeField]
     private Transform[] platformArray;
+
+    
     
     private void Update()
     {
-        interval = UnityEngine.Random.Range(2f, 5f);
+        interval = UnityEngine.Random.Range(2.5f, 5f);
         timePassed += Time.deltaTime;
 
         if (timePassed > interval)

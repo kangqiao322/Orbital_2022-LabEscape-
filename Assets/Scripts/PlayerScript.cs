@@ -122,6 +122,8 @@ public class PlayerScript : MonoBehaviour
             {
                 Debug.Log("removes bubble");
                 powerUpManager.setBubbleActive(false);
+                //this is for bubble anim
+                powerUpManager.setBubbleAlternate(2f);
                 Destroy(collision.collider);
                 Destroy(collision.rigidbody);
                 
@@ -140,6 +142,8 @@ public class PlayerScript : MonoBehaviour
             {
                 Debug.Log("removes bubble");
                 powerUpManager.setBubbleActive(false);
+                //this is for bubble anim
+                powerUpManager.setBubbleAlternate(2f);
                 Destroy(collision.collider);
                 Destroy(collision.rigidbody);
             } else //dies even if you have hunger effect
