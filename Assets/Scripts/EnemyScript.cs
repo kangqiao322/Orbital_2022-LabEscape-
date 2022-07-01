@@ -26,6 +26,11 @@ public class EnemyScript : MonoBehaviour
     
     void Update()
     {
+        if (gameManager.gameHasEnded())
+        {
+            return;
+        }
+        
         speed = gameManager.getSpeed();
         
         //speed = displacement / deltaTime, and translation uses displacement
@@ -41,12 +46,7 @@ public class EnemyScript : MonoBehaviour
             Destroy(this.gameObject);
             timePassed = 0f;
         }
-        
-        if (gameManager.gameHasEnded() == true)
-        {
-            speed = 0f;
-        }
-        
+
         // if (PlayerScript.isAlive)
         // {
         //     transform.Translate(Vector2.left * speed * Time.deltaTime);

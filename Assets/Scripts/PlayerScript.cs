@@ -7,10 +7,10 @@ public class PlayerScript : MonoBehaviour
 {
     //gem count increases when gem is in contact with tag "Player",
     //not when player is in contact with tag "gem"
-
-    public TextMeshProUGUI ScoreTxt;
-    public float JumpForce;
     
+    public float JumpForce;
+
+    //private FloatingScoreManager floatingScoreManager;
     private ScoreManager scoreManager;
     private PowerUpManager powerUpManager;
     private GameManager gameManager;
@@ -23,7 +23,6 @@ public class PlayerScript : MonoBehaviour
 //jumping fields
     private float playerFeetRadius = 0.4f;
     private float gravityForce = 5f;
-    public bool isAlive = true;
     public bool canDoubleJump = true;
 
 //underside fields
@@ -36,20 +35,30 @@ public class PlayerScript : MonoBehaviour
 
 //animation fields
     public Animator animator;
+
+    [SerializeField] private Transform floatingScore;
     
     private void Awake() 
     {
         RB = GetComponent<Rigidbody2D>();
         RB.gravityScale = gravityForce;
-        
-        
+
+
+        //floatingScoreManager = FindObjectOfType<FloatingScoreManager>();
         scoreManager = FindObjectOfType<ScoreManager>();
         powerUpManager = FindObjectOfType<PowerUpManager>();
         gameManager = FindObjectOfType<GameManager>();
+        
     }
 
     void Update()
     {
+        //player is not supposed to jump when dead
+        if (gameManager.gameHasEnded())
+        {
+            return;
+        }
+        
         isOnGround = Physics2D.OverlapCircle(playerFeet.position, playerFeetRadius, groundLayer);
         
         //first jump
@@ -61,7 +70,6 @@ public class PlayerScript : MonoBehaviour
             canDoubleJump = true;
 
             animator.SetBool("IsJumping", true);
-           
         }
         
         //double jump feature
@@ -94,6 +102,7 @@ public class PlayerScript : MonoBehaviour
 
         if (collision.gameObject.CompareTag("platformUnderside"))
         {
+
             isUndersidePlatform = true;
             isOnGround = false;
             RB.gravityScale = -gravityForce;
@@ -114,8 +123,13 @@ public class PlayerScript : MonoBehaviour
             if (powerUpManager.getHungerEffectStatus())
             {
                 Debug.Log("on hunger effect, eat enemy");
-                //Destroy(collision.collider);
-                //Destroy(collision.rigidbody);
+                
+                //5 is to compensate for the half length of the floating score prefab
+                Vector3 spawnVector = new Vector3(this.transform.position.x + 5f, this.transform.position.y, 0);
+                Instantiate(floatingScore, spawnVector, Quaternion.identity);
+                
+                //floatingScoreManager.spawnPoint(100, collision.transform.position);
+                scoreManager.increaseMainScoreBy(100);
                 Destroy(collision.gameObject);
             }
             else if (powerUpManager.getBubbleStatus())
@@ -124,15 +138,13 @@ public class PlayerScript : MonoBehaviour
                 powerUpManager.setBubbleActive(false);
                 Destroy(collision.collider);
                 Destroy(collision.rigidbody);
-                
             }
             else //when you dont have either effects you die
             {
-                isAlive = false;
+                //sets gameEnded boolean in GameManager to true
                 gameManager.endGame();
                 animator.SetBool("IsDead", true);
                 FindObjectOfType<GameManager>().GameOverScene(scoreManager.getScore());
-                
             }
         } else if (collision.gameObject.CompareTag("spike"))
         {
@@ -144,8 +156,8 @@ public class PlayerScript : MonoBehaviour
                 Destroy(collision.rigidbody);
             } else //dies even if you have hunger effect
             {
-                Debug.Log(collision.collider.gameObject.tag);
-                isAlive = false;
+                //sets gameEnded boolean in GameManager to true
+                gameManager.endGame();
                 //this is to animate death
                 animator.SetBool("IsDead", true);
                 FindObjectOfType<GameManager>().GameOverScene(scoreManager.getScore());

@@ -20,7 +20,6 @@ public class GameOverScript : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
     }
     
-    // Start is called before the first frame update
     public void SetUp(float score) 
     {
         gameObject.SetActive(true);

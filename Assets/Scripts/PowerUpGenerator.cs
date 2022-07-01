@@ -12,10 +12,18 @@ public class PowerUpGenerator : GeneratorAbstract
     private int pity = 0; //compensation if power up spawns in other objects
 
     //drag extra platform prefabs into this array field in the Unity GUI
-    [SerializeField] public Transform[] PowerUpArray;
+    [SerializeField] private Transform[] PowerUpArray;
     
     private void Update()
     {
+        if (base.hasGameEnded())
+        {
+            return;
+        }
+        //code stops here when game has ended, refer to parent method in GeneratorAbstract
+        //this method is just so that i dont have to keep
+        //importing GameManager in every single generator just to check if game has ended
+
         //interval = UnityEngine.Random.Range(2f, 5f); //testing for now 
         timePassed += Time.deltaTime;
 
@@ -23,7 +31,7 @@ public class PowerUpGenerator : GeneratorAbstract
         {
             //time for next power up to spawn
             interval = UnityEngine.Random.Range(5f, 10f); //prob = 0.4 to spawn tho
-            powerUpNtimes(1 + 2 * pity);
+            powerUpNtimes(1 + pity);
             timePassed = 0f;
         }
     }

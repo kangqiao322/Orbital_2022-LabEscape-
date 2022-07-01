@@ -16,6 +16,14 @@ public class PlatformGenerator : GeneratorAbstract
     
     private void Update()
     {
+        if (base.hasGameEnded())
+        {
+            return;
+        }
+        //code stops here when game has ended, refer to parent method in GeneratorAbstract
+        //this method is just so that i dont have to keep
+        //importing GameManager in every single generator just to check if game has ended
+
         interval = UnityEngine.Random.Range(2f, 5f);
         timePassed += Time.deltaTime;
 
