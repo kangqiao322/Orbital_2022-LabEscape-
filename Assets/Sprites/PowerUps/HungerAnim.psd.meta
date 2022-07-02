@@ -1,0 +1,474 @@
+fileFormatVersion: 2
+guid: 9376e795720041d44914168fcae9261e
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: HungerAnim_0
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 1977
+        width: 564
+        height: 919
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6130c5c4e1cde194982ca0d62f83b57b
+      internalID: 1528214407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HungerAnim_1
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 1967
+        width: 472
+        height: 981
+      alignment: 9
+      pivot: {x: 0.61521965, y: 0.47867665}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdab2728f47392944a7c1cbb5f6aa6e0
+      internalID: -1044969635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HungerAnim_2
+      rect:
+        serializedVersion: 2
+        x: 1566
+        y: 1979
+        width: 440
+        height: 962
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25581c2fe1383694f871b2c72d14e9b9
+      internalID: -33643651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HungerAnim_3
+      rect:
+        serializedVersion: 2
+        x: 2257
+        y: 1969
+        width: 380
+        height: 900
+      alignment: 9
+      pivot: {x: 0.56849235, y: 0.52952015}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60a64ed49c4ca7f4c980ae98a0bacb42
+      internalID: 342027153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HungerAnim_4
+      rect:
+        serializedVersion: 2
+        x: 4149
+        y: 2645
+        width: 552
+        height: 303
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 143c363d0a11b1b4d83296601d18b023
+      internalID: -1833826971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HungerAnim_5
+      rect:
+        serializedVersion: 2
+        x: 4172
+        y: 2195
+        width: 576
+        height: 383
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6df3fbf5b0029cc488c41c2765b0b56c
+      internalID: -2146338861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HungerAnim_6
+      rect:
+        serializedVersion: 2
+        x: 4196
+        y: 1669
+        width: 525
+        height: 452
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 230e59fe005581842a2cc6d968a863bb
+      internalID: -1489617242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HungerAnim_7
+      rect:
+        serializedVersion: 2
+        x: 4177
+        y: 1167
+        width: 586
+        height: 457
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6807629db18182c4ab184841d318cbaa
+      internalID: 1244111186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HungerAnim_8
+      rect:
+        serializedVersion: 2
+        x: 4224
+        y: 708
+        width: 554
+        height: 303
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85353745279b22d44b8c1c96fe19b8dd
+      internalID: -1729399471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HungerAnim_9
+      rect:
+        serializedVersion: 2
+        x: 1877
+        y: 144
+        width: 516
+        height: 882
+      alignment: 9
+      pivot: {x: 0.518752, y: 0.5548517}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b56be99afd2d41449f3658802cdb786
+      internalID: -486397194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HungerAnim_10
+      rect:
+        serializedVersion: 2
+        x: 1189
+        y: 139
+        width: 524
+        height: 859
+      alignment: 9
+      pivot: {x: 0.49201512, y: 0.5779202}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbce07f90ab6f7b448a1ce1034ce2603
+      internalID: -1679224300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HungerAnim_11
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 164
+        width: 524
+        height: 829
+      alignment: 9
+      pivot: {x: 0.46806532, y: 0.5100917}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e960ad5ce514994aadcb26867412661
+      internalID: -1109056879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HungerAnim_12
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 1088
+        width: 395
+        height: 839
+      alignment: 9
+      pivot: {x: 0.52118164, y: 0.5598335}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8892e55e334499249988cd2cc568e088
+      internalID: -684231406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HungerAnim_13
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 1077
+        width: 422
+        height: 832
+      alignment: 9
+      pivot: {x: 0.50991285, y: 0.56536525}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e2b227a06afbc14a9dbc4ecdd1fe851
+      internalID: 1879670839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HungerAnim_14
+      rect:
+        serializedVersion: 2
+        x: 1581
+        y: 1078
+        width: 432
+        height: 807
+      alignment: 9
+      pivot: {x: 0.42252803, y: 0.60367614}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0becb50de8244b4d90a3d11d6e17b7c
+      internalID: 333320781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HungerAnim_15
+      rect:
+        serializedVersion: 2
+        x: 2268
+        y: 1089
+        width: 439
+        height: 820
+      alignment: 9
+      pivot: {x: 0.43329343, y: 0.56632155}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2db293f0ae269e458b5ac0fb5e1b4cd
+      internalID: 174043208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      HungerAnim_11: -2146338861
+      HungerAnim_7: -1885968237
+      HungerAnim_10: -1833826971
+      HungerAnim_0: -61774414
+      HungerAnim_6: -1044969635
+      HungerAnim_4: 1528214407
+      HungerAnim_12: -1489617242
+      HungerAnim_15: -486397194
+      HungerAnim_2: 1568205127
+      HungerAnim_9: 342027153
+      HungerAnim_14: -1729399471
+      HungerAnim_5: 945083448
+      HungerAnim_1: -10487544
+      HungerAnim_13: 1244111186
+      HungerAnim_8: -33643651
+      HungerAnim_3: -599321289
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

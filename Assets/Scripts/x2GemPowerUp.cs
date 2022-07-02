@@ -5,6 +5,7 @@ public class x2GemPowerUp : PowerUpAbstract
 {
     //power up script handles collision with player
     //not player script handles collision with power up
+    //Alternate setters and getters are boolean for powerups
     
     private PowerUpManager powerUpManager;
     
@@ -31,10 +32,11 @@ public class x2GemPowerUp : PowerUpAbstract
                 //resets the effect time passed
                 Debug.Log("resetting timer");
                 powerUpManager.resetx2EffectTimePassed(); 
+         
             }
             
             Debug.Log("x2 effect active");
-            powerUpManager.setx2GemEffectActive(true); //effect handled by other class
+            powerUpManager.setx2GemEffectActive(true);//effect handled by other class
             Destroy(this.gameObject);
         }
         else

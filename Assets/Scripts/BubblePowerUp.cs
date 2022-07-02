@@ -27,6 +27,8 @@ public class BubblePowerUp : PowerUpAbstract
         {
             Debug.Log("bubble active");
             powerUpManager.setBubbleActive(true); //effect handled by other class
+            //to facilitate anim
+            powerUpManager.setBubbleAlternate(1f);
             Destroy(this.gameObject);
         }
         else

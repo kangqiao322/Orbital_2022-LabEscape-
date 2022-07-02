@@ -17,7 +17,6 @@ public class SpikeScript : MonoBehaviour
     {
         gameManager = FindObjectOfType<GameManager>();
         spikeRb = GetComponent<Rigidbody2D>();
-        
     }
     
     
@@ -45,7 +44,6 @@ public class SpikeScript : MonoBehaviour
             Destroy(this.gameObject);
             timePassed = 0f;
         }
-        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

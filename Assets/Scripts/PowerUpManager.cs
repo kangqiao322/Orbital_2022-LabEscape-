@@ -14,12 +14,28 @@ public class PowerUpManager : MonoBehaviour
 
     public bool bubbleActive = false;
 
+//0 is inactive
+//1 for normal
+//2 for pop
+    private float bubbleAlternate = 0f;
+    private float gemAlternate = 0f;
+    private float hungerAlternate = 0f;
+    private float warningTime = 5f;
+
+  
+
     void Update()
     {
         if (x2GemEffectActive) //handles x2 gem effect active mechanic
         {
+            gemAlternate = 1f;
             x2effectTimePassed += Time.deltaTime;
             GhostGemScript.setGemMultiplierTo(2);
+
+            if (x2effectTimePassed > warningTime)
+            {
+                gemAlternate = 2f;
+            }
             
             if (x2effectTimePassed > x2effectDuration)
             {
@@ -27,19 +43,32 @@ public class PowerUpManager : MonoBehaviour
                 x2GemEffectActive = false;
                 x2effectTimePassed = 0f;
                 GhostGemScript.setGemMultiplierTo(1);
+                gemAlternate = 0f;
+                
             }
+
+            
+
         }
+       
 
         if (hungerEffectActive)
         {
+            hungerAlternate = 1f;
             hungerEffectTimePassed += Time.deltaTime;
             //Debug.Log("hunger effect active");
+
+            if (hungerEffectTimePassed > warningTime)
+            {
+                hungerAlternate = 2f;
+            }
 
             if (hungerEffectTimePassed > hungerEffectDuration)
             {
                 Debug.Log("hunger effect not active");
                 hungerEffectActive = false;
                 hungerEffectTimePassed = 0f;
+                hungerAlternate = 0f;
             }
             
         }
@@ -89,4 +118,60 @@ public class PowerUpManager : MonoBehaviour
     {
         bubbleActive = booleanVal;
     }
+
+
+    public float getHungerTimePassed() 
+    {
+        return this.hungerEffectTimePassed;
+
+    }
+
+    public float getGemTimePassed() 
+    {
+        return this.x2effectTimePassed;
+    }
+
+    public float getGemDuration()
+    {
+        return this.x2effectDuration;
+    }
+
+    public float getHungerDuration()
+    {
+        return this.hungerEffectDuration;
+    }
+//these for animations, and when to  trigger them
+    public float getBubbleStatusAlternate() //OOP principles time
+    {
+        return bubbleAlternate;
+    }
+
+    public void setBubbleAlternate(float number)
+    {
+        bubbleAlternate = number;
+    }
+
+    public float getGemStatusAlternate() //OOP principles time
+    {
+        return gemAlternate;
+    }
+
+    public void setGemAlternate(float number)
+    {
+        gemAlternate = number;
+    }
+
+    public float getHungerStatusAlternate() //OOP principles time
+    {
+        return hungerAlternate;
+    }
+
+    public void setHungerAlternate(float number)
+    {
+        hungerAlternate = number;
+    }
+
+
+    
+    
 }
