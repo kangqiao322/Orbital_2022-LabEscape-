@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// this manages the various scenes and restart etc
+    //this manages the various scenes and restart etc
+    //this also manages global total gems between game sessions
 public class GameManager : MonoBehaviour
 {
 
@@ -17,12 +18,37 @@ public class GameManager : MonoBehaviour
     public GameOverScript GameOverScreen;
     private bool gameEnded = false;
 
+    private GameManager gameManager;
+    
+    //stores the global total gems, persists between game sessions
+    private int totalGems;
 
-    public void GameOverScene(float score) {
-        //this generates the game over screen
+    private void Start()
+    {
+        if (PlayerPrefs.HasKey("totalGem"))
+        {
+            totalGems = PlayerPrefs.GetInt("totalGem");
+        }
+        else
+        {
+            PlayerPrefs.SetInt("totalGem", 0);
+            totalGems = 0;
+        }
 
+        gameManager = GetComponent<GameManager>();
+        
+        Debug.Log("current global gems = " + totalGems);
+    }
+
+
+    public void GameOverScene(float score)
+    {
         gameEnded = true;
-        GameOverScreen.SetUp(score);
+        GameOverScreen.SetUp(score); //this generates the game over screen
+        
+        //only when player dies, total global gems is updated and stored.
+        totalGems += FindObjectOfType<ScoreManager>().getCurrentGemScore();
+        PlayerPrefs.SetInt("totalGem", totalGems);
     }
 
     public void ResetGameData()
@@ -35,6 +61,12 @@ public class GameManager : MonoBehaviour
     //this is for increasing speed
     private void Update()
     {
+        if (gameManager.gameHasEnded())
+        {
+            currentSpeed = 0;
+            return;
+        }
+        
         //Debug.Log(currentSpeed);
         timeUntilSpawnRateIncrease -= Time.deltaTime;
         
@@ -43,12 +75,6 @@ public class GameManager : MonoBehaviour
             currentSpeed += speedIncrMultiplier;
             timeUntilSpawnRateIncrease = timeCounter;
         }
-
-        if ( gameEnded == true)
-        {
-            currentSpeed = 0f;
-        }
-
     }
     
     public float getSpeed()

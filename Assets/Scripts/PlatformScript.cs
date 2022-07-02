@@ -15,7 +15,7 @@ public class PlatformScript : MonoBehaviour
     private float lifespan = 10f; //the amount of time left before destroyed
 
     
-    void Awake()
+    void Start()
     {
         //assign GameManager to gameManager only once
         gameManager = FindObjectOfType<GameManager>();
@@ -26,6 +26,11 @@ public class PlatformScript : MonoBehaviour
 
     void Update()
     {
+        if (gameManager.gameHasEnded())
+        {
+            return;
+        }
+        
         speed = gameManager.getSpeed();
    
         //transform.Translate(new Vector3(-PlayerScript.gameSpeed * Time.deltaTime, 0, 0));
@@ -42,22 +47,6 @@ public class PlatformScript : MonoBehaviour
             Destroy(this.gameObject);
             timePassed = 0f;
         }
-
-       
-        
-        // if (PlayerScript.isAlive)
-        // {
-        //     transform.Translate(Vector2.left * speed * Time.deltaTime);
-        //
-        //     timePassed += Time.deltaTime;
-        //     if (timePassed > lifespan)
-        //     {
-        //         Debug.Log("destroy " + this.gameObject);
-        //         Destroy(this.gameObject);
-        //         timePassed = 0f;
-        //     }
-        // }
-
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

@@ -6,14 +6,16 @@ public class GemScript : MonoBehaviour
 {
     //freeze z-axis
 
-    private ScoreManager scoreManager;
+    private GameManager gameManager;
     private float timePassed = 0f;
     private float lifespan = 10f; //the amount of time left before destroyed
 
-    public Transform ghostGem;
+    [SerializeField] private Transform ghostGem;
     
     private void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
+        
         //Make Collider2D as trigger 
         GetComponent<Collider2D>().isTrigger = true;
     }
@@ -32,6 +34,11 @@ public class GemScript : MonoBehaviour
     void Update()
     {
         //gem does not require velocity
+        
+        if (gameManager.gameHasEnded())
+        {
+            return;
+        }
         
         timePassed += Time.deltaTime;
         if (timePassed > lifespan)

@@ -15,6 +15,13 @@ public class SpikeGeneratorScript2 : GeneratorAbstract
 
     private void Update()
     {
+        if (base.hasGameEnded())
+        {
+            return;
+        }
+        //code stops here when game has ended, refer to parent method in GeneratorAbstract
+        //this method is just so that i dont have to keep
+        //importing GameManager in every single generator just to check if game has ended
         
         timePassed += Time.deltaTime;
             
@@ -24,17 +31,6 @@ public class SpikeGeneratorScript2 : GeneratorAbstract
             RandomSpawn(0.8, spike, spawnVector, 2);
             timePassed = 0f;
         }
-        
-        // if (PlayerScript.isAlive)
-        // {
-        //     timePassed += Time.deltaTime;
-        //     
-        //     if (timePassed > interval)
-        //     {
-        //         RandomSpawn(0.7, spike, spawnVector, 2);
-        //         timePassed = 0f;
-        //     }
-        // }
 
     }
 }
