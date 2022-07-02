@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -24,10 +25,14 @@ public class ScoreObjectScript : MonoBehaviour
     }
     
     private IEnumerator FadeTextToZeroAlpha(TextMeshPro text)
-     {
+    {
+        float pos = text.transform.position.y;
+        Vector3 destinationVector = new Vector3(transform.position.x * UnityEngine.Random.Range(1.01f, 1.1f), 1.1f * pos, 0);
+        
          while (text.color.a > 0.0f)
          {
-             text.transform.position += 0.005f * Vector3.up;
+             transform.position =
+                 Vector3.Lerp(transform.position, destinationVector, 2.5f * Time.deltaTime);
              
              text.color = new Color(text.color.r, text.color.g, text.color.b, text.color.a - (Time.deltaTime / 3));
              yield return null;
