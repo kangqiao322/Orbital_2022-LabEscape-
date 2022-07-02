@@ -47,19 +47,6 @@ public class EnemyScript : MonoBehaviour
             timePassed = 0f;
         }
 
-        // if (PlayerScript.isAlive)
-        // {
-        //     transform.Translate(Vector2.left * speed * Time.deltaTime);
-        //
-        //     timePassed += Time.deltaTime;
-        //     if (timePassed > lifespan)
-        //     {
-        //         Debug.Log("destroy " + this.gameObject);
-        //         Destroy(this.gameObject);
-        //         timePassed = 0f;
-        //     }
-        // }
-
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

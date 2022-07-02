@@ -7,7 +7,7 @@ public class PowerUpAbstract : MonoBehaviour
     private GameManager gameManager;
     
     private float timePassed = 0f;
-    private float lifespan = 10f; //the amount of time left before destroyed
+    private float lifespan = 1000f; //the amount of time left before destroyed
     private float speed;
     
     public virtual void Start()

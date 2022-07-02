@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6330512845482883341}
   - component: {fileID: 6330512845482883331}
   - component: {fileID: 6026805310422380189}
+  - component: {fileID: 944774959100663260}
   m_Layer: 0
   m_Name: x2GemPowerUp 1
   m_TagString: Untagged
@@ -190,3 +191,23 @@ PolygonCollider2D:
       - {x: 0.028945822, y: -2.510998}
       - {x: 0.07153239, y: -2.4811165}
       - {x: 1.2130935, y: 0.13461185}
+--- !u!95 &944774959100663260
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6330512845482883330}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

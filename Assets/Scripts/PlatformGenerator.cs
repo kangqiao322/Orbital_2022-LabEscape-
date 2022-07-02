@@ -13,9 +13,12 @@ public class PlatformGenerator : GeneratorAbstract
     //drag extra platform prefabs into this array field in the Unity GUI
     [SerializeField]
     private Transform[] platformArray;
+
+    
     
     private void Update()
     {
+
         if (base.hasGameEnded())
         {
             return;
@@ -24,7 +27,7 @@ public class PlatformGenerator : GeneratorAbstract
         //this method is just so that i dont have to keep
         //importing GameManager in every single generator just to check if game has ended
 
-        interval = UnityEngine.Random.Range(2f, 5f);
+        interval = UnityEngine.Random.Range(2.5f, 5f);
         timePassed += Time.deltaTime;
 
         if (timePassed > interval)
@@ -33,16 +36,6 @@ public class PlatformGenerator : GeneratorAbstract
             timePassed = 0f;
         }
         
-        // if (PlayerScript.isAlive)
-        // {
-        //     timePassed += Time.deltaTime;
-        //
-        //     if (timePassed > interval)
-        //     {
-        //         platformGeneration();
-        //         timePassed = 0f;
-        //     }
-        // }
 
     }
 
