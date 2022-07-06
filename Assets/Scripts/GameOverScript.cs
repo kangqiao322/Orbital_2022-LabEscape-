@@ -1,4 +1,4 @@
-  using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -54,7 +54,7 @@ public class GameOverScript : MonoBehaviour
     public void PauseButton() 
     {
         gameObject.SetActive(true);
-        gameManager.startGame();
+        //gameManager.startGame();
         Time.timeScale = 0f;
     }
 

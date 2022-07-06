@@ -65,14 +65,14 @@ public class OffsetScrolling : MonoBehaviour {
 
     void Update () {
         //correlate to game manager
-        maxSpeed = gameManager.getMaxSpeed() * 0.025f;
-        scrollSpeed = gameManager.getSpeed() * 0.025f;
+        maxSpeed = gameManager.getMaxSpeed() * 0.001f;
+        scrollSpeed = gameManager.getSpeed() * 0.001f;
         
         timePassed += Time.deltaTime;
         
         if (scrollSpeed < maxSpeed) 
         {
-            scrollSpeed += Time.deltaTime * 0.01f;
+            scrollSpeed += Time.deltaTime * 0.001f;
         }
         
         savedOffset = new Vector2(scrollSpeed, 0);
