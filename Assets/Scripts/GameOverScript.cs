@@ -13,11 +13,15 @@ public class GameOverScript : MonoBehaviour
 
     private ScoreManager scoreManager;
     private GameManager gameManager;
+    private OffsetScrolling scroller;
+    private ForegroundScroller scroller2;
 
     private void Start()
     {
         scoreManager = FindObjectOfType<ScoreManager>();
         gameManager = FindObjectOfType<GameManager>();
+        scroller = FindObjectOfType<OffsetScrolling>();
+        scroller2 = FindObjectOfType<ForegroundScroller>();
     }
     
     public void SetUp(float score) 
@@ -34,6 +38,8 @@ public class GameOverScript : MonoBehaviour
         gameManager.startGame();
         scoreManager.setTotalGems(0);
         Time.timeScale = 1f;
+        scroller.resetScrollOffset();
+        scroller2.resetGround();
     }
 
     public void MainMenuButton() 
@@ -42,6 +48,8 @@ public class GameOverScript : MonoBehaviour
         gameManager.startGame();
         scoreManager.setTotalGems(0);
         Time.timeScale = 1f;
+        scroller.resetScrollOffset();
+        scroller2.resetGround();
     }
 
     public void ResumeButton() 

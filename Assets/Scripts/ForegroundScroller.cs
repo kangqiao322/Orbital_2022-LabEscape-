@@ -18,17 +18,27 @@ public class ForegroundScroller : MonoBehaviour
 
     void Update () {
         //correlate to game manager
-    maxSpeed = gameManager.getMaxSpeed();
-    scrollSpeed = gameManager.getSpeed();
-    
-    if (scrollSpeed < maxSpeed) 
+    maxSpeed = gameManager.getMaxSpeed() * 0.001f;
+    scrollSpeed = gameManager.getSpeed() * 0.001f;
+    //980, 21
+    //578, 26.2
+    //maxSpeed = gameManager.getMaxSpeed() * 0.0009f;
+    //scrollSpeed = gameManager.getSpeed() * 0.0009f;
+    /*
+    if (scrollSpeed < maxSpeed)
     {
-        scrollSpeed += Time.deltaTime;
+        scrollSpeed += Time.deltaTime * 0.011f;
+        //scrollSpeed += Time.deltaTime * 0.0009f;
     }
   
-
+*/
     savedOffset = new Vector2(scrollSpeed, 0);
     renderer.mainTextureOffset += savedOffset * Time.deltaTime;
 
+    }
+
+    public void resetGround()
+    {
+        renderer.mainTextureOffset = new Vector2(0, 0);
     }
 }

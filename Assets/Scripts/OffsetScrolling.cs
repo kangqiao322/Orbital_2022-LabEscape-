@@ -65,16 +65,11 @@ public class OffsetScrolling : MonoBehaviour {
 
     void Update () {
         //correlate to game manager
-        maxSpeed = gameManager.getMaxSpeed() * 0.001f;
+
         scrollSpeed = gameManager.getSpeed() * 0.001f;
         
         timePassed += Time.deltaTime;
-        
-        if (scrollSpeed < maxSpeed) 
-        {
-            scrollSpeed += Time.deltaTime * 0.001f;
-        }
-        
+       
         savedOffset = new Vector2(scrollSpeed, 0);
         currentMaterial.mainTextureOffset += savedOffset * Time.deltaTime;
 
@@ -87,5 +82,10 @@ public class OffsetScrolling : MonoBehaviour {
             //the material in mesh renderer is the one that is displaying the the background
         }
     
+    }
+
+    public void resetScrollOffset()
+    {
+        currentMaterial.mainTextureOffset = new Vector2(0, 0);
     }
 }
