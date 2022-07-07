@@ -20,6 +20,7 @@ public class EnemyScript : MonoBehaviour
         //assign GameManager to gameManager only once
         gameManager = FindObjectOfType<GameManager>();
         
+        
         //enemyRB = GetComponent<Rigidbody2D>();
         // platformRB.transform.localScale = new Vector3(10, 1, 0);
     }
@@ -51,6 +52,8 @@ public class EnemyScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log(collision);
+        
         if (!collision.gameObject.CompareTag("Player"))
         {
             //Debug.Log("enemy touched " + collision.gameObject + ", destroying enemy...");

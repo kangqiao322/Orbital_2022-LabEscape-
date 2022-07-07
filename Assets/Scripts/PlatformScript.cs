@@ -22,6 +22,7 @@ public class PlatformScript : MonoBehaviour
         
         platformRB = GetComponent<Rigidbody2D>();
         // platformRB.transform.localScale = new Vector3(10, 1, 0);
+        
     }
 
     void Update()

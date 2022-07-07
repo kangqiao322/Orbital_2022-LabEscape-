@@ -189,7 +189,7 @@ public class PlayerScript : MonoBehaviour
         {
             RB.gravityScale = gravityForce;
             animator.SetBool("IsUnder", false);
-        } 
+        }
     }
 
 

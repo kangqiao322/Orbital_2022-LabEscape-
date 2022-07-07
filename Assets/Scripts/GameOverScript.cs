@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-//this is a button manager actually
+//this is a button manager actually during gameplay
 
 public class GameOverScript : MonoBehaviour
 {
