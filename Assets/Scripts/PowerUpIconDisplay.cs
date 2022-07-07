@@ -31,13 +31,13 @@ public class PowerUpIconDisplay : MonoBehaviour
     {
         if (powerUpManager.getBubbleStatusAlternate() == 1f)
         {
-            Debug.Log("BUBBLE HIT");
+            //Debug.Log("BUBBLE HIT");
             rend.enabled = true;
             animator.SetBool("BubbleOn", true);
         }
         else if (powerUpManager.getBubbleStatusAlternate() == 2f)
         {
-            Debug.Log("POP BUBBLE");
+            //Debug.Log("POP BUBBLE");
             animator.SetBool("BubbleOn", false);
             StartCoroutine(DelayBubble());
         }

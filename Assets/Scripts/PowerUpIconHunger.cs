@@ -36,7 +36,7 @@ public class PowerUpIconHunger : MonoBehaviour
         } 
         else if (powerUpManager.getHungerStatusAlternate() == 0f)
         {
-            Debug.Log("WE HIT IT");
+            //Debug.Log("WE HIT IT");
             animator.SetBool("HungerEnding", false);
             rend.enabled = false;
         }
