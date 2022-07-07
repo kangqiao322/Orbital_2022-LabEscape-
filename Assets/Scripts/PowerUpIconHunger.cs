@@ -7,7 +7,7 @@ public class PowerUpIconHunger : MonoBehaviour
     // Start is called before the first frame update
     public SpriteRenderer rend;
     private PowerUpManager powerUpManager;
-    private GameManager gameManager;
+    //private GameManager gameManager;
     
     public Animator animator;
 

@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine.Serialization;
 
 public class PlayerScript : MonoBehaviour
@@ -36,7 +37,11 @@ public class PlayerScript : MonoBehaviour
 //animation fields
     public Animator animator;
 
+    //stores the floating +100 score object
     [SerializeField] private Transform floatingScore;
+
+    //just set it to true to prevent dying
+    private bool isAdminMode = true;
     
     private void Awake() 
     {
@@ -143,6 +148,10 @@ public class PlayerScript : MonoBehaviour
             }
             else //when you dont have either effects you die
             {
+                if (isAdminMode)
+                {
+                    return;
+                }
                 //sets gameEnded boolean in GameManager to true
                 gameManager.endGame();
                 animator.SetBool("IsDead", true);
@@ -160,6 +169,11 @@ public class PlayerScript : MonoBehaviour
                 Destroy(collision.rigidbody);
             } else //dies even if you have hunger effect
             {
+                if (isAdminMode)
+                {
+                    return;
+                }
+                
                 //sets gameEnded boolean in GameManager to true
                 gameManager.endGame();
                 //this is to animate death
@@ -177,4 +191,6 @@ public class PlayerScript : MonoBehaviour
             animator.SetBool("IsUnder", false);
         } 
     }
+
+
 }

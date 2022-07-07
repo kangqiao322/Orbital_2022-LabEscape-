@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
     //this is for increasing speed
     private void Update()
     {
-        if (gameManager.gameHasEnded())
+        if (gameManager.gameHasEnded() == true)
         {
             currentSpeed = 0;
             return;
