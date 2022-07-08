@@ -1,29 +1,40 @@
-// using System.Collections;
-// using System.Collections.Generic;
-// using UnityEngine;
-// using UnityEngine.UI;
-//
-// public class GroundScroller : MonoBehaviour
-// {
-//     private GameManager gameManager;
-//     private RawImage img;
-//     private float speed;
-//     
-//     void Start()
-//     {
-//         //only calls this once
-//         gameManager = FindObjectOfType<GameManager>();
-//         img = GetComponent<RawImage>();
-//     }
-//
-//     // Update is called once per frame
-//     void Update()
-//     {
-//
-//         speed = gameManager.getSpeed();
-//         
-//         img.uvRect = new Rect(img.uvRect.position + new Vector2(-speed,0) * Time.deltaTime
-//             , img.uvRect.size);
-//         
-//     }
-// }
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class GroundScroller : MonoBehaviour
+{
+    private float scrollSpeed;
+    private float maxSpeed;
+
+    [SerializeField] private GameManager gameManager;
+    //[SerializeField] private Material[] materialArray = new Material[1];
+
+    private Material currentMaterial;
+    private Vector2 savedOffset;
+
+    private void Start() {
+        //currentMaterial = materialArray[0];
+        //GetComponent<MeshRenderer>().material = currentMaterial;
+
+        maxSpeed = gameManager.getMaxSpeed() * 0.001f;
+        
+        currentMaterial = GetComponent<MeshRenderer>().material;
+    }
+
+    void Update () {
+        //correlate to game manager
+        
+        scrollSpeed = gameManager.getSpeed();
+
+        if (scrollSpeed < maxSpeed) 
+        {
+            scrollSpeed += Time.deltaTime * 0.001f;
+        }
+        
+        savedOffset = new Vector2(scrollSpeed, 0);
+        currentMaterial.mainTextureOffset += savedOffset * Time.deltaTime;
+    }
+
+
+}

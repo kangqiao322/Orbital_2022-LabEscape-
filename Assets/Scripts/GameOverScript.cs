@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-//this is a button manager actually
+//this is a button manager actually during gameplay
 
 public class GameOverScript : MonoBehaviour
 {
@@ -13,11 +13,13 @@ public class GameOverScript : MonoBehaviour
 
     private ScoreManager scoreManager;
     private GameManager gameManager;
+    private OffsetScrolling offsetScrolling;
 
     private void Start()
     {
         scoreManager = FindObjectOfType<ScoreManager>();
         gameManager = FindObjectOfType<GameManager>();
+        offsetScrolling = FindObjectOfType<OffsetScrolling>();
     }
     
     public void SetUp(float score) 
@@ -33,6 +35,7 @@ public class GameOverScript : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         gameManager.startGame();
         scoreManager.setTotalGems(0);
+        offsetScrolling.resetScrollOffset();
         Time.timeScale = 1f;
     }
 
@@ -41,6 +44,7 @@ public class GameOverScript : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
         gameManager.startGame();
         scoreManager.setTotalGems(0);
+        offsetScrolling.resetScrollOffset();
         Time.timeScale = 1f;
     }
 

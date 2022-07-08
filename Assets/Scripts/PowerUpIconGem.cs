@@ -35,7 +35,7 @@ public class PowerUpIconGem : MonoBehaviour
         } 
         else if (powerUpManager.getGemStatusAlternate() == 0f)
         {
-            Debug.Log("WE HIT IT");
+            //Debug.Log("WE HIT IT");
             animator.SetBool("GemEnding", false);
             rend.enabled = false;
         }
