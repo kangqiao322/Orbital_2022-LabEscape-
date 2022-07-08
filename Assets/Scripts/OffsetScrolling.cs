@@ -39,10 +39,15 @@ public class OffsetScrolling : MonoBehaviour {
             scrollSpeed += Time.deltaTime * 0.001f;
         }
         
+
+        // scrollSpeed = gameManager.getSpeed() * 0.001f;
+        
+        // timePassed += Time.deltaTime;
+       
         savedOffset = new Vector2(scrollSpeed, 0);
         currentMaterial.mainTextureOffset += savedOffset * Time.deltaTime;
     }
-    
+
     public void resetScrollOffset()
     {
         currentMaterial.mainTextureOffset = new Vector2(0, 0);

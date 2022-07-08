@@ -13,13 +13,18 @@ public class GameOverScript : MonoBehaviour
 
     private ScoreManager scoreManager;
     private GameManager gameManager;
-    private OffsetScrolling offsetScrolling;
+
+    private OffsetScrolling scroller;
+    private ForegroundScroller scroller2;
+
 
     private void Start()
     {
         scoreManager = FindObjectOfType<ScoreManager>();
         gameManager = FindObjectOfType<GameManager>();
-        offsetScrolling = FindObjectOfType<OffsetScrolling>();
+
+        scroller = FindObjectOfType<OffsetScrolling>();
+        scroller2 = FindObjectOfType<ForegroundScroller>();
     }
     
     public void SetUp(float score) 
@@ -35,8 +40,10 @@ public class GameOverScript : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         gameManager.startGame();
         scoreManager.setTotalGems(0);
-        offsetScrolling.resetScrollOffset();
         Time.timeScale = 1f;
+
+        scroller.resetScrollOffset();
+        scroller2.resetGround();
     }
 
     public void MainMenuButton() 
@@ -44,8 +51,10 @@ public class GameOverScript : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
         gameManager.startGame();
         scoreManager.setTotalGems(0);
-        offsetScrolling.resetScrollOffset();
         Time.timeScale = 1f;
+        
+        scroller.resetScrollOffset();
+        scroller2.resetGround();
     }
 
     public void ResumeButton() 

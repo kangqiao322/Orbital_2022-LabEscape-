@@ -32,7 +32,7 @@ public class SpikeScript : MonoBehaviour
         //spikeRb.velocity = new Vector2(-PlayerScript.gameSpeed, 0);
 
 
-        speed = gameManager.getSpeed();
+        speed = gameManager.getSpeed() * 0.98f;
 
         timePassed += Time.deltaTime;
         

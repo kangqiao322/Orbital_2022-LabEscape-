@@ -32,7 +32,7 @@ public class PlatformScript : MonoBehaviour
             return;
         }
         
-        speed = gameManager.getSpeed();
+        speed = gameManager.getSpeed() ;
    
         //transform.Translate(new Vector3(-PlayerScript.gameSpeed * Time.deltaTime, 0, 0));
         //speed = displacement / deltaTime, and translation uses displacement
