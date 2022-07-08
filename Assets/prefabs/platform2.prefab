@@ -53,9 +53,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3382765637381974428}
     m_Modifications:
+    - target: {fileID: 1378633616114431488, guid: f4f70800ef5fd1f498e526f7cb4e38ba, type: 3}
+      propertyPath: m_Constraints
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2732838851593266230, guid: f4f70800ef5fd1f498e526f7cb4e38ba, type: 3}
       propertyPath: m_Name
       value: new platform
+      objectReference: {fileID: 0}
+    - target: {fileID: 2911260137900757891, guid: f4f70800ef5fd1f498e526f7cb4e38ba, type: 3}
+      propertyPath: m_Size.y
+      value: 0.89605135
+      objectReference: {fileID: 0}
+    - target: {fileID: 2911260137900757891, guid: f4f70800ef5fd1f498e526f7cb4e38ba, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.007828057
+      objectReference: {fileID: 0}
+    - target: {fileID: 2911260137900757891, guid: f4f70800ef5fd1f498e526f7cb4e38ba, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.051974326
       objectReference: {fileID: 0}
     - target: {fileID: 4590473114026573815, guid: f4f70800ef5fd1f498e526f7cb4e38ba, type: 3}
       propertyPath: m_RootOrder
@@ -103,11 +119,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5428105551923260223, guid: f4f70800ef5fd1f498e526f7cb4e38ba, type: 3}
       propertyPath: m_BodyType
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5428105551923260223, guid: f4f70800ef5fd1f498e526f7cb4e38ba, type: 3}
       propertyPath: m_Constraints
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7910541675799109179, guid: f4f70800ef5fd1f498e526f7cb4e38ba, type: 3}
+      propertyPath: m_Size.x
+      value: 2.1104655
+      objectReference: {fileID: 0}
+    - target: {fileID: 7910541675799109179, guid: f4f70800ef5fd1f498e526f7cb4e38ba, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.9527488
+      objectReference: {fileID: 0}
+    - target: {fileID: 8708186348549677127, guid: f4f70800ef5fd1f498e526f7cb4e38ba, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.0053499
+      objectReference: {fileID: 0}
+    - target: {fileID: 8708186348549677127, guid: f4f70800ef5fd1f498e526f7cb4e38ba, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.9658
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3353813037640160170, guid: f4f70800ef5fd1f498e526f7cb4e38ba, type: 3}

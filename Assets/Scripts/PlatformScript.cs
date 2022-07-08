@@ -12,7 +12,7 @@ public class PlatformScript : MonoBehaviour
 
     private Rigidbody2D platformRB; //this is private
     private float timePassed = 0f;
-    private float lifespan = 10f; //the amount of time left before destroyed
+    private float lifespan = 15f; //the amount of time left before destroyed
 
     
     void Start()
@@ -52,6 +52,11 @@ public class PlatformScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //Debug.Log(collision.collider.tag);
+        
+        //the problem is that the collider for platform is so small
+        //platforms can overlap with each other
+        
         if (collision.gameObject.CompareTag("ground") ||
             collision.gameObject.CompareTag("gem"))
         {

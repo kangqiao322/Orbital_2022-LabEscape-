@@ -14,8 +14,6 @@ public class PlatformGenerator : GeneratorAbstract
     [SerializeField]
     private Transform[] platformArray;
 
-    
-    
     private void Update()
     {
 

@@ -9,11 +9,11 @@ public class GameManager : MonoBehaviour
 {
 
 //make this adjustable first
-    private float maxSpeed = 25f;
+    private float maxSpeed = 25f; //25f;
     private float currentSpeed = 5f;
 
     private float speedIncrMultiplier = 0.8f;
-    private float timeUntilSpawnRateIncrease = 3f;
+    private float timeUntilSpeedIncrease = 3f;
     private float timeCounter = 3f;
 
     public GameOverScript GameOverScreen;
@@ -69,12 +69,12 @@ public class GameManager : MonoBehaviour
         }
         
         //Debug.Log(currentSpeed);
-        timeUntilSpawnRateIncrease -= Time.deltaTime;
+        timeUntilSpeedIncrease -= Time.deltaTime;
         
-        if (timeUntilSpawnRateIncrease < 0 && currentSpeed + speedIncrMultiplier <= maxSpeed) 
+        if (timeUntilSpeedIncrease < 0 && currentSpeed + speedIncrMultiplier <= maxSpeed) 
         {
             currentSpeed += speedIncrMultiplier;
-            timeUntilSpawnRateIncrease = timeCounter;
+            timeUntilSpeedIncrease = timeCounter;
         }
     }
     

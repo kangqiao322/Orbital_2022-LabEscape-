@@ -65,7 +65,7 @@ public class PlayerScript : MonoBehaviour
         }
         
         isOnGround = Physics2D.OverlapCircle(playerFeet.position, playerFeetRadius, groundLayer);
-        
+
         //first jump
         if (Input.GetButtonDown("Jump") && isOnGround)
         {
