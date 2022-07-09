@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 
 //make this adjustable first
     private float maxSpeed = 25f; //25f;
-    private float currentSpeed = 5f;
+    private float currentSpeed = 7f;
 
     private float speedIncrMultiplier = 0.8f;
     private float timeUntilSpeedIncrease = 3f;

@@ -291,9 +291,21 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7025743688813144127, guid: e0582f5f77f2b7c488ba9cf9ddbca987, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.62
+      objectReference: {fileID: 0}
     - target: {fileID: 8644233439513932182, guid: e0582f5f77f2b7c488ba9cf9ddbca987, type: 3}
       propertyPath: m_Name
       value: platform4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030442805618574767, guid: e0582f5f77f2b7c488ba9cf9ddbca987, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030442805618574767, guid: e0582f5f77f2b7c488ba9cf9ddbca987, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.32
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2375579900675995553, guid: e0582f5f77f2b7c488ba9cf9ddbca987, type: 3}
