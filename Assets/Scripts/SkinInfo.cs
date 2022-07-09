@@ -7,7 +7,7 @@ using UnityEngine;
 public class SkinInfo : ScriptableObject  
 {
     public enum SkinIDs {pink, red, green, purple, orange, bronze, silver, gold, crystal, rainbow}
-    public SkinIDS skinID;
+    public SkinIDs skinID;
 
     public Sprite skinSprite;
 
