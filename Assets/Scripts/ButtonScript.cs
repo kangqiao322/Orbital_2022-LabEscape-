@@ -18,7 +18,8 @@ public class ButtonScript : MonoBehaviour
         //Load the Biome1 scene, ordering in File > Build Settings
         SceneManager.LoadScene("Biome1");
         
-        offsetScrolling.resetScrollOffset();
+        //for now no reset scrolling, cause null pointer error but game still runs tho
+        //offsetScrolling.resetScrollOffset();
     }
 
     public void ShopButton()
