@@ -85,6 +85,7 @@ public class ButtonAction : MonoBehaviour
         isBought = true;
         isEquipped = false;
         TMPtext.text = "Equip";
+        TMPtext.fontSize = 20;
 
         button.onClick.RemoveAllListeners();
         button.onClick.AddListener(ChangeButtonToIsEquipped);
@@ -102,6 +103,7 @@ public class ButtonAction : MonoBehaviour
         isBought = true;
         isEquipped = true;
         TMPtext.text = "Equipped";
+        TMPtext.fontSize = 15;
         
         PlayerPrefs.SetInt("wearing", id);
         storeManager.updateAllButtons();
