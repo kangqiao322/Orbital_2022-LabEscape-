@@ -56,8 +56,8 @@ public class ButtonAction : MonoBehaviour
     private void TryToBuy(int cost)
         //when this method is called the skin is alr guaranteed to be not bought yet
     {
-        //totalGems = PlayerPrefs.GetInt("totalGem");
-        totalGems =  100000;
+        totalGems = PlayerPrefs.GetInt("totalGem");
+       
         
         if (totalGems >= cost)
         {
