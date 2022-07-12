@@ -10,15 +10,12 @@ public class StoreGemCount : MonoBehaviour
     
     void Start()
     {
-        if (PlayerPrefs.HasKey("totalGem"))
-        {
-            totalGems = PlayerPrefs.GetInt("totalGem");
-        }
-        else
+        if (!PlayerPrefs.HasKey("totalGem"))
         {
             PlayerPrefs.SetInt("totalGem", 0);
-            totalGems = 0;
         }
+        
+        totalGems = PlayerPrefs.GetInt("totalGem");
 
         gemScoreTxt = GetComponent<TextMeshProUGUI>();
         gemScoreTxt.text = totalGems.ToString("0");
@@ -26,6 +23,12 @@ public class StoreGemCount : MonoBehaviour
     
     void Update()
     {
+        if (totalGems == PlayerPrefs.GetInt("totalGem"))
+        {
+            return;
+        }
+        
+        totalGems = PlayerPrefs.GetInt("totalGem");
         gemScoreTxt.text = totalGems.ToString("0");
     }
 }

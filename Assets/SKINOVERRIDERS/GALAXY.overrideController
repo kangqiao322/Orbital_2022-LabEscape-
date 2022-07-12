@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: GALAXY
+  m_Controller: {fileID: 9100000, guid: f63fb49209abb534aacf796c40d579cd, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 3a9870cc442c5f945b87dd4dcc1c7ff1, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 111171e39b8139a43b61d5116301cab9, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 287cdb75ae0c24a46a42b0e6f3d59bd0, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 704af3cd25aee8f4a95a27f97cb9251c, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: a5b2ad18933dfc04e9d6277a2004e194, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 7e808330d37a1f5478666fbf1d5e8613, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 9378d3fe9aabaa047b19785dbe038932, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 9393b6a8f3014fe4b8a792e8f6b7c3cb, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: f2450070ac9c946438ea5e422d66f662, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 73538d3fef2ddd24e988d30ccaf454d0, type: 2}
