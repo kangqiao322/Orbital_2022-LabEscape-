@@ -11,11 +11,16 @@ public class GemScript : MonoBehaviour
     private float lifespan = 10f; //the amount of time left before destroyed
 
     [SerializeField] private Transform ghostGem;
-    
+    private AudioSource gemCollect;
+
     private void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
-        
+
+        gemCollect = GetComponent<AudioSource>();
+        gemCollect.playOnAwake = false;
+        //Debug.Log(gemCollect);
+
         //Make Collider2D as trigger 
         GetComponent<Collider2D>().isTrigger = true;
     }
@@ -26,6 +31,7 @@ public class GemScript : MonoBehaviour
         if (otherCollider.CompareTag("Player"))
         {
             Instantiate(ghostGem, this.transform.position, Quaternion.identity);
+            AudioSource.PlayClipAtPoint(gemCollect.clip, this.transform.position);
             Destroy(this.gameObject);
         }
     }

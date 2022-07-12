@@ -8,13 +8,25 @@ public class ButtonScript : MonoBehaviour
 //for handling buttons in the main menu, shop and settings screens only
 {
     private OffsetScrolling offsetScrolling;
+    private ButtonPersistentSound _buttonPersistentSound;
+    
     private void Start()
     {
+        _buttonPersistentSound = FindObjectOfType<ButtonPersistentSound>();
         offsetScrolling = FindObjectOfType<OffsetScrolling>();
     }
 
     public void PlayButton()
     {
+        //this is ONLY when the game DOES NOT start from main menu
+        //since the button persistent object only spawns in the main menu
+        //there might be a problem with the green pause button for some reason no sound gets played
+        if (ButtonPersistentSound.Instance != null)
+        {
+            //button click sound
+            _buttonPersistentSound.playNormalClick();
+        }
+
         //Load the Biome1 scene, ordering in File > Build Settings
         SceneManager.LoadScene("Biome1");
         
@@ -24,11 +36,23 @@ public class ButtonScript : MonoBehaviour
 
     public void ShopButton()
     {
+        if (ButtonPersistentSound.Instance != null)
+        {
+            //button click sound
+            _buttonPersistentSound.playNormalClick();
+        }
+        
         SceneManager.LoadScene("Shop");
     }
 
     public void MainMenuButton()
     {
+        if (ButtonPersistentSound.Instance != null)
+        {
+            //button click sound
+            _buttonPersistentSound.playNormalClick();
+        }
+        
         //Load the main menu scene
         SceneManager.LoadScene(0);
     }

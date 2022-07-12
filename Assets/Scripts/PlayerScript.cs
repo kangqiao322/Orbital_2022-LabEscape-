@@ -41,7 +41,9 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] private Transform floatingScore;
 
     //just set it to true to prevent dying
-    private bool isAdminMode = true;
+    private bool isAdminMode = false;
+
+    [SerializeField] private AudioClip[] sounds;
     
     private void Awake() 
     {
@@ -53,7 +55,7 @@ public class PlayerScript : MonoBehaviour
         scoreManager = FindObjectOfType<ScoreManager>();
         powerUpManager = FindObjectOfType<PowerUpManager>();
         gameManager = FindObjectOfType<GameManager>();
-        
+
     }
 
     void Update()
@@ -133,6 +135,9 @@ public class PlayerScript : MonoBehaviour
                 Vector3 spawnVector = new Vector3(this.transform.position.x + 5f, this.transform.position.y, 0);
                 Instantiate(floatingScore, spawnVector, Quaternion.identity);
                 
+                //play sound effect
+                AudioSource.PlayClipAtPoint(sounds[0], this.transform.position);
+                
                 //floatingScoreManager.spawnPoint(100, collision.transform.position);
                 scoreManager.increaseMainScoreBy(100);
                 Destroy(collision.gameObject);
@@ -140,6 +145,10 @@ public class PlayerScript : MonoBehaviour
             else if (powerUpManager.getBubbleStatus())
             {
                 Debug.Log("removes bubble");
+                
+                //play sound effect
+                AudioSource.PlayClipAtPoint(sounds[2], this.transform.position);
+                
                 powerUpManager.setBubbleActive(false);
                 //this is for bubble anim
                 powerUpManager.setBubbleAlternate(2f);
@@ -155,6 +164,10 @@ public class PlayerScript : MonoBehaviour
                 //sets gameEnded boolean in GameManager to true
                 gameManager.endGame();
                 animator.SetBool("IsDead", true);
+                
+                //play sound effect
+                AudioSource.PlayClipAtPoint(sounds[1], this.transform.position);
+                
                 FindObjectOfType<GameManager>().GameOverScene(scoreManager.getScore());
             }
         } else if (collision.gameObject.CompareTag("spike"))
@@ -162,6 +175,10 @@ public class PlayerScript : MonoBehaviour
             if (powerUpManager.getBubbleStatus())
             {
                 Debug.Log("removes bubble");
+                
+                //play sound effect
+                AudioSource.PlayClipAtPoint(sounds[2], this.transform.position);
+                
                 powerUpManager.setBubbleActive(false);
                 //this is for bubble anim
                 powerUpManager.setBubbleAlternate(2f);
@@ -178,6 +195,10 @@ public class PlayerScript : MonoBehaviour
                 gameManager.endGame();
                 //this is to animate death
                 animator.SetBool("IsDead", true);
+                
+                //play sound effect
+                AudioSource.PlayClipAtPoint(sounds[1], this.transform.position);
+                
                 FindObjectOfType<GameManager>().GameOverScene(scoreManager.getScore());
             }
         }

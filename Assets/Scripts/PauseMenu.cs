@@ -11,13 +11,18 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenuUI;
     private GameManager gameManager;
 
+    private BackgroundMusicInGame _backgroundMusicInGame;
+    private ButtonPersistentSound _buttonPersistentSound;
+
     private void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
+        _backgroundMusicInGame = FindObjectOfType<BackgroundMusicInGame>();
+        _buttonPersistentSound = FindObjectOfType<ButtonPersistentSound>();
     }
 
     void Update () {
-        
+
         if (Input.GetKeyDown(KeyCode.Escape) && !gameManager.gameHasEnded())
             //if game over screen displays then cannot display pause menu
         {
@@ -34,18 +39,31 @@ public class PauseMenu : MonoBehaviour
 
     void Resume ()
     {
+        if (ButtonPersistentSound.Instance != null)
+        {
+            //button click sound
+            _buttonPersistentSound.playNormalClick();
+        }
+        
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
+        _backgroundMusicInGame.ResumeMusic();
 
     }
 
     void Pause ()
     {
+        if (ButtonPersistentSound.Instance != null)
+        {
+            //button click sound
+            _buttonPersistentSound.playNormalClick();
+        }
+        
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
-
+        _backgroundMusicInGame.PauseMusic();
     }
     
 }

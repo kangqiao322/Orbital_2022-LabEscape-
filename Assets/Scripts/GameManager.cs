@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     private bool gameEnded = false;
 
     private GameManager gameManager;
+    private BackgroundMusicInGame _backgroundMusicInGame;
     
     //stores the global total gems, persists between game sessions
     private int totalGems;
@@ -37,6 +38,7 @@ public class GameManager : MonoBehaviour
         }
 
         gameManager = GetComponent<GameManager>();
+        _backgroundMusicInGame = FindObjectOfType<BackgroundMusicInGame>();
         
         Debug.Log("current global gems = " + totalGems);
     }
@@ -44,6 +46,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOverScene(float score)
     {
+        _backgroundMusicInGame.PauseMusic();
         gameEnded = true;
         GameOverScreen.SetUp(score); //this generates the game over screen
         
@@ -64,6 +67,7 @@ public class GameManager : MonoBehaviour
     {
         if (gameManager.gameHasEnded() == true)
         {
+            
             currentSpeed = 0;
             return;
         }

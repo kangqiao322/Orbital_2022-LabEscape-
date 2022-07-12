@@ -21,7 +21,7 @@ public class ButtonAction : MonoBehaviour
     private bool isEquipped;
     private int totalGems;
 
-    [SerializeField] private int id; //to correlate to array index in ShopManager
+    [SerializeField] private int id;
     
     void Awake()
     {

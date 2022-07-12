@@ -17,7 +17,10 @@ public class GameOverScript : MonoBehaviour
     private OffsetScrolling scroller;
     private ForegroundScroller scroller2;
 
-
+    private BackgroundMusicInGame _backgroundMusicInGame;
+    
+    private ButtonPersistentSound _buttonPersistentSound;
+    
     private void Start()
     {
         scoreManager = FindObjectOfType<ScoreManager>();
@@ -25,6 +28,9 @@ public class GameOverScript : MonoBehaviour
 
         scroller = FindObjectOfType<OffsetScrolling>();
         scroller2 = FindObjectOfType<ForegroundScroller>();
+
+        _backgroundMusicInGame = FindObjectOfType<BackgroundMusicInGame>();
+        _buttonPersistentSound = FindObjectOfType<ButtonPersistentSound>();
     }
     
     public void SetUp(float score) 
@@ -36,6 +42,12 @@ public class GameOverScript : MonoBehaviour
     public void RestartButton() 
 
     {
+        if (ButtonPersistentSound.Instance != null)
+        {
+            //button click sound
+            _buttonPersistentSound.playNormalClick();
+        }
+
         //reload the active scene instead of biome1
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         gameManager.startGame();
@@ -48,6 +60,12 @@ public class GameOverScript : MonoBehaviour
 
     public void MainMenuButton() 
     {
+        if (ButtonPersistentSound.Instance != null)
+        {
+            //button click sound
+            _buttonPersistentSound.playNormalClick();
+        }
+
         SceneManager.LoadScene("MainMenu");
         gameManager.startGame();
         scoreManager.setTotalGems(0);
@@ -59,20 +77,40 @@ public class GameOverScript : MonoBehaviour
 
     public void ResumeButton() 
     {
+        if (ButtonPersistentSound.Instance != null)
+        {
+            //button click sound
+            _buttonPersistentSound.playNormalClick();
+        }
+
         gameObject.SetActive(false);
         gameManager.startGame();
         Time.timeScale = 1f;
+        _backgroundMusicInGame.ResumeMusic();
     }
 
     public void PauseButton() 
     {
+        if (ButtonPersistentSound.Instance != null)
+        {
+            //button click sound
+            _buttonPersistentSound.playNormalClick();
+        }
+
         gameObject.SetActive(true);
         //gameManager.startGame();
         Time.timeScale = 0f;
+        _backgroundMusicInGame.PauseMusic();
     }
 
     public void ExitButton()
     {
+        if (ButtonPersistentSound.Instance != null)
+        {
+            //button click sound
+            _buttonPersistentSound.playNormalClick();
+        }
+
         Application.Quit();
     }
 
