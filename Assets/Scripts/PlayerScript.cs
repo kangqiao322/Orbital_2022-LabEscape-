@@ -41,8 +41,7 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] private Transform floatingScore;
 
     //just set it to true to prevent dying
-    private bool isAdminMode = true;
-    
+    private bool isAdminMode = false;
     private void Awake() 
     {
         RB = GetComponent<Rigidbody2D>();
