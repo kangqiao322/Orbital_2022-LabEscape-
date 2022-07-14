@@ -10,7 +10,7 @@ public class ButtonScript : MonoBehaviour
     private OffsetScrolling offsetScrolling;
     private ButtonPersistentSound _buttonPersistentSound;
     
-    private void Start()
+    private void Awake()
     {
         _buttonPersistentSound = FindObjectOfType<ButtonPersistentSound>();
         offsetScrolling = FindObjectOfType<OffsetScrolling>();
@@ -21,7 +21,7 @@ public class ButtonScript : MonoBehaviour
         //this is ONLY when the game DOES NOT start from main menu
         //since the button persistent object only spawns in the main menu
         //there might be a problem with the green pause button for some reason no sound gets played
-        if (ButtonPersistentSound.Instance != null)
+        if (_buttonPersistentSound != null)
         {
             //button click sound
             _buttonPersistentSound.playNormalClick();
@@ -36,7 +36,7 @@ public class ButtonScript : MonoBehaviour
 
     public void ShopButton()
     {
-        if (ButtonPersistentSound.Instance != null)
+        if (_buttonPersistentSound != null)
         {
             //button click sound
             _buttonPersistentSound.playNormalClick();
@@ -47,7 +47,7 @@ public class ButtonScript : MonoBehaviour
 
     public void MainMenuButton()
     {
-        if (ButtonPersistentSound.Instance != null)
+        if (_buttonPersistentSound != null)
         {
             //button click sound
             _buttonPersistentSound.playNormalClick();

@@ -20,25 +20,28 @@ public class ButtonPersistentSound : MonoBehaviour
     {
         if (_instance != null && _instance != this)
         {
-            Debug.Log("Destroyed " + this.GetHashCode());
+            //Debug.Log("Destroyed " + this.GetHashCode());
             Destroy(this.gameObject);
             return;
         }
         else
         {
-            Debug.Log(this.GetHashCode());
+            //Debug.Log(this.GetHashCode());
             _instance = this;
         }
         
         DontDestroyOnLoad(this.gameObject);
         
         normalClick = GetComponent<AudioSource>();
-        Debug.Log(normalClick);
+        //Debug.Log(normalClick);
     }
 
+    //at least there are no more null pointer errors
+    //worse case is no button sound but everything else works ok
     public void playNormalClick()
     {
-        Debug.Log(normalClick);
+        //Debug.Log(normalClick);
+        
         normalClick.PlayOneShot(normalClick.clip);
     }
 

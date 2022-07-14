@@ -44,7 +44,9 @@ public class ButtonAction : MonoBehaviour
         }
         else if (!isEquipped)
         {
-            ChangeButtonToEquip();
+            ChangeButtonToEquip(false); //optional parameter
+            //false because from main menu -> shop you dont want it to produce sound
+            //since the button is supposed to be at "Equip" already
         }
         else //meaning it is currently equipped
         {
@@ -60,6 +62,7 @@ public class ButtonAction : MonoBehaviour
         
         if (totalGems >= cost)
         {
+            storeManager.playAudioNumber(0);
             Debug.Log("enough gems to buy");
             PlayerPrefs.SetInt("bought_" + id, 1);
             isBought = true;
@@ -70,12 +73,14 @@ public class ButtonAction : MonoBehaviour
         }
         else
         {
+            storeManager.playAudioNumber(1);
             Debug.Log("not enough gems");
         }
     }
 
+    //
     //now this button contains the method to switch to is equipped after pressing
-    private void ChangeButtonToEquip()
+    private void ChangeButtonToEquip(bool needSound = true) //by default sounds are played
     {
         if (gemImage != null)
         {
@@ -89,6 +94,12 @@ public class ButtonAction : MonoBehaviour
 
         button.onClick.RemoveAllListeners();
         button.onClick.AddListener(ChangeButtonToIsEquipped);
+
+        if (needSound)
+        {
+            // Debug.Log(id);
+            storeManager.playAudioNumber(2);
+        }
     }
 
     private void ChangeButtonToIsEquipped()
@@ -129,4 +140,6 @@ public class ButtonAction : MonoBehaviour
             ChangeButtonToEquip();
         }
     }
+    
+    
 }

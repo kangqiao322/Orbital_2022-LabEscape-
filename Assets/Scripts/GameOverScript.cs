@@ -21,7 +21,7 @@ public class GameOverScript : MonoBehaviour
     
     private ButtonPersistentSound _buttonPersistentSound;
     
-    private void Start()
+    private void Awake()
     {
         scoreManager = FindObjectOfType<ScoreManager>();
         gameManager = FindObjectOfType<GameManager>();
@@ -42,7 +42,7 @@ public class GameOverScript : MonoBehaviour
     public void RestartButton() 
 
     {
-        if (ButtonPersistentSound.Instance != null)
+        if (_buttonPersistentSound != null)
         {
             //button click sound
             _buttonPersistentSound.playNormalClick();
@@ -60,7 +60,7 @@ public class GameOverScript : MonoBehaviour
 
     public void MainMenuButton() 
     {
-        if (ButtonPersistentSound.Instance != null)
+        if (_buttonPersistentSound != null)
         {
             //button click sound
             _buttonPersistentSound.playNormalClick();
@@ -74,10 +74,11 @@ public class GameOverScript : MonoBehaviour
         scroller.resetScrollOffset();
         scroller2.resetGround();
     }
-
+    
+    //responsible for the green pause button 
     public void ResumeButton() 
     {
-        if (ButtonPersistentSound.Instance != null)
+        if (_buttonPersistentSound != null)
         {
             //button click sound
             _buttonPersistentSound.playNormalClick();
@@ -89,13 +90,15 @@ public class GameOverScript : MonoBehaviour
         _backgroundMusicInGame.ResumeMusic();
     }
 
+    //responsible for the green pause button 
     public void PauseButton() 
     {
-        if (ButtonPersistentSound.Instance != null)
+        if (_buttonPersistentSound != null)
         {
             //button click sound
             _buttonPersistentSound.playNormalClick();
         }
+        
 
         gameObject.SetActive(true);
         //gameManager.startGame();
@@ -105,7 +108,7 @@ public class GameOverScript : MonoBehaviour
 
     public void ExitButton()
     {
-        if (ButtonPersistentSound.Instance != null)
+        if (_buttonPersistentSound != null)
         {
             //button click sound
             _buttonPersistentSound.playNormalClick();

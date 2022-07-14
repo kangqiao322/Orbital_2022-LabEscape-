@@ -8,6 +8,9 @@ public class StoreManager : MonoBehaviour
     //if true, every time game is launched there are no bought skins
     //and wearing id is set to 0 
     //sometimes this function is called too late
+    
+    [SerializeField] private AudioClip[] sounds;
+    private AudioSource _audioSource; //forced to create a dummy one to use PlayOneShot
 
     private void Awake()
     {
@@ -24,6 +27,10 @@ public class StoreManager : MonoBehaviour
             
             PlayerPrefs.DeleteKey("wearing");
         }
+
+        _audioSource = GetComponent<AudioSource>();
+        
+        //PlayerPrefs.SetInt("totalGem", 50000);
         
         Debug.Log("wearing skin id " + PlayerPrefs.GetInt("wearing"));
     }
@@ -36,5 +43,15 @@ public class StoreManager : MonoBehaviour
         {
             buttonAction.updateOwnButton();
         }
+    }
+
+    public void playAudioNumber(int i)
+    {
+        if (_audioSource == null) //idk why
+        {
+            _audioSource = GetComponent<AudioSource>();
+        }
+
+        _audioSource.PlayOneShot(sounds[i]);
     }
 }
