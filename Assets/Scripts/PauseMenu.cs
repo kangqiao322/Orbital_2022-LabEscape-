@@ -13,12 +13,14 @@ public class PauseMenu : MonoBehaviour
 
     private BackgroundMusicInGame _backgroundMusicInGame;
     private ButtonPersistentSound _buttonPersistentSound;
+    private PokemonSound _pokemonSound;
 
     private void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
         _backgroundMusicInGame = FindObjectOfType<BackgroundMusicInGame>();
         _buttonPersistentSound = FindObjectOfType<ButtonPersistentSound>();
+        _pokemonSound = FindObjectOfType<PokemonSound>();
     }
 
     void Update () {
@@ -39,10 +41,11 @@ public class PauseMenu : MonoBehaviour
 
     void Resume ()
     {
-        if (ButtonPersistentSound.Instance != null)
+        if (_buttonPersistentSound != null)
         {
             //button click sound
             _buttonPersistentSound.playNormalClick();
+            _pokemonSound.pausePokemon();
         }
         
         pauseMenuUI.SetActive(false);
@@ -54,10 +57,11 @@ public class PauseMenu : MonoBehaviour
 
     void Pause ()
     {
-        if (ButtonPersistentSound.Instance != null)
+        if (_buttonPersistentSound != null)
         {
             //button click sound
             _buttonPersistentSound.playNormalClick();
+            _pokemonSound.pausePokemon();
         }
         
         pauseMenuUI.SetActive(true);

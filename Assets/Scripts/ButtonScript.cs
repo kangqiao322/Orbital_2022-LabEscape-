@@ -9,10 +9,13 @@ public class ButtonScript : MonoBehaviour
 {
     private OffsetScrolling offsetScrolling;
     private ButtonPersistentSound _buttonPersistentSound;
+    private PokemonSound _pokemonSound;
     
     private void Awake()
     {
         _buttonPersistentSound = FindObjectOfType<ButtonPersistentSound>();
+        _pokemonSound = FindObjectOfType<PokemonSound>();
+        
         offsetScrolling = FindObjectOfType<OffsetScrolling>();
     }
 
@@ -25,6 +28,7 @@ public class ButtonScript : MonoBehaviour
         {
             //button click sound
             _buttonPersistentSound.playNormalClick();
+            _pokemonSound.pausePokemon();
         }
 
         //Load the Biome1 scene, ordering in File > Build Settings
@@ -47,6 +51,7 @@ public class ButtonScript : MonoBehaviour
 
     public void MainMenuButton()
     {
+
         if (_buttonPersistentSound != null)
         {
             //button click sound

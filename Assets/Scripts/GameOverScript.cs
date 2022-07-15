@@ -18,8 +18,8 @@ public class GameOverScript : MonoBehaviour
     private ForegroundScroller scroller2;
 
     private BackgroundMusicInGame _backgroundMusicInGame;
-    
     private ButtonPersistentSound _buttonPersistentSound;
+    private PokemonSound _pokemonSound;
     
     private void Awake()
     {
@@ -31,6 +31,7 @@ public class GameOverScript : MonoBehaviour
 
         _backgroundMusicInGame = FindObjectOfType<BackgroundMusicInGame>();
         _buttonPersistentSound = FindObjectOfType<ButtonPersistentSound>();
+        _pokemonSound = FindObjectOfType<PokemonSound>();
     }
     
     public void SetUp(float score) 
@@ -46,6 +47,7 @@ public class GameOverScript : MonoBehaviour
         {
             //button click sound
             _buttonPersistentSound.playNormalClick();
+            _pokemonSound.pausePokemon();
         }
 
         //reload the active scene instead of biome1
@@ -82,6 +84,7 @@ public class GameOverScript : MonoBehaviour
         {
             //button click sound
             _buttonPersistentSound.playNormalClick();
+            _pokemonSound.pausePokemon();
         }
 
         gameObject.SetActive(false);
@@ -97,6 +100,7 @@ public class GameOverScript : MonoBehaviour
         {
             //button click sound
             _buttonPersistentSound.playNormalClick();
+            _pokemonSound.pausePokemon();
         }
         
 

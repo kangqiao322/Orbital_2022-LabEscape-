@@ -12,6 +12,8 @@ public class BackgroundMusicInGame : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         audioSource.loop = true;
+        audioSource.volume = 0.3f;
+        
         //audioSource.mute = true;
     }
 
