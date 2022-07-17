@@ -69,7 +69,7 @@ public class ButtonAction : MonoBehaviour
             totalGems -= cost;
             PlayerPrefs.SetInt("totalGem", totalGems);
 
-            ChangeButtonToEquip();
+            ChangeButtonToEquip(false);
         }
         else
         {

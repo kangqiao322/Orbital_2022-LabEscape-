@@ -48,6 +48,17 @@ public class ButtonScript : MonoBehaviour
         
         SceneManager.LoadScene("Shop");
     }
+    
+    public void SettingsButton()
+    {
+        if (_buttonPersistentSound != null)
+        {
+            //button click sound
+            _buttonPersistentSound.playNormalClick();
+        }
+        
+        SceneManager.LoadScene(3);
+    }
 
     public void MainMenuButton()
     {

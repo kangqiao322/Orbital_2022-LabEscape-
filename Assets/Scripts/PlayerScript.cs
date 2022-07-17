@@ -75,6 +75,9 @@ public class PlayerScript : MonoBehaviour
             RB.gravityScale = gravityForce;
             RB.velocity = new Vector2(0, JumpForce);
             canDoubleJump = true;
+            
+            //play sound effect
+            AudioSource.PlayClipAtPoint(sounds[3], this.transform.position);
 
             animator.SetBool("IsJumping", true);
         }
@@ -87,6 +90,9 @@ public class PlayerScript : MonoBehaviour
             canDoubleJump = false;
             RB.gravityScale = gravityForce;
             RB.velocity = new Vector2(0, JumpForce);
+            
+            //play sound effect
+            AudioSource.PlayClipAtPoint(sounds[3], this.transform.position);
 
             animator.SetBool("IsJumping", true);
         }
@@ -99,6 +105,9 @@ public class PlayerScript : MonoBehaviour
             RB.velocity = new Vector2(0, JumpForce);
             isUndersidePlatform = false;
             canDoubleJump = true;
+            
+            //play sound effect
+            AudioSource.PlayClipAtPoint(sounds[3], this.transform.position);
         }
 
     }
@@ -115,6 +124,8 @@ public class PlayerScript : MonoBehaviour
             RB.gravityScale = -gravityForce;
             animator.SetBool("IsUnder", true);
             
+            //play sound effect
+            AudioSource.PlayClipAtPoint(sounds[3], this.transform.position);
         }  
         else if (collision.gameObject.CompareTag("ground"))
         {

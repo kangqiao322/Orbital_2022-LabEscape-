@@ -4,10 +4,11 @@ using UnityEngine;
 public class StoreManager : MonoBehaviour
 {
     
-    public bool adminModeResetSkins = true;
+    public bool adminModeResetSkins;
     //if true, every time game is launched there are no bought skins
     //and wearing id is set to 0 
-    //sometimes this function is called too late
+    //you need to reload the game twice for this to fully work
+    //since it is called too slow the first time
     
     [SerializeField] private AudioClip[] sounds;
     private AudioSource _audioSource; //forced to create a dummy one to use PlayOneShot
@@ -30,7 +31,7 @@ public class StoreManager : MonoBehaviour
 
         _audioSource = GetComponent<AudioSource>();
         
-        //PlayerPrefs.SetInt("totalGem", 50000);
+        PlayerPrefs.SetInt("totalGem", 500);
         
         Debug.Log("wearing skin id " + PlayerPrefs.GetInt("wearing"));
     }
