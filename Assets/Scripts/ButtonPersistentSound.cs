@@ -1,11 +1,14 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class ButtonPersistentSound : MonoBehaviour
 {
     //i have no idea what is going on
-    
+
+    public AudioMixer mixer;
     private AudioSource normalClick;
     public int hashcode;
+    
 
     void Awake()
     {
@@ -46,6 +49,15 @@ public class ButtonPersistentSound : MonoBehaviour
                 normalClick = obj.GetComponent<AudioSource>(); //NOTE: DO NOT USE the keyword "this", use "obj"
             }
         }
+        
+        if (!PlayerPrefs.HasKey("sliderValue"))
+        {
+            PlayerPrefs.SetFloat("sliderValue", 1);
+        }
+        
+        Debug.Log(PlayerPrefs.GetFloat("sliderValue"));
+        
+        mixer.SetFloat("MusicVol", Mathf.Log10(PlayerPrefs.GetFloat("sliderValue")) * 20);
     }
     
 
@@ -56,4 +68,5 @@ public class ButtonPersistentSound : MonoBehaviour
         normalClick.volume = 0.15f; //i accidentally made the clip's volume too high
         normalClick.PlayOneShot(normalClick.clip);
     }
+
 }
