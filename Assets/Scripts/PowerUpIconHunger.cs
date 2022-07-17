@@ -27,6 +27,7 @@ public class PowerUpIconHunger : MonoBehaviour
             //normal
            
             rend.enabled = true;
+            animator.SetBool("HungerEnding", false);
         }
         else if (powerUpManager.getHungerStatusAlternate() == 2f)
         {

@@ -6,11 +6,11 @@ public class PowerUpManager : MonoBehaviour
 {
     public bool x2GemEffectActive = false;
     private float x2effectDuration = 10f;
-    private float x2effectTimePassed = 0f;
+    public float x2effectTimePassed = 0f;
     
     public bool hungerEffectActive = false;
     private float hungerEffectDuration = 10f;
-    private float hungerEffectTimePassed = 0f;
+    public float hungerEffectTimePassed = 0f;
 
     public bool bubbleActive = false;
 
@@ -35,6 +35,11 @@ public class PowerUpManager : MonoBehaviour
             if (x2effectTimePassed > warningTime)
             {
                 gemAlternate = 2f;
+            }
+
+             if (x2effectTimePassed <= warningTime)
+            {
+                gemAlternate = 1f;
             }
             
             if (x2effectTimePassed > x2effectDuration)
@@ -61,6 +66,11 @@ public class PowerUpManager : MonoBehaviour
             if (hungerEffectTimePassed > warningTime)
             {
                 hungerAlternate = 2f;
+            }
+
+             if (hungerEffectTimePassed <= warningTime)
+            {
+                hungerAlternate = 1f;
             }
 
             if (hungerEffectTimePassed > hungerEffectDuration)

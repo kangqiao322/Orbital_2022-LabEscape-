@@ -26,6 +26,7 @@ public class PowerUpIconGem : MonoBehaviour
             //normal
            
             rend.enabled = true;
+            animator.SetBool("GemEnding", false);
         }
         else if (powerUpManager.getGemStatusAlternate() == 2f)
         {
