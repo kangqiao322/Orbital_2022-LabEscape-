@@ -6,7 +6,7 @@ public class PowerUpGenerator : GeneratorAbstract
     //this extends GeneratorAbstract class^
 {
     //time before 1st powerup is spawned
-    private float interval = 20f;
+    private float interval = 10f;
     private float timePassed = 0f;
     private Vector3 spawnVector;
     private int pity = 0; //compensation if power up spawns in other objects
@@ -30,7 +30,7 @@ public class PowerUpGenerator : GeneratorAbstract
         if (timePassed > interval)
         {
             //time for next power up to spawn
-            interval = UnityEngine.Random.Range(5f, 10f); //prob = 0.4 to spawn tho
+            interval = UnityEngine.Random.Range(9f, 18f); //prob = 0.4 to spawn tho
             powerUpNtimes(1 + pity);
             timePassed = 0f;
         }

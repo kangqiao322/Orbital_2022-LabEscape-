@@ -7,11 +7,13 @@ public abstract class GeneratorAbstract : MonoBehaviour
 {
     private int noSpawnCount = 0;
     private GameManager gameManager;
+    private ScoreManager scoreManager;
 
 
-    private void Start()
+    private void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
+        scoreManager = FindObjectOfType<ScoreManager>();
     }
 
     
@@ -21,6 +23,12 @@ public abstract class GeneratorAbstract : MonoBehaviour
         //in every single generator just to check if game has ended
         
         return this.gameManager.gameHasEnded();
+    }
+
+    protected float gameScore()
+    {
+        //this is to return the score of the game
+        return this.scoreManager.getScore();
     }
 
     protected void RandomSpawn(double probability, Transform spawnObject, Vector3 spawnPosition, int maxNoSpawnCount)

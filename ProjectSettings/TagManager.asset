@@ -13,6 +13,8 @@ TagManager:
   - platformUndersideEnd
   - gem
   - platform
+  - CamBox
+  - wall
   layers:
   - Default
   - TransparentFX
@@ -20,7 +22,7 @@ TagManager:
   - Ground
   - Water
   - UI
-  - 
+  - CamBox
   - 
   - 
   - 
