@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class x2GemPowerUp : PowerUpAbstract
@@ -8,6 +9,7 @@ public class x2GemPowerUp : PowerUpAbstract
     //Alternate setters and getters are boolean for powerups
     
     private PowerUpManager powerUpManager;
+   
     
     public override void Start()
     {
@@ -34,7 +36,8 @@ public class x2GemPowerUp : PowerUpAbstract
                 powerUpManager.resetx2EffectTimePassed(); 
          
             }
-            
+
+            AudioSource.PlayClipAtPoint(base.sound.clip, this.transform.position);
             Debug.Log("x2 effect active");
             powerUpManager.setx2GemEffectActive(true);//effect handled by other class
             Destroy(this.gameObject);

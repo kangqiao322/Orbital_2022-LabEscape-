@@ -8,13 +8,29 @@ public class ButtonScript : MonoBehaviour
 //for handling buttons in the main menu, shop and settings screens only
 {
     private OffsetScrolling offsetScrolling;
-    private void Start()
+    private ButtonPersistentSound _buttonPersistentSound;
+    private PokemonSound _pokemonSound;
+    
+    private void Awake()
     {
+        _buttonPersistentSound = FindObjectOfType<ButtonPersistentSound>();
+        _pokemonSound = FindObjectOfType<PokemonSound>();
+        
         offsetScrolling = FindObjectOfType<OffsetScrolling>();
     }
 
     public void PlayButton()
     {
+        //this is ONLY when the game DOES NOT start from main menu
+        //since the button persistent object only spawns in the main menu
+        //there might be a problem with the green pause button for some reason no sound gets played
+        if (_buttonPersistentSound != null)
+        {
+            //button click sound
+            _buttonPersistentSound.playNormalClick();
+            _pokemonSound.pausePokemon();
+        }
+
         //Load the Biome1 scene, ordering in File > Build Settings
         SceneManager.LoadScene("Biome1");
         
@@ -24,11 +40,24 @@ public class ButtonScript : MonoBehaviour
 
     public void ShopButton()
     {
+        if (_buttonPersistentSound != null)
+        {
+            //button click sound
+            _buttonPersistentSound.playNormalClick();
+        }
+        
         SceneManager.LoadScene("Shop");
     }
 
     public void MainMenuButton()
     {
+
+        if (_buttonPersistentSound != null)
+        {
+            //button click sound
+            _buttonPersistentSound.playNormalClick();
+        }
+        
         //Load the main menu scene
         SceneManager.LoadScene(0);
     }

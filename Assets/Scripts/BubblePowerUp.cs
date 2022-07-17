@@ -29,6 +29,7 @@ public class BubblePowerUp : PowerUpAbstract
             powerUpManager.setBubbleActive(true); //effect handled by other class
             //to facilitate anim
             powerUpManager.setBubbleAlternate(1f);
+            AudioSource.PlayClipAtPoint(base.sound.clip, this.transform.position);
             Destroy(this.gameObject);
         }
         else

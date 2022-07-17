@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/ChangeSkin.cs.meta
 guid: f575f54f02c888a49af5efeb5aa44fed
+========
+guid: 164ebaa1c9a29ed4b8ed20344600d72e
+>>>>>>>> test2:Assets/Scripts/ButtonAction.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

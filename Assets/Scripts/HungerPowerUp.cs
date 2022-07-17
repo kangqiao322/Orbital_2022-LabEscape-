@@ -34,6 +34,7 @@ public class HungerPowerUp : PowerUpAbstract
                 powerUpManager.resetHungerEffectTimePassed(); 
             }
             
+            AudioSource.PlayClipAtPoint(base.sound.clip, this.transform.position);
             Debug.Log("hunger effect active");
             powerUpManager.setHungerEffectActive(true); //effect handled by other class
             Destroy(this.gameObject);

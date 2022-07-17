@@ -7,7 +7,8 @@ public class PowerUpIconDisplay : MonoBehaviour
 
     private PowerUpManager powerUpManager;
     private GameManager gameManager;
-    public SpriteRenderer rend;
+    private SpriteRenderer rend;
+    
 
     private float timer;
 
@@ -38,6 +39,7 @@ public class PowerUpIconDisplay : MonoBehaviour
         else if (powerUpManager.getBubbleStatusAlternate() == 2f)
         {
             //Debug.Log("POP BUBBLE");
+
             animator.SetBool("BubbleOn", false);
             StartCoroutine(DelayBubble());
         }

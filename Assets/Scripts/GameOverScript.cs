@@ -17,14 +17,21 @@ public class GameOverScript : MonoBehaviour
     private OffsetScrolling scroller;
     private ForegroundScroller scroller2;
 
-
-    private void Start()
+    private BackgroundMusicInGame _backgroundMusicInGame;
+    private ButtonPersistentSound _buttonPersistentSound;
+    private PokemonSound _pokemonSound;
+    
+    private void Awake()
     {
         scoreManager = FindObjectOfType<ScoreManager>();
         gameManager = FindObjectOfType<GameManager>();
 
         scroller = FindObjectOfType<OffsetScrolling>();
         scroller2 = FindObjectOfType<ForegroundScroller>();
+
+        _backgroundMusicInGame = FindObjectOfType<BackgroundMusicInGame>();
+        _buttonPersistentSound = FindObjectOfType<ButtonPersistentSound>();
+        _pokemonSound = FindObjectOfType<PokemonSound>();
     }
     
     public void SetUp(float score) 
@@ -36,6 +43,13 @@ public class GameOverScript : MonoBehaviour
     public void RestartButton() 
 
     {
+        if (_buttonPersistentSound != null)
+        {
+            //button click sound
+            _buttonPersistentSound.playNormalClick();
+            _pokemonSound.pausePokemon();
+        }
+
         //reload the active scene instead of biome1
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         gameManager.startGame();
@@ -48,6 +62,12 @@ public class GameOverScript : MonoBehaviour
 
     public void MainMenuButton() 
     {
+        if (_buttonPersistentSound != null)
+        {
+            //button click sound
+            _buttonPersistentSound.playNormalClick();
+        }
+
         SceneManager.LoadScene("MainMenu");
         gameManager.startGame();
         scoreManager.setTotalGems(0);
@@ -56,23 +76,48 @@ public class GameOverScript : MonoBehaviour
         scroller.resetScrollOffset();
         scroller2.resetGround();
     }
-
+    
+    //responsible for the green pause button 
     public void ResumeButton() 
     {
+        if (_buttonPersistentSound != null)
+        {
+            //button click sound
+            _buttonPersistentSound.playNormalClick();
+            _pokemonSound.pausePokemon();
+        }
+
         gameObject.SetActive(false);
         gameManager.startGame();
         Time.timeScale = 1f;
+        _backgroundMusicInGame.ResumeMusic();
     }
 
+    //responsible for the green pause button 
     public void PauseButton() 
     {
+        if (_buttonPersistentSound != null)
+        {
+            //button click sound
+            _buttonPersistentSound.playNormalClick();
+            _pokemonSound.pausePokemon();
+        }
+        
+
         gameObject.SetActive(true);
         //gameManager.startGame();
         Time.timeScale = 0f;
+        _backgroundMusicInGame.PauseMusic();
     }
 
     public void ExitButton()
     {
+        if (_buttonPersistentSound != null)
+        {
+            //button click sound
+            _buttonPersistentSound.playNormalClick();
+        }
+
         Application.Quit();
     }
 

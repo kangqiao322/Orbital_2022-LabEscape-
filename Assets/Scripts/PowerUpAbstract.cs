@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PowerUpAbstract : MonoBehaviour
@@ -10,9 +11,15 @@ public class PowerUpAbstract : MonoBehaviour
     private float lifespan = 1000f; //the amount of time left before destroyed
     private float speed;
     
+    protected AudioSource sound; //protected so child classes can access
+    
     public virtual void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
+        sound = GetComponent<AudioSource>();
+        sound.playOnAwake = false;
+        
+        //Debug.Log(sound);
     }
 
     // Update is called once per frame
