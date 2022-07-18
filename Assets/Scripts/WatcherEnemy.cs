@@ -54,7 +54,7 @@ public class WatcherEnemy : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // Debug.Log(collision.collider.tag);
-        if (collision.gameObject.CompareTag("ground") || collision.gameObject.CompareTag("platformUnderside"))
+        if (collision.gameObject.CompareTag("ground") || collision.gameObject.CompareTag("platformUnderside") || collision.gameObject.CompareTag("enemy"))
         {
             //Debug.Log("enemy touched " + collision.gameObject + ", destroying enemy...");
             GetComponent<Animator>().runtimeAnimatorController = phase as RuntimeAnimatorController;
@@ -66,7 +66,7 @@ public class WatcherEnemy : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
         // Debug.Log(collision.collider.tag);
-        if (collision.gameObject.CompareTag("ground") || collision.gameObject.CompareTag("platformUnderside"))
+        if (collision.gameObject.CompareTag("ground") || collision.gameObject.CompareTag("platformUnderside") || collision.gameObject.CompareTag("enemy"))
         {
             //Debug.Log("enemy touched " + collision.gameObject + ", destroying enemy...");
            GetComponent<Animator>().runtimeAnimatorController = normal as RuntimeAnimatorController;

@@ -32,7 +32,7 @@ public class WatcherSpawner : GeneratorAbstract
         {
             interval = Random.Range(4f, 12f);
             spawnVector = new Vector3(15f, UnityEngine.Random.Range(21f, 28f));
-            RandomSpawn(0.7, enemy, spawnVector);
+            RandomSpawn(0.85, enemy, spawnVector);
             timePassed = 0f;
         }
         }

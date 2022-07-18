@@ -27,7 +27,7 @@ public class EnemyGeneratorScript : GeneratorAbstract //this extends GeneratorAb
 
         if (timePassed > interval)
         {
-            interval = Random.Range(1f, 8f);
+            interval = Random.Range(1f, 6f);
             spawnVector = new Vector3(15f, UnityEngine.Random.Range(20f, 25f));
             RandomSpawn(0.9, enemy, spawnVector);
             timePassed = 0f;

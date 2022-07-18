@@ -56,7 +56,7 @@ public class PlatformGenerator : GeneratorAbstract
                 break;
         }
         
-        RandomSpawn(0.8, platformArray[randInt], spawnVector);
+        RandomSpawn(0.95, platformArray[randInt], spawnVector);
         //1st value is probability. It is a parent class' method
     }
 }
