@@ -1,0 +1,430 @@
+fileFormatVersion: 2
+guid: 8997640a1cb91784b896f90abfbe083a
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DEATHWYRM3_0
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 586
+        width: 1164
+        height: 625
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92eeb33b5ca2e664e815f94003c13119
+      internalID: 766904118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DEATHWYRM3_1
+      rect:
+        serializedVersion: 2
+        x: 989
+        y: 1202
+        width: 5
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5290c4d6382a314429ccc166fc04e9f4
+      internalID: 79488263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DEATHWYRM3_2
+      rect:
+        serializedVersion: 2
+        x: 2275
+        y: 567
+        width: 1145
+        height: 697
+      alignment: 9
+      pivot: {x: 0.5, y: 0.48}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee9f11704ca0f934e91261a6e0ec2824
+      internalID: -1563693398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DEATHWYRM3_3
+      rect:
+        serializedVersion: 2
+        x: 3592
+        y: 585
+        width: 1128
+        height: 748
+      alignment: 9
+      pivot: {x: 0.5043517, y: 0.45408428}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2c16c74236419b4f9f0363327daf536
+      internalID: -1197355023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DEATHWYRM3_4
+      rect:
+        serializedVersion: 2
+        x: 4848
+        y: 586
+        width: 1128
+        height: 806
+      alignment: 9
+      pivot: {x: 0.5, y: 0.40576142}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c8490c5f3e02b9499ae820bc2b7cbe8
+      internalID: 1366763942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DEATHWYRM3_5
+      rect:
+        serializedVersion: 2
+        x: 6053
+        y: 585
+        width: 1110
+        height: 759
+      alignment: 9
+      pivot: {x: 0.5000004, y: 0.42242825}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14ace3f9f6adb9c44860e78ff7cdaf61
+      internalID: -36818983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DEATHWYRM3_6
+      rect:
+        serializedVersion: 2
+        x: 7199
+        y: 585
+        width: 1114
+        height: 690
+      alignment: 9
+      pivot: {x: 0.5, y: 0.471557}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 099a3863cb6943243aa37c1c1ca39e52
+      internalID: 104658578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DEATHWYRM3_7
+      rect:
+        serializedVersion: 2
+        x: 8825
+        y: 585
+        width: 1104
+        height: 746
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4611184}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89112fb03df11c843b68b2ab1812133f
+      internalID: 425954605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DEATHWYRM3_8
+      rect:
+        serializedVersion: 2
+        x: 10173
+        y: 585
+        width: 1130
+        height: 748
+      alignment: 9
+      pivot: {x: 0.49601597, y: 0.43982235}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cdcbadfcc708e34989309ceec647d05
+      internalID: -1935556110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DEATHWYRM3_9
+      rect:
+        serializedVersion: 2
+        x: 11806
+        y: 586
+        width: 1106
+        height: 771
+      alignment: 9
+      pivot: {x: 0.5081392, y: 0.4182645}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1d72c61f9caae14db39cfd7b589271b
+      internalID: 716708780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DEATHWYRM3_10
+      rect:
+        serializedVersion: 2
+        x: 13342
+        y: 586
+        width: 1079
+        height: 703
+      alignment: 9
+      pivot: {x: 0.5, y: 0.46431294}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e5bc678fc56d6042beceb55d139cd02
+      internalID: -687438475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DEATHWYRM3_11
+      rect:
+        serializedVersion: 2
+        x: 13321
+        y: 1176
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b38770ae14df704d81a5b4dfcac5910
+      internalID: 1081398103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DEATHWYRM3_12
+      rect:
+        serializedVersion: 2
+        x: 11795
+        y: 1137
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c143293113c6442409668accb50ac8e4
+      internalID: 454075214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DEATHWYRM3_13
+      rect:
+        serializedVersion: 2
+        x: 11792
+        y: 1114
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e208aa030fcef542bda46d44acdc4cc
+      internalID: 1012041115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      DEATHWYRM3_0: 766904118
+      DEATHWYRM3_7: 425954605
+      DEATHWYRM3_3: -1197355023
+      DEATHWYRM3_10: -687438475
+      DEATHWYRM3_2: -1563693398
+      DEATHWYRM3_4: 1366763942
+      DEATHWYRM3_6: 104658578
+      DEATHWYRM3_8: -1935556110
+      DEATHWYRM3_13: 1012041115
+      DEATHWYRM3_1: 79488263
+      DEATHWYRM3_5: -36818983
+      DEATHWYRM3_11: 1081398103
+      DEATHWYRM3_9: 716708780
+      DEATHWYRM3_12: 454075214
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

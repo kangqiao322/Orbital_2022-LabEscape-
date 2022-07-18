@@ -28,12 +28,16 @@ public class WyrmSpawner : GeneratorAbstract
 
         if (timePassed > interval)
         {
-            interval = Random.Range(1f, 5f);
-            spawnVector = new Vector3(15f, 15f);
+            interval = Random.Range(8f, 20f);
+            spawnVector = new Vector3(15f, 16f);
             RandomSpawn(0.6, enemy, spawnVector);
             timePassed = 0f;
         }
         }
 
     }
+
+
+    
 }
+

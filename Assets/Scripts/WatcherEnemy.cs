@@ -33,7 +33,7 @@ public class WatcherEnemy : MonoBehaviour
             return;
         }
         
-        speed = gameManager.getSpeed() * 1.2f;
+        speed = gameManager.getSpeed() * 1.05f;
         
         //speed = displacement / deltaTime, and translation uses displacement
         

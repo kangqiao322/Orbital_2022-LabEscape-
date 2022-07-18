@@ -25,26 +25,28 @@ public class CyberSpawner : GeneratorAbstract
         //code stops here when game has ended, refer to parent method in GeneratorAbstract
         //this method is just so that i dont have to keep
         //importing GameManager in every single generator just to check if game has ended
-        if (base.gameScore() > 4000)
+        if (base.gameScore() > 3000)
         {
 
         timePassed += Time.deltaTime;
 
         if (timePassed > interval)
         {
-            rando = Random.Range(0, enemy.Length - 1);
-            interval = Random.Range(5f, 20f);
+            rando = Random.Range(0, enemy.Length);
+            interval = Random.Range(4f, 16f);
             spawnVector = new Vector3(120f, UnityEngine.Random.Range(20f, 25f));
-            //RandomSpawn(0.8, enemy[rando], spawnVector);
+            RandomSpawn(0.8, enemy[rando], spawnVector);
+            /*
             if (rando == 0)
             {
-                RandomSpawn(0.7, enemy[rando], spawnVector);
+                RandomSpawn(0.7, enemy[0], spawnVector);
             }
 
             if (rando == 1)
             {
-                RandomSpawn(0.5, enemy[rando], spawnVector);
+                RandomSpawn(1, enemy[1], spawnVector);
             }
+            */
             timePassed = 0f;
         }
         }

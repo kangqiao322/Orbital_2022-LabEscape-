@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6527508179760284428}
   - component: {fileID: 2851862000615120455}
   - component: {fileID: 3393795639019690041}
-  - component: {fileID: 3305478199624332035}
+  - component: {fileID: 1122295058044985038}
   m_Layer: 0
   m_Name: Spike 1
   m_TagString: spike
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cad74c5a591d7d14aad5dc004e3a24a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!61 &3305478199624332035
+--- !u!61 &1122295058044985038
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,16 +133,16 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.012784839, y: -0.029829264}
+  m_Offset: {x: 0.010431409, y: -0.0026078224}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.68, y: 2.4833682}
+    oldSize: {x: 2.68, y: 2.48}
     newSize: {x: 1.28, y: 1.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.9555721, y: 2.4237094}
+  m_Size: {x: 1.9707024, y: 2.4122}
   m_EdgeRadius: 0
