@@ -18,7 +18,7 @@ public class SetVolume : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(slider.value);
+        //Debug.Log(slider.value);
 
         if (Math.Abs(PlayerPrefs.GetFloat("sliderValue") - slider.value) >= 0.01)
         {

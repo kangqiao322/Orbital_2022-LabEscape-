@@ -31,7 +31,7 @@ public class StoreManager : MonoBehaviour
 
         _audioSource = GetComponent<AudioSource>();
         
-        PlayerPrefs.SetInt("totalGem", 500);
+        //PlayerPrefs.SetInt("totalGem", 500);
         
         Debug.Log("wearing skin id " + PlayerPrefs.GetInt("wearing"));
     }

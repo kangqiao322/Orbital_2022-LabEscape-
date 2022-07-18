@@ -41,7 +41,7 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] private Transform floatingScore;
 
     //just set it to true to prevent dying
-    private bool isAdminMode = true;
+    private bool isAdminMode = false;
 
     [SerializeField] private AudioClip[] sounds;
     
@@ -133,6 +133,9 @@ public class PlayerScript : MonoBehaviour
             isUndersidePlatform = false;
             isOnGround = true;
             animator.SetBool("IsJumping", false);
+            
+            //play sound effect
+            AudioSource.PlayClipAtPoint(sounds[3], this.transform.position);
 
         } else if (collision.gameObject.CompareTag("enemy"))
         {
