@@ -152,11 +152,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6507851641636455014, guid: 16f94a819ca3abb499eec4edd8f6f85a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.685
+      value: -12.42
       objectReference: {fileID: 0}
     - target: {fileID: 6507851641636455014, guid: 16f94a819ca3abb499eec4edd8f6f85a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 17.202
+      value: 26.91
       objectReference: {fileID: 0}
     - target: {fileID: 6507851641636455014, guid: 16f94a819ca3abb499eec4edd8f6f85a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3268,7 +3268,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.51}
     oldSize: {x: 2.69, y: 1.4119148}
-    newSize: {x: 2.3, y: 1.5821457}
+    newSize: {x: 2.69, y: 1.4119148}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -3343,7 +3343,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.3, y: 1.5821457}
+  m_Size: {x: 2.69, y: 1.4119148}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -4241,11 +4241,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1992683606442775143, guid: a40424af2bde34f42a45fd2b981dbead, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.6101
+      value: 13.47
       objectReference: {fileID: 0}
     - target: {fileID: 1992683606442775143, guid: a40424af2bde34f42a45fd2b981dbead, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 16.5924
+      value: 16.67
       objectReference: {fileID: 0}
     - target: {fileID: 1992683606442775143, guid: a40424af2bde34f42a45fd2b981dbead, type: 3}
       propertyPath: m_LocalPosition.z
