@@ -366,7 +366,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SlimeIdleAndLand 3_5: -2057441537
+      Slime256VER2_2: 0
       SlimeIdleAndLand 3_0: 1949877364
       Slime256VER2_10: 0
       SlimeIdleAndLand 3_1: 1882987807
@@ -386,7 +386,7 @@ TextureImporter:
       SlimeIdleAndLand 3_3: -1960878638
       SlimeIdleAndLand 3_6: -834448790
       Slime256VER2_6: 0
-      Slime256VER2_2: 0
+      SlimeIdleAndLand 3_5: -2057441537
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 1
