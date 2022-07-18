@@ -2525,10 +2525,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5738060879231870512, guid: e09f26a71ccc8a34388e91e4b2e7ac35, type: 3}
+      propertyPath: mixer
+      value: 
+      objectReference: {fileID: 24100000, guid: aadc2403d06d48d44a335e8ff90307cf, type: 2}
     - target: {fileID: 5738060879231870517, guid: e09f26a71ccc8a34388e91e4b2e7ac35, type: 3}
       propertyPath: m_Name
       value: game background music
       objectReference: {fileID: 0}
+    - target: {fileID: 5738060879231870518, guid: e09f26a71ccc8a34388e91e4b2e7ac35, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: aadc2403d06d48d44a335e8ff90307cf, type: 2}
     - target: {fileID: 5738060879231870519, guid: e09f26a71ccc8a34388e91e4b2e7ac35, type: 3}
       propertyPath: m_RootOrder
       value: 29

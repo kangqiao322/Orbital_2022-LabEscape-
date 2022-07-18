@@ -1,13 +1,17 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class PokemonSound : MonoBehaviour
 {
     
+    public AudioMixer mixer;
     private AudioSource littleRoot;
     public int hashcode;
 
     void Awake()
     {
+        
+        
         if (PlayerPrefs.GetInt("currentPokemonHash") == 0)
         {
             PlayerPrefs.SetInt("currentPokemonHash", this.gameObject.GetHashCode());
@@ -66,6 +70,17 @@ public class PokemonSound : MonoBehaviour
         
             //Debug.Log(littleRoot.isPlaying);
         }
+        
+        //PlayerPrefs.DeleteKey("sliderValue");
+
+        if (!PlayerPrefs.HasKey("sliderValue"))
+        {
+            PlayerPrefs.SetFloat("sliderValue", 1);
+        }
+        
+        Debug.Log(PlayerPrefs.GetFloat("sliderValue"));
+        
+        mixer.SetFloat("MusicVol", Mathf.Log10(PlayerPrefs.GetFloat("sliderValue")) * 20);
     }
 
     public void pausePokemon()

@@ -1256,7 +1256,7 @@ AudioSource:
   m_GameObject: {fileID: 1287935912}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: aadc2403d06d48d44a335e8ff90307cf, type: 2}
   m_audioClip: {fileID: 8300000, guid: 8c0efab883e710e40857e2e9af16410e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.15
@@ -1370,6 +1370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78fd785b6295af941a7e236c79cd85b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mixer: {fileID: 24100000, guid: aadc2403d06d48d44a335e8ff90307cf, type: 2}
   hashcode: 0
 --- !u!1 &1307602235
 GameObject:
@@ -1647,6 +1648,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6134453278804043812, guid: 0410738f5646aae40a6c29ad5ea7e543, type: 3}
+      propertyPath: mixer
+      value: 
+      objectReference: {fileID: 24100000, guid: aadc2403d06d48d44a335e8ff90307cf, type: 2}
+    - target: {fileID: 6134453279041912684, guid: 0410738f5646aae40a6c29ad5ea7e543, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: aadc2403d06d48d44a335e8ff90307cf, type: 2}
     - target: {fileID: 6134453279041912685, guid: 0410738f5646aae40a6c29ad5ea7e543, type: 3}
       propertyPath: m_Name
       value: Persistent Button sound
