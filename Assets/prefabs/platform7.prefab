@@ -330,6 +330,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5864412358717051058}
     m_Modifications:
+    - target: {fileID: 1122295058044985038, guid: 11c5f5419de60054e81fae8273fbee74, type: 3}
+      propertyPath: m_Size.x
+      value: 1.7555671
+      objectReference: {fileID: 0}
+    - target: {fileID: 1122295058044985038, guid: 11c5f5419de60054e81fae8273fbee74, type: 3}
+      propertyPath: m_Size.y
+      value: 2.3137243
+      objectReference: {fileID: 0}
+    - target: {fileID: 1122295058044985038, guid: 11c5f5419de60054e81fae8273fbee74, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.09808159
+      objectReference: {fileID: 0}
+    - target: {fileID: 1122295058044985038, guid: 11c5f5419de60054e81fae8273fbee74, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.017922044
+      objectReference: {fileID: 0}
     - target: {fileID: 1126790945353431789, guid: 11c5f5419de60054e81fae8273fbee74, type: 3}
       propertyPath: m_Name
       value: Spike 1 (1)
@@ -352,7 +368,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9072857763502615465, guid: 11c5f5419de60054e81fae8273fbee74, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.089027
+      value: 0.9931927
       objectReference: {fileID: 0}
     - target: {fileID: 9072857763502615465, guid: 11c5f5419de60054e81fae8273fbee74, type: 3}
       propertyPath: m_LocalScale.z
@@ -364,7 +380,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9072857763502615465, guid: 11c5f5419de60054e81fae8273fbee74, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.14
+      value: 4.296
       objectReference: {fileID: 0}
     - target: {fileID: 9072857763502615465, guid: 11c5f5419de60054e81fae8273fbee74, type: 3}
       propertyPath: m_LocalPosition.z

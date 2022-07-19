@@ -33,9 +33,9 @@ public class CyberSpawner : GeneratorAbstract
         if (timePassed > interval)
         {
             rando = Random.Range(0, enemy.Length);
-            interval = Random.Range(3f, 15f);
+            interval = Random.Range(1f, 18f);
             spawnVector = new Vector3(120f, UnityEngine.Random.Range(20f, 25f));
-            RandomSpawn(0.9, enemy[rando], spawnVector);
+            RandomSpawn(0.95, enemy[rando], spawnVector);
             /*
             if (rando == 0)
             {

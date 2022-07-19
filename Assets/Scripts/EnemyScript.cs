@@ -32,7 +32,7 @@ public class EnemyScript : MonoBehaviour
             return;
         }
         
-        speed = gameManager.getSpeed() * 1.05f;
+        speed = gameManager.getSpeed();
         
         //speed = displacement / deltaTime, and translation uses displacement
         

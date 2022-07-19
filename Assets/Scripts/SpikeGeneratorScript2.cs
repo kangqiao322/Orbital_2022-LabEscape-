@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpikeGeneratorScript2 : GeneratorAbstract
 {
 
-    private float interval = 2f;
+    private float interval;
     private float timePassed = 0f;
     //now it spawns outside the screen which is intended
 
@@ -30,17 +30,18 @@ public class SpikeGeneratorScript2 : GeneratorAbstract
             
         if (timePassed > interval)
         {
+            interval = Random.Range(2f, 10f);
             rand = Random.Range(0, spike.Length);
             if (rand == 0) 
             {
             var spawnVector = new Vector3(UnityEngine.Random.Range(12f, 40f), 17.4f);
-            RandomSpawn(0.8, spike[rand], spawnVector, 2);
+            RandomSpawn(0.65, spike[rand], spawnVector, 2);
             timePassed = 0f;
             }
             else
             {
             var spawnVector = new Vector3(UnityEngine.Random.Range(12f, 40f), 17f);
-            RandomSpawn(0.8, spike[rand], spawnVector, 2);
+            RandomSpawn(0.65, spike[rand], spawnVector, 2);
             timePassed = 0f;
             }
         }
