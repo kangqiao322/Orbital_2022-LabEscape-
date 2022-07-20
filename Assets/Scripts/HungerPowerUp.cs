@@ -39,7 +39,7 @@ public class HungerPowerUp : PowerUpAbstract
             powerUpManager.setHungerEffectActive(true); //effect handled by other class
             Destroy(this.gameObject);
         }
-        else
+        else if (!otherCollider.CompareTag("wall"))
         {
             Debug.Log(gameObject + " touched " + otherCollider.gameObject + ", destroying itself...");
             Destroy(this.gameObject);

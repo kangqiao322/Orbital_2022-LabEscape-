@@ -31,7 +31,7 @@ public class WyrmEnemy : MonoBehaviour
             return;
         }
         
-        speed = gameManager.getSpeed() * 1.3f;
+        speed = gameManager.getSpeed() * 1.05f;
         
         //speed = displacement / deltaTime, and translation uses displacement
         
@@ -59,5 +59,10 @@ public class WyrmEnemy : MonoBehaviour
             Destroy(this.gameObject);
         }
         */
+        if (collision.gameObject.CompareTag("spike"))
+        {
+            Destroy(collision.gameObject);
+        }
+    
     }
 }

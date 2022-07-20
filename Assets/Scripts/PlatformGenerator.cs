@@ -25,7 +25,7 @@ public class PlatformGenerator : GeneratorAbstract
         //this method is just so that i dont have to keep
         //importing GameManager in every single generator just to check if game has ended
 
-        interval = UnityEngine.Random.Range(2.5f, 5f);
+        interval = UnityEngine.Random.Range(3f, 7f);
         timePassed += Time.deltaTime;
 
         if (timePassed > interval)
@@ -33,6 +33,16 @@ public class PlatformGenerator : GeneratorAbstract
             platformGeneration();
             timePassed = 0f;
         }
+         if (base.gameScore() > 1000)
+        {
+            interval =  UnityEngine.Random.Range(1f, 3f);
+        }
+
+        if (base.gameScore() > 3000)
+        {
+            interval =  UnityEngine.Random.Range(1f, 1.5f);
+        }
+        
         
 
     }
@@ -56,7 +66,7 @@ public class PlatformGenerator : GeneratorAbstract
                 break;
         }
         
-        RandomSpawn(0.8, platformArray[randInt], spawnVector);
+        RandomSpawn(0.95, platformArray[randInt], spawnVector);
         //1st value is probability. It is a parent class' method
     }
 }

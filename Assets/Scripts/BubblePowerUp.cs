@@ -32,7 +32,7 @@ public class BubblePowerUp : PowerUpAbstract
             AudioSource.PlayClipAtPoint(base.sound.clip, this.transform.position);
             Destroy(this.gameObject);
         }
-        else
+        else if (!otherCollider.CompareTag("wall"))
         {
             Debug.Log(gameObject + " touched " + otherCollider.gameObject + ", destroying itself...");
             Destroy(this.gameObject);
