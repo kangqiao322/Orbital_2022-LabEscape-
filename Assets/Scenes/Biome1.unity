@@ -880,7 +880,7 @@ GameObject:
   - component: {fileID: 776053493}
   - component: {fileID: 776053492}
   m_Layer: 5
-  m_Name: Indicators
+  m_Name: Indicators unused
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -945,7 +945,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 200
   m_TargetDisplay: 0
 --- !u!224 &776053495
 RectTransform:
@@ -1996,7 +1996,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1508106217
 GameObject:
@@ -2011,7 +2011,7 @@ GameObject:
   - component: {fileID: 1508106218}
   - component: {fileID: 1508106222}
   m_Layer: 3
-  m_Name: Ground
+  m_Name: Ground unused?
   m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2209,7 +2209,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f79882f6d0651fe4ea92b2a889f628bb, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2227,7 +2227,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1520955631}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22.53, y: 24.36, z: -0.1342589}
+  m_LocalPosition: {x: -23.01, y: 24.67, z: -0.1342589}
   m_LocalScale: {x: 1, y: 18.568457, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3557,7 +3557,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3546028266776513135, guid: acc7babd6b936b84e91f694910ed6416, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3546028266776513135, guid: acc7babd6b936b84e91f694910ed6416, type: 3}
       propertyPath: m_LocalPosition.x

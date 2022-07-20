@@ -38,6 +38,7 @@ public class PowerUpGenerator : GeneratorAbstract
 
     private void powerUpNtimes(int n)
     {
+        n = n > 2 ? 2 : n; //hard cap of 2 powerups spawning at once
         while (n > 0)
         {
             powerUpGeneration();
