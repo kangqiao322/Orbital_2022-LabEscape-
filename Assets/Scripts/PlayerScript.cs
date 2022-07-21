@@ -42,7 +42,7 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] private Transform floatingScore;
 
     //just set it to true to prevent dying
-    private bool isAdminMode = false;
+    private bool isAdminMode = true;
 
     [SerializeField] private AudioClip[] sounds;
 

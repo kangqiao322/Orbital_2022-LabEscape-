@@ -15,6 +15,7 @@ TagManager:
   - platform
   - CamBox
   - wall
+  - gemblock
   layers:
   - Default
   - TransparentFX
