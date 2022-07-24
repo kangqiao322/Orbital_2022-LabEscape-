@@ -40,7 +40,7 @@ public class PlatformGenerator : GeneratorAbstract
 
         if (base.gameScore() > 3000)
         {
-            interval = 1f;
+            interval = UnityEngine.Random.Range(0.5f, 1f);
         }
         
         
