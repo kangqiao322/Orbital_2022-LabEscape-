@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
 
 public class PlayerScript : MonoBehaviour
@@ -9,7 +10,7 @@ public class PlayerScript : MonoBehaviour
     //gem count increases when gem is in contact with tag "Player",
     //not when player is in contact with tag "gem"
     
-    public float JumpForce;
+    private float JumpForce = 22;
 
     //private FloatingScoreManager floatingScoreManager;
     private ScoreManager scoreManager;
@@ -44,7 +45,10 @@ public class PlayerScript : MonoBehaviour
     private bool isAdminMode = false;
 
     [SerializeField] private AudioClip[] sounds;
-    
+
+    private bool doubleTap = false; //for android port, maybe in the future
+    private int tapCount = 0;
+
     private void Awake() 
     {
         RB = GetComponent<Rigidbody2D>();
@@ -67,9 +71,9 @@ public class PlayerScript : MonoBehaviour
         }
         
         isOnGround = Physics2D.OverlapCircle(playerFeet.position, playerFeetRadius, groundLayer);
-
+        
         //first jump
-        if (Input.GetButtonDown("Jump") && isOnGround)
+        if ((Input.GetButtonDown("Jump") || Input.touchCount > 0) && isOnGround)
         {
             //Debug.Log("jump");
             RB.gravityScale = gravityForce;
@@ -81,10 +85,32 @@ public class PlayerScript : MonoBehaviour
 
             animator.SetBool("IsJumping", true);
         }
-        
+
+        if (canDoubleJump)
+        {
+            //Debug.Log("can jump window, " + Input.touchCount);
+            if (Input.touchCount == 1)
+            {
+                Touch touch = Input.GetTouch(0);
+
+                if (touch.phase == TouchPhase.Ended)
+                {
+                    tapCount++;
+                }
+            } else if (tapCount == 2)
+            {
+                doubleTap = true; //the boolean that allows double jump on phone
+            }
+        }
+        else
+        {
+            tapCount = 0;
+            doubleTap = false;
+        }
+
         //double jump feature
         //second jump
-        if (Input.GetButtonDown("Jump") && canDoubleJump && !isOnGround)
+        if ((Input.GetButtonDown("Jump") || doubleTap) && canDoubleJump && !isOnGround)
         {
             //Debug.Log("double jump");
             canDoubleJump = false;
@@ -98,7 +124,7 @@ public class PlayerScript : MonoBehaviour
         }
 
         //underside
-        if (Input.GetButtonDown("Jump") && isUndersidePlatform) //on underside of platform and jumps
+        if ((Input.GetButtonDown("Jump") || Input.touchCount > 0) && isUndersidePlatform) //on underside of platform and jumps
         {
             //Debug.Log("under jump");
             RB.gravityScale = gravityForce;
@@ -109,7 +135,7 @@ public class PlayerScript : MonoBehaviour
             //play sound effect
             AudioSource.PlayClipAtPoint(sounds[3], this.transform.position);
         }
-
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

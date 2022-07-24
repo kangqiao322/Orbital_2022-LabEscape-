@@ -35,12 +35,12 @@ public class PlatformGenerator : GeneratorAbstract
         }
          if (base.gameScore() > 1000)
         {
-            interval =  UnityEngine.Random.Range(1f, 3f);
+            interval =  UnityEngine.Random.Range(1f, 2f);
         }
 
         if (base.gameScore() > 3000)
         {
-            interval =  UnityEngine.Random.Range(1f, 1.5f);
+            interval = UnityEngine.Random.Range(0.5f, 1f);
         }
         
         

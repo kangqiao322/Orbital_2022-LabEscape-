@@ -70,7 +70,7 @@ MonoBehaviour:
 
     CONSUMES ALL LIVING ENEMIES
 
-    LASTS 15 SECONDS'
+    LASTS 10 SECONDS'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bfea85097efb52f4787062c87d233b73, type: 2}
   m_sharedMaterial: {fileID: -2067270259569029876, guid: bfea85097efb52f4787062c87d233b73, type: 2}
@@ -657,7 +657,7 @@ MonoBehaviour:
 
     DOUBLES ALL GEMS COLLECTED
 
-    LASTS 15 SECONDS'
+    LASTS 10 SECONDS'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bfea85097efb52f4787062c87d233b73, type: 2}
   m_sharedMaterial: {fileID: -2067270259569029876, guid: bfea85097efb52f4787062c87d233b73, type: 2}
