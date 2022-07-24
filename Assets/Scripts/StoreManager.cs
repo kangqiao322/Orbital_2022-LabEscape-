@@ -4,7 +4,7 @@ using UnityEngine;
 public class StoreManager : MonoBehaviour
 {
     
-    public bool adminModeResetSkins;
+    private bool adminModeResetSkins = false;
     //if true, every time game is launched there are no bought skins
     //and wearing id is set to 0 
     //you need to reload the game twice for this to fully work

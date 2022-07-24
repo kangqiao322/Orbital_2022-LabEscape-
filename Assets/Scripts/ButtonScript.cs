@@ -72,4 +72,15 @@ public class ButtonScript : MonoBehaviour
         //Load the main menu scene
         SceneManager.LoadScene(0);
     }
+    
+    public void ExitButton()
+    {
+        if (_buttonPersistentSound != null)
+        {
+            //button click sound
+            _buttonPersistentSound.playNormalClick();
+        }
+
+        Application.Quit();
+    }
 }

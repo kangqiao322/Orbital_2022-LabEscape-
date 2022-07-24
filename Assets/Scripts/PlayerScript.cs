@@ -10,7 +10,7 @@ public class PlayerScript : MonoBehaviour
     //gem count increases when gem is in contact with tag "Player",
     //not when player is in contact with tag "gem"
     
-    public float JumpForce;
+    private float JumpForce = 22;
 
     //private FloatingScoreManager floatingScoreManager;
     private ScoreManager scoreManager;

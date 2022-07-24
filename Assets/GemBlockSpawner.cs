@@ -31,7 +31,7 @@ public class GemBlockSpawner : GeneratorAbstract
         if (timePassed > interval)
         {
             rando = Random.Range(0, blocks.Length);
-            interval = Random.Range(1f, 10f);
+            interval = Random.Range(4f, 10f);
             spawnVector = new Vector3(50f, UnityEngine.Random.Range(20f, 28f));
             RandomSpawn(1, blocks[rando], spawnVector);
            

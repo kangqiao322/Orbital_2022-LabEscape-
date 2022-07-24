@@ -54,7 +54,9 @@ public class gemblockscript : MonoBehaviour
     {
         // Debug.Log(collision.collider.tag);
         
-        if (collision.gameObject.CompareTag("ground") || collision.gameObject.CompareTag("platformUnderside") || collision.gameObject.CompareTag("gemblock"))
+       
+        if (collision.gameObject.CompareTag("ground") || collision.gameObject.CompareTag("platformUnderside") || collision.gameObject.CompareTag("gemblock")
+            || collision.gameObject.CompareTag("enemy") || collision.gameObject.CompareTag("spike"))
         {
             //Debug.Log("enemy touched " + collision.gameObject + ", destroying enemy...");
             Destroy(this.gameObject);
